@@ -1,123 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Számítógép Részei és Szerelése</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 2em;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        .part {
-            margin-bottom: 1em;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            margin-top: 2em;
-        }
-    </style>
+<html lang="hu">
+<head> 
+    <title>Projekt Munk�k</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Projekt Munk�k</h1>
+        <nav>
+            <ul>
+                <li><a href="#evfolyam9">9. �vfolyam</a></li>
+                <li><a href="#evfolyam10">10. �vfolyam</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <h1>Számítógép Részei és Szerelése</h1>
-</header>
+    <section id="evfolyam9">
+        <h2>9. �vfolyam Projekt Munk�k</h2>
+        <div class="projekt">
+            <h3>1. Projekt</h3>
+            <p>�ramk�r�k, m�r�sek �ramk�r�kben.</p>
+			<a href="dokumentacio.html" target="_blank">dokumentacio</a><br>
+            <a href="aramkorok.html" target="_blank">weboldal </a>			
+        </div>
+        <div class="projekt">
+            <h3>2. Projekt</h3>
+            <p>Sz�m�t�g�p R�szei �s Szerel�se.</p>
+			<a href="dokumentacio2.pdf" target="_blank">dokumentacio</a><br>
+            <a href="szamitogep.html" target="_blank"> Weboldal</a>
+			
+        </div>
+    </section>
 
-<nav>
-    <a href="#cpu">Processzor</a>
-    <a href="#ram">RAM</a>
-    <a href="#hdd">HDD/SSD</a>
-    <a href="#gpu">Videókártya</a>
-    <a href="#power">Tápegység</a>
-	
-	<ul>
-		<li><a href="szereles.html">Szerelés</a></li>
-	</ul>
-	
-</nav>
+    <section id="evfolyam10">
+        <h2>10. �vfolyam Projekt Munk�k</h2>
+        <div class="projekt">
+            <h3>1. Projekt</h3>
+            <p>R�szletes inform�ci�k a 10. �vfolyam 1. projektj�r�l.</p>
+            <a href="dokumetum3.pdf" target="_blank">Dokumentum </a>
+        </div>
+        <div class="projekt">
+            <h3>2. Projekt</h3>
+            <p>R�szletes inform�ci�k a 10. �vfolyam 2. projektj�r�l.</p>
+            <a href="dokumetum4.pdf" target="_blank">Dokumentum </a>
+        </div>
+    </section>
 
-<section id="cpu">
-    <h2>1. Processzor (CPU)</h2>
-    <div class="part">
-        <p>A processzor az agya a számítógépnek, amely végrehajtja az utasításokat és koordinálja a rendszert. Az alaplapra van felszerelve, és a hűtésre is figyelni kell, hogy elkerüljük a túlmelegedést.</p>
-    </div>
-	<img src="processzor.jpg" name="processzor" border="1">
-</section>
-
-<section id="ram">
-    <h2>2. RAM (Memória)</h2>
-    <div class="part">
-        <p>A RAM az ideiglenes memória, amely gyors hozzáférést biztosít az aktív alkalmazások számára. A memória bővítése gyorsíthatja a számítógép teljesítményét, különösen több alkalmazás futtatásakor.</p>
-    </div>
-	<img src="ram.jpg" name="Ram" border="1">
-</section>
-
-<section id="hdd">
-    <h2>3. Merevlemez (HDD) / SSD</h2>
-    <div class="part">
-        <p>A merevlemez tárolja az operációs rendszert és az adatokat. Az SSD-k gyorsabbak, mint a hagyományos HDD-k, mivel nincsenek mozgó alkatrészeik.</p>
-    </div>
-	<img src="merevlemez.jpg" name="Merevlemez" border="1">
-</section>
-
-<section id="gpu">
-    <h2>4. Videókártya (GPU)</h2>
-    <div class="part">
-        <p>A videókártya felelős a grafikus teljesítményért. Az erősebb GPU-k fontosak a játékokhoz, 3D modellezéshez és más grafikus alkalmazásokhoz.</p>
-    </div>
-	<img src="gpu.jpg" name="GPU" border="1">
-</section>
-
-<section id="power">
-    <h2>5. Tápegység (PSU)</h2>
-    <div class="part">
-        <p>A tápegység biztosítja az összes alkatrész számára szükséges áramot. Fontos, hogy elegendő watt-teljesítménnyel rendelkezzen, hogy minden komponens működni tudjon.</p>
-    </div>
-	<img src="tapegyseg.jpg" name="Tápegység" border="1">
-</section>
-
-<section id="szereles">
-    
-</section>
-
+    <footer>
+        <p>&copy; 2025 Projekt Munk�k</p>
+		+3
+    </footer>
 </body>
 </html>
