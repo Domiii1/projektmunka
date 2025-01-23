@@ -1,116 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Számítógép Részei és Szerelése</title>
+    <title>Számítógép Szerelés</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
         }
-
         header {
-            background-color: #333;
+            background-color: #4CAF50;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 1em;
         }
-
         nav {
-            background-color: #444;
-            padding: 1em;
-            text-align: center;
-		font-weight: bold;
+            background-color: #333;
+            overflow: hidden;
         }
-
         nav a {
             color: white;
-            margin: 0 15px;
+            padding: 14px 20px;
             text-decoration: none;
-		font-weight: bold;
+            display: inline-block;
         }
-
-        section {
-            padding: 2em;
+        nav a:hover {
+            background-color: #575757;
         }
-
-        h2 {
+        .content {
+            padding: 20px;
+        }
+        .section-title {
             color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
-
-        .part {
-            margin-bottom: 1em;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .section-content {
+            color: #555;
+            font-size: 18px;
         }
-
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Számítógép Részei és Szerelése</h1>
-</header>
-
-<nav>
-	<ul>
-		<li><a href="szereles.html">Szerelés</a></li><br>
-		<li><a href="arajanlat.html">Árajanlat</a></li><br>
-		<li><a href="alkatreszek.html">Alkatreszek</a></li>
-	</ul>
-	
-</nav>
-
-<section id="cpu">
-    <h2>1. Processzor (CPU)</h2>
-    <div class="part">
-        <p>A CPU (angol: Central Processing Unit – központi feldolgozóegység) más néven processzor ill. mikroprocesszor, a számítógép „agya”, azon egysége, amely az utasítások értelmezését és végrehajtását vezérli, félvezetős kivitelezésű, összetett elektronikus áramkör..</p>
-    </div>
-</section>
-
-<section id="ram">
-    <h2>2. RAM (Memória)</h2>
-    <div class="part">
-        <p>A RAM az ideiglenes memória, amely gyors hozzáférést biztosít az aktív alkalmazások számára. A memória bővítése gyorsíthatja a számítógép teljesítményét, különösen több alkalmazás futtatásakor.</p>
-    </div>
-</section>
-
-<section id="hdd">
-    <h2>3. Merevlemez (HDD) / SSD</h2>
-    <div class="part">
-        <p>A merevlemez tárolja az operációs rendszert és az adatokat. Az SSD-k gyorsabbak, mint a hagyományos HDD-k, mivel nincsenek mozgó alkatrészeik.</p>
-    </div>
-</section>
-
-<section id="gpu">
-    <h2>4. Videókártya (GPU)</h2>
-    <div class="part">
-        <p>A videókártya felelős a grafikus teljesítményért. Az erősebb GPU-k fontosak a játékokhoz, 3D modellezéshez és más grafikus alkalmazásokhoz.</p>
-    </div>
-</section>
-
-<section id="power">
-    <h2>5. Tápegység (PSU)</h2>
-    <div class="part">
-        <p>A tápegység biztosítja az összes alkatrész számára szükséges áramot. Fontos, hogy elegendő watt-teljesítménnyel rendelkezzen, hogy minden komponens működni tudjon.</p>
-    </div>
-</section>
-
-<section id="szereles">
+    <header>
+        <h1>Számítógép Szerelés</h1>
+        <p>Segítség a számítógép hibáinak elhárításában és javításában</p>
+    </header>
     
-</section>
+    <nav>
+        <a href="#bevezeto">Bevezetés</a>
+        <a href="#alkatreszek">Alkatrészek</a>
+        <a href="#hiba">Hibák és Megoldások</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+    
+    <div class="content">
+        <section id="bevezeto">
+            <h2 class="section-title">Bevezetés</h2>
+            <p class="section-content">
+                A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. Ezen az oldalon bemutatjuk a leggyakoribb hibákat és megoldásokat, valamint segítünk abban, hogyan végezhetünk el kisebb javításokat otthon.
+            </p>
+        </section>
 
+        <section id="alkatreszek">
+            <h2 class="section-title">Alkatrészek</h2>
+            <p class="section-content">
+                A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következő komponensek:
+                <ul>
+                    <li><strong>Alaplap</strong>: A számítógép központi egysége, amely összeköti az összes többi alkatrészt.</li>
+                    <li><strong>Processzor (CPU)</strong>: Az agy, amely a számításokat végzi.</li>
+                    <li><strong>Memória (RAM)</strong>: Az ideiglenes tároló, amely gyors hozzáférést biztosít az aktív adatokhoz.</li>
+                    <li><strong>Grafikus kártya (GPU)</strong>: A képi megjelenítésért felelős alkatrész.</li>
+                    <li><strong>Tápegység (PSU)</strong>: Biztosítja az áramellátást a rendszer minden alkatrésze számára.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="hiba">
+            <h2 class="section-title">Hibák és Megoldások</h2>
+            <p class="section-content">
+                A számítógépek néha hibáznak, de sok esetben a probléma egyszerűen orvosolható. Néhány gyakori hiba:
+                <ul>
+                    <li><strong>Nem indul el a számítógép:</strong> Ellenőrizd, hogy az áramellátás rendben van-e, és hogy az összes kábel megfelelően csatlakozik.</li>
+                    <li><strong>Képernyő probléma:</strong> Ha a monitor nem kap jelet, próbáld meg újra csatlakoztatni a videókábelt vagy ellenőrizd a grafikus kártyát.</li>
+                    <li><strong>Hangprobléma:</strong> Ellenőrizd a hangkártya illesztőprogramjait, és győződj meg arról, hogy a hangszórók megfelelően csatlakoznak.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="kapcsolat">
+            <h2 class="section-title">Kapcsolat</h2>
+            <p class="section-content">
+                Ha bármilyen kérdésed van a számítógép szerelésével kapcsolatban, vagy segítségre van szükséged, bátran vedd fel velünk a kapcsolatot!
+            </p>
+            <p class="section-content">
+                Email: <a href="mailto:info@szamitogepszereles.hu">info@szamitogepszereles.hu</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Számítógép Szerelés | Minden jog fenntartva</p>
+    </footer>
 </body>
 </html>
