@@ -1,1 +1,110 @@
-
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hálózati Alapok és Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kapcsoló és Router Alapkonfiguráció</h1>
+        <h2>1. Alapvető beállítások kapcsolón</h2>
+        <p>Íme néhány alapvető parancs egy Cisco kapcsoló konfigurálásához:</p>
+        <pre>
+        enable
+        configure terminal
+        hostname Switch1
+        interface vlan 1
+        ip address 192.168.1.1 255.255.255.0
+        no shutdown
+        exit
+        </pre>
+        
+        <h2>2. Router alapszintű konfiguráció</h2>
+        <p>Router beállítása egy egyszerű LAN számára:</p>
+        <pre>
+        enable
+        configure terminal
+        hostname Router1
+        interface GigabitEthernet0/0
+        ip address 192.168.1.254 255.255.255.0
+        no shutdown
+        exit
+        </pre>
+        
+        <h2>3. Haladó hálózati beállítások</h2>
+        <p>Statikus útvonal beállítása:</p>
+        <pre>
+        ip route 192.168.2.0 255.255.255.0 192.168.1.2
+        </pre>
+        <p>DHCP konfiguráció egy routeren:</p>
+        <pre>
+        ip dhcp pool LAN
+        network 192.168.1.0 255.255.255.0
+        default-router 192.168.1.254
+        dns-server 8.8.8.8
+        exit
+        </pre>
+        
+        <h1>Python Nyelv Alapjai</h1>
+        <h2>1. Változók és kiíratás</h2>
+        <p>Egyszerű Python kód:</p>
+        <pre>
+        name = "Tanuló"
+        print("Helló,", name)
+        </pre>
+        
+        <h2>2. Feltételes elágazás</h2>
+        <p>Hogyan működik az if-else szerkezet Pythonban:</p>
+        <pre>
+        age = 18
+        if age >= 18:
+            print("Felnőtt vagy.")
+        else:
+            print("Még nem vagy felnőtt.")
+        </pre>
+        
+        <h2>3. Ciklusok</h2>
+        <p>For ciklus használata:</p>
+        <pre>
+        for i in range(5):
+            print("Szám:", i)
+        </pre>
+        
+        <h2>4. Függvények</h2>
+        <p>Egyszerű Python függvény:</p>
+        <pre>
+        def osszeg(a, b):
+            return a + b
+        
+        print(osszeg(3, 5))
+        </pre>
+        
+        <h2>Gyakorlati feladatok</h2>
+        <p><strong>1. Hálózatkezelési feladat:</strong> Hozz létre egy új VLAN-t a kapcsolón és rendelj hozzá egy portot.</p>
+        <p><strong>2. Programozási feladat:</strong> Írj egy Python programot, amely bekér egy számot és megmondja, hogy páros vagy páratlan.</p>
+    </div>
+</body>
+</html>
