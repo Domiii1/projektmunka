@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsoló és Router Alapkonfiguráció</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        code {
+            color: #d6336c;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kapcsoló és Router Alapkonfiguráció</h1>
+
+    <h2>Bevezetés</h2>
+    <p>A hálózati eszközök, mint a kapcsolók (switch) és routerek alapvető szerepet játszanak a számítógépes hálózatokban. A kapcsolók lehetővé teszik az eszközök közötti adatátvitelt a helyi hálózatban, míg a routerek a különböző hálózatok közötti adatforgalmat irányítják. Az alábbi dokumentáció célja, hogy bemutassa a kapcsolók és routerek alapvető konfigurálását és azok szerepét egy hálózati környezetben.</p>
+
+    <h2>1. Kapcsoló (Switch) Alapkonfiguráció</h2>
+
+    <p>A kapcsolók feladata, hogy az eszközök között adatokat továbbítsanak ugyanabban a helyi hálózatban (LAN). A kapcsolók a MAC-címek alapján irányítják az adatcsomagokat a megfelelő portok között. Az alapkonfiguráció célja, hogy a kapcsoló működését gyorsan és hatékonyan beállítsuk.</p>
+
+    <h3>1.1 Kapcsoló alapértelmezett konfigurációja</h3>
+    <p>Amikor egy kapcsolót először bekapcsolunk, az alapértelmezett konfigurációt kell beállítanunk. A legfontosabb feladatok:</p>
+    <ul>
+        <li>A kapcsoló neve</li>
+        <li>A soros port beállításai (ha szükséges)</li>
+        <li>Az eszköz védelme (jelszó beállítása)</li>
+        <li>A VLAN-ok konfigurálása (ha szükséges)</li>
+    </ul>
+
+    <h3>1.2 Alap konfigurációs lépések Cisco kapcsolókon</h3>
+    <pre><code>Switch> enable
+Switch# configure terminal
+Switch(config)# hostname Kapcsolo1
+Switch(config)# enable secret jelszo123
+Switch(config)# vlan 10
+Switch(config-vlan)# name Sales
+Switch(config-vlan)# exit
+Switch(config)# interface gigabitethernet 0/1
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10
+Switch(config)# end
+Switch# write memory</code></pre>
+
+    <h3>1.3 Kapcsoló konfigurációs tesztelés</h3>
+    <p>A konfiguráció ellenőrzésére a következő parancsokat használhatjuk:</p>
+    <ul>
+        <li><code>show running-config</code>: A kapcsoló jelenlegi konfigurációjának megtekintése</li>
+        <li><code>show vlan brief</code>: A VLAN-ok listájának megjelenítése</li>
+        <li><code>show interface status</code>: A portok állapotának ellenőrzése</li>
+    </ul>
+
+    <h2>2. Router Alapkonfiguráció</h2>
+    <p>A routerek a különböző hálózatok közötti adatforgalmat irányítják. A routerek beállítása alapvetően különbözik a kapcsolókétól, mivel a routerek IP-címekkel és alhálózati maszkokkal dolgoznak.</p>
+
+    <h3>2.1 Router alapértelmezett konfigurációja</h3>
+    <p>A routerek beállítása során a legfontosabb lépések a következőket tartalmazzák:</p>
+    <ul>
+        <li>A router neve</li>
+        <li>Az interfészek konfigurálása</li>
+        <li>Az IP-címek és alhálózati maszkok hozzárendelése</li>
+        <li>A routing protokollok beállítása</li>
+    </ul>
+
+    <h3>2.2 Alap konfigurációs lépések Cisco routereken</h3>
+    <pre><code>Router> enable
+Router# configure terminal
+Router1(config)# hostname Router1
+Router1(config)# interface gigabitethernet 0/0
+Router1(config-if)# ip address 192.168.1.1 255.255.255.0
+Router1(config-if)# no shutdown
+Router1(config)# router rip
+Router1(config-router)# version 2
+Router1(config-router)# network 192.168.1.0
+Router1(config)# end
+Router1# write memory</code></pre>
+
+    <h3>2.3 Router konfigurációs tesztelés</h3>
+    <p>A router konfigurációjának ellenőrzésére a következő parancsokat használhatjuk:</p>
+    <ul>
+        <li><code>show ip interface brief</code>: Az interfészek állapotának és IP-címeinek megtekintése</li>
+        <li><code>show ip route</code>: Az útválasztási táblázat megtekintése</li>
+    </ul>
+
+</body>
+</html>
