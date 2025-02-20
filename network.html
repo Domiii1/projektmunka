@@ -1,1 +1,60 @@
-
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hálózati Konfiguráció</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        Hálózati Konfiguráció
+    </header>
+    <nav>
+        <a href="index.html" class="menu-item">Főoldal</a>
+        <a href="python.html" class="menu-item">Python Alapok</a>
+    </nav>
+    <div class="container">
+        <h1>Kapcsoló és Router Alapkonfiguráció</h1>
+        
+        <h2>1. Kapcsoló alapvető beállításai</h2>
+        <pre>
+        enable
+        configure terminal
+        hostname Switch1
+        interface vlan 1
+        ip address 192.168.1.1 255.255.255.0
+        no shutdown
+        exit
+        </pre>
+        
+        <h2>2. Router alapszintű konfiguráció</h2>
+        <pre>
+        enable
+        configure terminal
+        hostname Router1
+        interface GigabitEthernet0/0
+        ip address 192.168.1.254 255.255.255.0
+        no shutdown
+        exit
+        </pre>
+        
+        <h2>3. Haladó hálózati beállítások</h2>
+        <p>Statikus útvonal beállítása:</p>
+        <pre>
+        ip route 192.168.2.0 255.255.255.0 192.168.1.2
+        </pre>
+        <p>DHCP konfiguráció egy routeren:</p>
+        <pre>
+        ip dhcp pool LAN
+        network 192.168.1.0 255.255.255.0
+        default-router 192.168.1.254
+        dns-server 8.8.8.8
+        exit
+        </pre>
+    </div>
+    <footer>
+        &copy; 2025 Hálózati és Programozási Alapok
+    </footer>
+</body>
+</html>
