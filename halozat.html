@@ -1,32 +1,22 @@
 <!DOCTYPE html>
+<html lang="hu">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hálózati Alapok és Python</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        code {
-            background: #eee;
-            padding: 2px 5px;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        Hálózati Alapok és Python
+    </header>
+    <nav>
+        <a href="#kapcsolo">Kapcsoló Konfiguráció</a>
+        <a href="#router">Router Konfiguráció</a>
+        <a href="#python">Python Alapok</a>
+    </nav>
     <div class="container">
-        <h1>Kapcsoló és Router Alapkonfiguráció</h1>
+        <h1 id="kapcsolo">Kapcsoló és Router Alapkonfiguráció</h1>
         <h2>1. Alapvető beállítások kapcsolón</h2>
         <p>Íme néhány alapvető parancs egy Cisco kapcsoló konfigurálásához:</p>
         <pre>
@@ -39,7 +29,7 @@
         exit
         </pre>
         
-        <h2>2. Router alapszintű konfiguráció</h2>
+        <h2 id="router">2. Router alapszintű konfiguráció</h2>
         <p>Router beállítása egy egyszerű LAN számára:</p>
         <pre>
         enable
@@ -65,7 +55,7 @@
         exit
         </pre>
         
-        <h1>Python Nyelv Alapjai</h1>
+        <h1 id="python">Python Nyelv Alapjai</h1>
         <h2>1. Változók és kiíratás</h2>
         <p>Egyszerű Python kód:</p>
         <pre>
@@ -103,5 +93,8 @@
         <p><strong>1. Hálózatkezelési feladat:</strong> Hozz létre egy új VLAN-t a kapcsolón és rendelj hozzá egy portot.</p>
         <p><strong>2. Programozási feladat:</strong> Írj egy Python programot, amely bekér egy számot és megmondja, hogy páros vagy páratlan.</p>
     </div>
+    <footer>
+        &copy; 2025 Hálózati és Programozási Alapok
+    </footer>
 </body>
 </html>
