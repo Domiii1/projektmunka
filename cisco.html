@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vállalati Hálózati Topológia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .network-diagram {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .diagram-img {
+            max-width: 80%;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        td {
+            background-color: #fafafa;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>Vállalati Hálózati Topológia</h1>
+</header>
+
+<div class="container">
+    <h2>Hálózati Eszközök és IP-címek</h2>
+    <p>Ez a hálózati topológia egy egyszerű vállalati hálózatot mutat be, amely tartalmazza a routert, switch-et, PC-ket és egy szervert.</p>
+
+    <h3>Hálózati Eszközök:</h3>
+    <table>
+        <tr>
+            <th>Eszköz</th>
+            <th>IP-cím</th>
+            <th>Leírás</th>
+        </tr>
+        <tr>
+            <td>Router</td>
+            <td>192.168.1.1</td>
+            <td>Hálózati forgalom irányítása</td>
+        </tr>
+        <tr>
+            <td>Switch</td>
+            <td>N/A</td>
+            <td>Hálózati eszközök összekapcsolása</td>
+        </tr>
+        <tr>
+            <td>PC1</td>
+            <td>192.168.1.10</td>
+            <td>Felhasználói számítógép</td>
+        </tr>
+        <tr>
+            <td>PC2</td>
+            <td>192.168.1.20</td>
+            <td>Felhasználói számítógép</td>
+        </tr>
+        <tr>
+            <td>PC3</td>
+            <td>192.168.1.30</td>
+            <td>Felhasználói számítógép</td>
+        </tr>
+        <tr>
+            <td>Szerver</td>
+            <td>192.168.1.50</td>
+            <td>Web és fájl szerver</td>
+        </tr>
+    </table>
+
+    <div class="network-diagram">
+        <h3>Hálózati Diagram</h3>
+        <img src="network-diagram.png" alt="Hálózati diagram" class="diagram-img">
+    </div>
+
+    <h3>Hálózati Beállítások</h3>
+    <p>A routeren a következő beállítások szerepelnek:</p>
+    <pre>
+Router> enable
+Router# config terminal
+Router(config)# interface g0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown
+    </pre>
+
+    <p>A PC-k IP-cím beállítása:</p>
+    <pre>
+PC1: 192.168.1.10
+PC2: 192.168.1.20
+PC3: 192.168.1.30
+Szerver: 192.168.1.50
+    </pre>
+
+    <h3>Tesztelés</h3>
+    <p>Ping teszt a hálózat tesztelésére:</p>
+    <pre>
+C:\> ping 192.168.1.1 (router IP)
+C:\> ping 192.168.1.50 (szerver IP)
+    </pre>
+</div>
+
+<footer>
+    <p>&copy; 2025 Hálózati Topológia Készítés</p>
+</footer>
+
+</body>
+</html>
