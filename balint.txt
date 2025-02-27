@@ -1,0 +1,62 @@
+Lépések a hálózat felépítéséhez:
+1. Eszközök hozzáadása
+Nyisd meg a Cisco Packet Tracer programot.
+
+A bal oldali panelen válaszd ki az eszközöket. Ezeket fogjuk hozzáadni a hálózathoz.
+
+Router: Válassz egy routert (pl. 2911 vagy más modell).
+Switch: Válassz egy switch-et (pl. 2960).
+PC: Hozz létre néhány PC-t, amelyek a felhasználók gépei lesznek.
+Server: Ha szükséges, hozzáadhatsz egy szervert is (pl. web vagy fájl szerver).
+Cables: Különböző típusú kábeleket fogsz használni, pl. crossover vagy straight-through kábeleket.
+
+2. Hálózati eszközök elhelyezése
+Helyezd el a routert és a switch-et a munkaterületen.
+Helyezd el a PC-ket és a szervert. A felhasználói gépekhez csatlakoztass külön-külön kábelt.
+
+3. Hálózati eszközök összekapcsolása
+Csatlakoztasd a router portját a switch portjához egy straight-through kábellel.
+Csatlakoztasd a switch portjait a PC-khez és a szerverhez crossover kábelekkel, vagy ha a switch portok automatikusan felismerik a kapcsolatot, akkor egyenes kábellel is csatlakozhatsz.
+
+4. IP-címek beállítása
+Router: Állítsd be a router interfész IP-címét a CLI (Command Line Interface) segítségével. Például:
+arduino
+Másolás
+Router> enable
+Router# config terminal
+Router(config)# interface g0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown
+PC: Minden PC-nek egy egyedi IP-címet kell adnod. Például:
+PC1: 192.168.1.10
+PC2: 192.168.1.20
+PC3: 192.168.1.30
+Szerver: A szerver IP-címét is állítsd be, például 192.168.1.50.
+
+5. DHCP beállítása (opcionális)
+A routeren beállíthatsz egy DHCP-szolgáltatást, hogy automatikusan kiosszon IP-címeket a PC-knek.
+scss
+Másolás
+Router(config)# ip dhcp pool NETWORK_POOL
+Router(config-dhcp)# network 192.168.1.0 255.255.255.0
+Router(config-dhcp)# default-router 192.168.1.1
+Router(config-dhcp)# dns-server 8.8.8.8
+
+6. Tesztelés
+Miután minden eszközt összekapcsoltál és beállítottál, teszteld a hálózatot.
+Használj ping parancsot a PC-n, hogy teszteld, elérhetők-e az eszközök. Például:
+vbnet
+Másolás
+C:\> ping 192.168.1.1 (a router IP-címe)
+C:\> ping 192.168.1.50 (a szerver IP-címe)
+7. További beállítások (opcionális)
+
+VLAN-ok: Ha szeretnél külön hálózati szegmenseket, beállíthatsz VLAN-okat a switch-en.
+Statikus útvonalak: Ha több routert használsz, beállíthatsz statikus útvonalakat a routerek között.
+Példa a hálózat felépítésére:
+Router: 192.168.1.1
+Switch: Csatlakoztatva a routerhez és a PC-khez.
+PC1: 192.168.1.10
+PC2: 192.168.1.20
+PC3: 192.168.1.30
+Szerver: 192.168.1.50
