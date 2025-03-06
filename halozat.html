@@ -11,7 +11,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f4f4f4;
             color: #333;
         }
 
@@ -23,17 +23,25 @@
             padding: 20px 0;
         }
 
+        header h1 {
+            font-size: 2.5rem;
+        }
+
         /* Navigációs menü */
         nav {
             background-color: #333;
             overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
         }
 
         nav a {
             color: white;
             padding: 14px 20px;
-            display: inline-block;
             text-decoration: none;
+            text-align: center;
+            font-size: 1.1rem;
         }
 
         nav a:hover {
@@ -41,13 +49,24 @@
             color: black;
         }
 
-        /* Tartalom */
+        /* Fő tartalom */
         .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         h2, h3 {
             color: #4CAF50;
+            font-size: 1.8rem;
+        }
+
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         /* Menü elem kiemelése */
@@ -69,12 +88,41 @@
         /* Kép középre helyezése és keret */
         .image-container {
             text-align: center;
+            margin: 20px 0;
         }
 
         .image-container img {
             max-width: 80%;
             height: auto;
             border: 5px solid #333333;
+            border-radius: 10px;
+        }
+
+        /* Új szakaszok, példák stílusai */
+        .python-example {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: "Courier New", monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+        }
+
+        .python-example code {
+            color: #2a2a2a;
+            font-size: 1.2rem;
+        }
+
+        /* Alap linkek */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -88,8 +136,6 @@
     <!-- Navigációs menü -->
     <nav>
         <a href="index.html" class="back-link">Vissza a Projektekhez</a>
-    </nav>
-    <nav>
         <a href="network.html" class="menu-item">Hálózati Konfiguráció</a>
         <a href="python.html" class="menu-item">Python Alapok</a>
     </nav>
@@ -117,6 +163,37 @@
             <li><strong><code>requests</code> könyvtár</strong>: Ez a könyvtár HTTP kérések küldésére és válaszok fogadására szolgál, amely hasznos webes alkalmazások esetén.</li>
             <li><strong><code>asyncio</code> modul</strong>: Ez az aszinkron programozásra szolgáló modul, amely lehetővé teszi a nagy teljesítményű, több szálas hálózati alkalmazások készítését.</li>
         </ul>
+
+        <!-- Python példák szakasz -->
+        <h3>Példa Python kódok</h3>
+        <p>Itt bemutatok egy egyszerű Python kódot, amely TCP kapcsolatot létesít egy szerverrel:</p>
+        <div class="python-example">
+            <code>
+import socket
+
+# Létrehozunk egy TCP kapcsolatot
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(('localhost', 8080))
+
+# Üzenet küldése a szervernek
+s.sendall(b'Hello, Server')
+
+# Válasz fogadása a szervertől
+data = s.recv(1024)
+print('Received', repr(data))
+
+s.close()
+            </code>
+        </div>
+
+        <p>Ez a kód bemutatja, hogyan tudunk egyszerűen TCP kapcsolatot létrehozni a Python <code>socket</code> moduljával.</p>
+
+        <!-- Kép példával -->
+        <h3>Példa Kép</h3>
+        <div class="image-container">
+            <img src="pyalapfeladat.jpg" alt="Python programozás alapok">
+        </div>
+
     </div>
 
 </body>
