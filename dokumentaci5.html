@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <title>Kis- és Közepes Vállalati Hálózat Tervezése és Adatbázis Implementálás</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #2C3E50;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .content-wrapper {
+            width: 90%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <header>
+            <h1>Kis- és Közepes Vállalati Hálózat Tervezése és Adatbázis Implementálás</h1>
+        </header>
+
+        <section>
+            <h2>1. Bevezetés</h2>
+            <p>Ez a dokumentáció bemutatja egy kis- és közepes méretű vállalat számára készült hálózati infrastruktúra tervezését, megvalósítását IPv4 címzéssel, valamint egy egyszerű egytáblás adatbázis tervezését és implementálását.</p>
+        </section>
+
+        <section>
+            <h2>2. Kis- és Közepes Vállalati Hálózat Tervezése IPv4 Címzéssel</h2>
+            <h3>2.1. Hálózati igények és célok</h3>
+            <p>A vállalat számára szükséges egy stabil, gyors és biztonságos hálózati infrastruktúra, amely képes kiszolgálni a mindennapi üzleti műveleteket. Az IPv4 címzés használatával történik a hálózati eszközök azonosítása.</p>
+
+            <h3>2.2. IPv4 Címzési Tervezés</h3>
+            <p>A hálózati címek tervezéséhez figyelembe kell venni a vállalat eszközeinek számát, a különböző alhálózatokat és a hálózaton belüli kommunikációt. A tervezéshez a következő címzés javasolt:</p>
+            <pre><code>192.168.0.0/24</code></pre>
+            <p>Ez biztosítja a vállalat összes eszközének azonosítását egy 254 eszközig. Az alhálózatokat szükség szerint tovább lehet bontani.</p>
+        </section>
+
+        <section>
+            <h2>3. Egytáblás Adatbázis Tervezése</h2>
+            <h3>3.1. Adatbázis célja</h3>
+            <p>A cél egy egyszerű, egytáblás adatbázis létrehozása, amely tárolja a vállalat munkatársainak adatait.</p>
+
+            <h3>3.2. Adatbázis szerkezete</h3>
+            <p>A táblázatnak a következő mezőket kell tartalmaznia:</p>
+            <ul>
+                <li><strong>ID:</strong> Egyedi azonosító</li>
+                <li><strong>Vezetéknév:</strong> A munkavállaló vezetékneve</li>
+                <li><strong>Keresztnév:</strong> A munkavállaló keresztneve</li>
+                <li><strong>Email:</strong> A munkavállaló email címe</li>
+                <li><strong>Telefonszám:</strong> A munkavállaló telefonszáma</li>
+            </ul>
+
+            <h3>3.3. SQL Táblázat létrehozása</h3>
+            <pre><code>
+CREATE TABLE Munkavallalok (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    vezeteknev VARCHAR(50),
+    keresztnev VARCHAR(50),
+    email VARCHAR(100),
+    telefonszam VARCHAR(20)
+);
+            </code></pre>
+
+            <h3>3.4. Módosítás és Adatok Lekérdezése</h3>
+            <p>Az adatok módosítására és lekérdezésére az alábbi SQL parancsokat használhatjuk:</p>
+            <pre><code>
+-- Új munkavállaló hozzáadása
+INSERT INTO Munkavallalok (vezeteknev, keresztnev, email, telefonszam)
+VALUES ('Kovács', 'Anna', 'anna.kovacs@example.com', '06201234567');
+
+-- Munkavállaló adatainak módosítása
+UPDATE Munkavallalok
+SET email = 'anna.newemail@example.com'
+WHERE id = 1;
+
+-- Munkavállaló adatainak lekérdezése
+SELECT * FROM Munkavallalok WHERE id = 1;
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>4. Összegzés</h2>
+            <p>Az IPv4 alapú hálózati tervezés biztosítja a vállalat számára szükséges eszközkészlet és alhálózati struktúra kialakítását, míg az egytáblás adatbázis lehetőséget biztosít az adatok hatékony kezelésére és lekérdezésére. A megfelelő tervezés és kivitelezés hozzájárul a vállalati rendszer zavartalan működéséhez.</p>
+        </section>
+    </div>
+
+</body>
+</html>
