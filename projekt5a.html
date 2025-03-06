@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hálózat Működése</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef1f5;
+            text-align: center;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Hálózat Működésének Részletei</div>
+    <div class="container">
+        <h2>Hálózat Felépítése</h2>
+        <p>A hálózat egy routert, több switchet és klienseket tartalmaz, VLAN-okkal és különböző alhálózatokkal konfigurálva.</p>
+        
+        <h2>IP Címzés</h2>
+        <p>A hálózat IPv4 és IPv6 címzést használ. A következő IP-cím tartományokat alkalmazzuk:</p>
+        <ul>
+            <li>Menedzsment VLAN: 192.168.1.0/24</li>
+            <li>Felhasználói hálózat: 192.168.2.0/24</li>
+            <li>Szerverhálózat: 192.168.3.0/24</li>
+        </ul>
+        
+        <h2>Forgalomirányítás és Biztonság</h2>
+        <p>A router végzi a forgalomirányítást a VLAN-ok között. ACL-ek (Access Control List) biztosítják a jogosulatlan hozzáférések blokkolását.</p>
+        
+        <h2>Hálózati Hibakeresés</h2>
+        <p>Diagnosztikai parancsok:</p>
+        <pre>
+        Router# show ip route
+        Router# ping 192.168.1.1
+        Router# traceroute 192.168.1.10
+        </pre>
+        <a href="index.html" class="back-button">Vissza az előző oldalra</a>
+    </div>
+</body>
+</html>
