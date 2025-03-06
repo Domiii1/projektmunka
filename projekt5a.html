@@ -12,12 +12,29 @@
             background-color: #2c3e50; /* Darker background color */
             text-align: center;
         }
+        .back-button {
+            display: inline-block;
+            margin: 10px 0 20px 0;
+            padding: 10px 20px;
+            background-color: #2c3e50; /* Darker button color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            position: absolute; /* Positioning the button at the top center */
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .back-button:hover {
+            background-color: #34495e; /* Slightly lighter when hovered */
+        }
         .header {
             background-color: #34495e; /* Slightly darker header */
             color: white;
             padding: 15px;
             font-size: 22px;
             font-weight: bold;
+            margin-top: 50px; /* Added margin to move the header lower */
         }
         .container {
             max-width: 900px;
@@ -28,26 +45,10 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
-        .back-button {
-            display: inline-block;
-            margin: 10px 0 20px 0;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            position: absolute; /* Positioning the button at the top center */
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .back-button:hover {
-            background-color: #2980b9;
-        }
     </style>
 </head>
 <body>
-    <a href="projekt5.html" class="back-button">Vissza az előző oldalra</a> <!-- Move the button here -->
+    <a href="projekt5.html" class="back-button">Vissza az előző oldalra</a> <!-- Back button at the top -->
     <div class="header">Hálózat Működésének Részletei</div>
     <div class="container">
         <h2>Hálózat Felépítése</h2>
