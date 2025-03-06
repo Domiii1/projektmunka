@@ -55,6 +55,97 @@
         print(gyumolcsok)  # Kimenet: ['alma', 'banán', 'cseresznye', 'datolya']
         </pre>
         <p>Ebben a példában létrehoztunk egy 'gyumolcsok' nevű listát, amely három gyümölcs nevét tartalmazza. Az első elem eléréséhez az indexelést használtuk, majd a <code>append()</code> metódussal hozzáadtunk egy új elemet a lista végéhez.</p>
+        
+        <h2>6. Szótárak (Dictionary)</h2>
+        <pre>
+        szemely = {"név": "János", "kor": 25, "város": "Budapest"}
+        print(szemely["név"])  # Kimenet: János
+        szemely["kor"] = 26
+        print(szemely)  # Kimenet: {'név': 'János', 'kor': 26, 'város': 'Budapest'}
+        </pre>
+        
+        <h2>7. Tuple (Tupel)</h2>
+        <pre>
+        pontok = (10, 20, 30)
+        print(pontok[1])  # Kimenet: 20
+        </pre>
+        
+        <h2>8. Szekvenciák (Stringek)</h2>
+        <pre>
+        szoveg = "Helló világ!"
+        print(szoveg.lower())  # Kimenet: helló világ!
+        print(szoveg.upper())  # Kimenet: HELLÓ VILÁG!
+        </pre>
+        
+        <h2>9. Listák szűrése és műveletek (List Comprehensions)</h2>
+        <pre>
+        szamok = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        paros_szamok = [szam for szam in szamok if szam % 2 == 0]
+        print(paros_szamok)  # Kimenet: [2, 4, 6, 8]
+        </pre>
+        
+        <h2>10. Hibakezelés (Exception Handling)</h2>
+        <pre>
+        try:
+            szam = int(input("Adj meg egy számot: "))
+            print(10 / szam)
+        except ZeroDivisionError:
+            print("Hiba: osztás nullával!")
+        except ValueError:
+            print("Hiba: nem számot adtál meg!")
+        </pre>
+        
+        <h2>11. Osztályok és objektumok (Class and Objects)</h2>
+        <pre>
+        class Szemely:
+            def __init__(self, nev, kor):
+                self.nev = nev
+                self.kor = kor
+
+            def bemutatkozas(self):
+                print(f"Hello, én {self.nev} vagyok és {self.kor} éves vagyok.")
+
+        szemely1 = Szemely("Anna", 30)
+        szemely1.bemutatkozas()  # Kimenet: Hello, én Anna vagyok és 30 éves vagyok.
+        </pre>
+        
+        <h2>12. Lambda függvények</h2>
+        <pre>
+        negyzet = lambda x: x ** 2
+        print(negyzet(4))  # Kimenet: 16
+        </pre>
+        
+        <h2>13. File kezelés</h2>
+        <pre>
+        # Fájl írása
+        with open("pelda.txt", "w") as f:
+            f.write("Helló, Python!")
+
+        # Fájl olvasása
+        with open("pelda.txt", "r") as f:
+            tartalom = f.read()
+            print(tartalom)  # Kimenet: Helló, Python!
+        </pre>
+        
+        <h2>14. Modulok importálása</h2>
+        <pre>
+        import math
+        print(math.sqrt(16))  # Kimenet: 4.0
+        </pre>
+        
+        <h2>15. Map és Filter függvények</h2>
+        <pre>
+        szamok = [1, 2, 3, 4, 5]
+
+        # Map példa
+        negyzetek = list(map(lambda x: x ** 2, szamok))
+        print(negyzetek)  # Kimenet: [1, 4, 9, 16, 25]
+
+        # Filter példa
+        paros_szamok = list(filter(lambda x: x % 2 == 0, szamok))
+        print(paros_szamok)  # Kimenet: [2, 4]
+        </pre>
+
         <p><img src="chris-ried-ieic5Tq8YMk-unsplash-scaled.jpg" alt="Python programozás alapok" style="max-width: 80%; height: auto;"></p>
     </div>
     <footer>
