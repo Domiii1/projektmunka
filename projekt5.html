@@ -3,53 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kis- és közepes vállalati hálózat tervezése és kivitelezése</title>
-    <link rel="stylesheet" href="stilus.css">
-</head>
+    <title>Vállalati Hálózati Topológia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #eef1f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            text-align: center;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             background: white;
+            margin: 20px auto;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
         }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
         }
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-        ul {
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
             text-align: left;
-            margin-left: 20px;
         }
-        li {
-            margin-bottom: 8px;
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        img {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         .button-container {
-            text-align: center;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
         .back-button {
             background-color: #3498db;
@@ -65,34 +65,43 @@
     </style>
 </head>
 <body>
+    <div class="header">Vállalati Hálózati Topológia</div>
+    <div class="button-container">
+        <a href="#" class="back-button">Vissza a Projektekhez</a>
+    </div>
     <div class="container">
-        <div class="button-container">
-            <a href="index.html" class="back-button">Vissza a projektekhez</a>
-        </div>
-        <h1>Kis- és közepes vállalati hálózat tervezése és kivitelezése</h1>
-        <h2>Projekt célja</h2>
-        <p>A projekt célja, hogy a tanulók képesek legyenek összetett működésű kis- és közepes méretű hálózatok tervezésére, kivitelezésére és beállítására. A megfelelő hálózati architektúra kialakítása biztosítja a hatékony és biztonságos működést.</p>
-        
-        <h2>Főbb feladatok</h2>
-        <ul>
-            <li>Legalább 2 router alkalmazása</li>
-            <li>Legalább 3-4 alhálózat kialakítása</li>
-            <li>Legalább az egyik alhálózatban 2 kapcsoló használata</li>
-            <li>IPv4 és IPv6 címzések beállítása</li>
-            <li>Portvédelem konfigurálása</li>
-            <li>VLAN-ok létrehozása és közöttük forgalomirányítás</li>
-            <li>Hálózati hibakeresés és -javítás</li>
-        </ul>
-        
-        <h2>Technológiák</h2>
-        <p>A projekt során a következő technológiák és eszközök alkalmazására kerül sor:</p>
-        <ul>
-            <li>Routerek és switchek konfigurálása (pl. Cisco, MikroTik)</li>
-            <li>IP-címzés, alhálózatok és DHCP beállítások</li>
-            <li>LAN és WLAN hálózatok kialakítása</li>
-            <li>Biztonsági protokollok (tűzfalak, VPN, VLAN, IDS/IPS)</li>
-            <li>Hálózati monitorozás, SNMP és logelemzés</li>
-        </ul>
+        <h2>Hálózati Eszközök és IP-címek</h2>
+        <p>Ez a hálózati topológia egy minta struktúrát ábrázol, amely tartalmazza a routert, switcheket és PC-ket egyaránt.</p>
+        <table>
+            <tr>
+                <th>Eszköz</th>
+                <th>IP-cím</th>
+                <th>Leírás</th>
+            </tr>
+            <tr><td>Router</td><td>192.168.1.1</td><td>Hálózati forgalom irányítása</td></tr>
+            <tr><td>Switch</td><td>N/A</td><td>Hálózati eszközök összekapcsolása</td></tr>
+            <tr><td>PC1</td><td>192.168.1.10</td><td>Felhasználói számítógép</td></tr>
+            <tr><td>PC2</td><td>192.168.1.20</td><td>Felhasználói számítógép</td></tr>
+            <tr><td>PC3</td><td>192.168.1.30</td><td>Felhasználói számítógép</td></tr>
+            <tr><td>Szerver</td><td>192.168.1.50</td><td>Weboldal és fájlszerver</td></tr>
+        </table>
+        <h2>Hálózati Diagram</h2>
+        <img src="topologia.png" alt="Hálózati Diagram">
+        <h2>Hálózati Beállítások</h2>
+        <p>A router és eszközök beállításaira példák:</p>
+        <pre>
+Router(config)# interface gig0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown
+        </pre>
+        <h2>Tesztelés</h2>
+        <p>Ping teszt indítása:</p>
+        <pre>
+C:\> ping 192.168.1.1
+        </pre>
+        <h2>Letöltés Cisco Packet Tracer fájlhoz</h2>
+        <p>Letölthető a hálózati topológia Packet Tracer formátumban:</p>
+        <a href="topologia.pkt">Letöltés</a>
     </div>
 </body>
 </html>
