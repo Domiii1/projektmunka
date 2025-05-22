@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <title>Egyszerű Táblás Adatbázis</title>
+  <title>Táblás Adatbázis - Megmaradó Adatokkal</title>
   <style>
     table {
       width: 80%;
@@ -29,7 +29,7 @@
 </head>
 <body>
 
-  <h2 style="text-align: center;">Egyszerű Táblás Adatbázis</h2>
+  <h2 style="text-align: center;">Táblás Adatbázis (adatok megmaradnak)</h2>
 
   <div style="text-align: center;">
     <input type="text" id="name" placeholder="Név">
@@ -52,38 +52,63 @@
   </table>
 
   <script>
-    let idCounter = 1;
+    let data = JSON.parse(localStorage.getItem('tableData')) || [];
+    let idCounter = localStorage.getItem('idCounter') ? parseInt(localStorage.getItem('idCounter')) : 1;
+
+    function saveToStorage() {
+      localStorage.setItem('tableData', JSON.stringify(data));
+      localStorage.setItem('idCounter', idCounter);
+    }
+
+    function loadTable() {
+      const tableBody = document.getElementById('databaseTable').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = '';
+      data.forEach(row => {
+        const newRow = tableBody.insertRow();
+        newRow.insertCell(0).textContent = row.id;
+        newRow.insertCell(1).textContent = row.name;
+        newRow.insertCell(2).textContent = row.age;
+        newRow.insertCell(3).innerHTML = `<button onclick="deleteRow(${row.id})">Törlés</button>`;
+      });
+    }
 
     function addRow() {
-      const name = document.getElementById('name').value;
-      const age = document.getElementById('age').value;
+      const nameInput = document.getElementById('name');
+      const ageInput = document.getElementById('age');
+      const name = nameInput.value.trim();
+      const age = ageInput.value.trim();
+
       if (!name || !age) {
         alert('Minden mezőt ki kell tölteni!');
         return;
       }
 
-      const table = document.getElementById('databaseTable').getElementsByTagName('tbody')[0];
-      const newRow = table.insertRow();
+      const newRow = {
+        id: idCounter++,
+        name: name,
+        age: age
+      };
 
-      const cellId = newRow.insertCell(0);
-      const cellName = newRow.insertCell(1);
-      const cellAge = newRow.insertCell(2);
-      const cellAction = newRow.insertCell(3);
+      data.push(newRow);
+      saveToStorage();
+      loadTable();
 
-      cellId.textContent = idCounter++;
-      cellName.textContent = name;
-      cellAge.textContent = age;
-      cellAction.innerHTML = '<button onclick="deleteRow(this)">Törlés</button>';
-
-      // Clear inputs
-      document.getElementById('name').value = '';
-      document.getElementById('age').value = '';
+      nameInput.value = '';
+      ageInput.value = '';
     }
 
-    function deleteRow(button) {
-      const row = button.parentNode.parentNode;
-      row.parentNode.removeChild(row);
+    function deleteRow(id) {
+      data = data.filter(row => row.id !== id);
+      if (data.length === 0) {
+        idCounter = 1; // reset ID if no data left
+        localStorage.removeItem('idCounter');
+      }
+      saveToStorage();
+      loadTable();
     }
+
+    // Betöltés indításkor
+    loadTable();
   </script>
 
 </body>
