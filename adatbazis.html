@@ -2,54 +2,126 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <title>Táblás Adatbázis - Megmaradó Adatokkal</title>
+  <title>Stílusos Táblás Adatbázis</title>
   <style>
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
     }
+
+    h2 {
+      text-align: center;
+      color: #0f172a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+      width: 200px;
+    }
+
+    button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
     th, td {
-      border: 1px solid #999;
-      padding: 8px;
+      border: 1px solid #e2e8f0;
+      padding: 12px;
       text-align: center;
     }
+
     th {
-      background-color: #f2f2f2;
+      background-color: #f1f5f9;
+      color: #1e293b;
     }
-    input {
-      padding: 5px;
-      margin: 5px;
+
+    td button {
+      background-color: #ef4444;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      border-radius: 6px;
     }
-    button {
-      padding: 5px 10px;
-      cursor: pointer;
+
+    td button:hover {
+      background-color: #dc2626;
+    }
+
+    @media (max-width: 600px) {
+      .form-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h2 style="text-align: center;">Táblás Adatbázis (adatok megmaradnak)</h2>
+  <div class="container">
+    <h2>Adatbázis Táblázat (Modern kinézet)</h2>
 
-  <div style="text-align: center;">
-    <input type="text" id="name" placeholder="Név">
-    <input type="number" id="age" placeholder="Kor">
-    <button onclick="addRow()">Hozzáadás</button>
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Név">
+      <input type="number" id="age" placeholder="Kor">
+      <button onclick="addRow()">Hozzáadás</button>
+    </div>
+
+    <table id="databaseTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Név</th>
+          <th>Kor</th>
+          <th>Művelet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sorok ide jönnek -->
+      </tbody>
+    </table>
   </div>
-
-  <table id="databaseTable">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Név</th>
-        <th>Kor</th>
-        <th>Művelet</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Adatok ide jönnek -->
-    </tbody>
-  </table>
 
   <script>
     let data = JSON.parse(localStorage.getItem('tableData')) || [];
@@ -100,14 +172,14 @@
     function deleteRow(id) {
       data = data.filter(row => row.id !== id);
       if (data.length === 0) {
-        idCounter = 1; // reset ID if no data left
+        idCounter = 1;
         localStorage.removeItem('idCounter');
       }
       saveToStorage();
       loadTable();
     }
 
-    // Betöltés indításkor
+    // Betöltés oldalindításkor
     loadTable();
   </script>
 
