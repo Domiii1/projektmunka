@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Egyszerű Táblás Adatbázis</title>
+  <style>
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    input {
+      padding: 5px;
+      margin: 5px;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center;">Egyszerű Táblás Adatbázis</h2>
+
+  <div style="text-align: center;">
+    <input type="text" id="name" placeholder="Név">
+    <input type="number" id="age" placeholder="Kor">
+    <button onclick="addRow()">Hozzáadás</button>
+  </div>
+
+  <table id="databaseTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Név</th>
+        <th>Kor</th>
+        <th>Művelet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Adatok ide jönnek -->
+    </tbody>
+  </table>
+
+  <script>
+    let idCounter = 1;
+
+    function addRow() {
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      if (!name || !age) {
+        alert('Minden mezőt ki kell tölteni!');
+        return;
+      }
+
+      const table = document.getElementById('databaseTable').getElementsByTagName('tbody')[0];
+      const newRow = table.insertRow();
+
+      const cellId = newRow.insertCell(0);
+      const cellName = newRow.insertCell(1);
+      const cellAge = newRow.insertCell(2);
+      const cellAction = newRow.insertCell(3);
+
+      cellId.textContent = idCounter++;
+      cellName.textContent = name;
+      cellAge.textContent = age;
+      cellAction.innerHTML = '<button onclick="deleteRow(this)">Törlés</button>';
+
+      // Clear inputs
+      document.getElementById('name').value = '';
+      document.getElementById('age').value = '';
+    }
+
+    function deleteRow(button) {
+      const row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  </script>
+
+</body>
+</html>
