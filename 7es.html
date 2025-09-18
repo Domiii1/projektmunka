@@ -5,71 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hierarchikus Kisvállalati Hálózat Projekt</title>
     <style>
-        /* styles.css */
+        /* Modern, letisztult, kerekített stílus */
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fbfe;
+            color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #333;
+            background-color: #4a90e2;
             color: white;
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
+            font-size: 28px;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
+            margin: 20px 0 0 0;
+            text-align: center;
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 15px;
+            display: inline-block;
+            margin: 0 10px;
         }
 
         nav ul li a {
-            color: white;
+            background-color: #e3f0ff;
+            color: #337ab7;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 500;
             text-decoration: none;
-            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #337ab7;
+            color: white;
         }
 
         main {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         section {
+            background-color: white;
+            padding: 25px;
             margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        section h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-top: 0;
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #4CAF50;
             color: white;
             border: none;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
 
         button:hover {
             background-color: #45a049;
         }
 
+        ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #1565c0;
+        }
+
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #f3f3f3;
+            color: #888;
             text-align: center;
-            padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            font-size: 15px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        footer a {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #1565c0;
         }
     </style>
 </head>
@@ -89,17 +148,15 @@
 </header>
 
 <main>
-
     <section id="bevezeto">
         <h2>Bevezető</h2>
         <p>Ebben a projektben a tanulók megismerkednek a Windows szerverek verzióival és telepítési módjaikkal, miközben létrehoznak egy hierarchikus kisvállalati hálózatot.</p>
     </section>
 
-
     <section id="virtualis-gepek">
         <h2>Virtuális Gépek és Szerver Telepítése</h2>
         <p>Ez a szakasz bemutatja, hogyan hozhatsz létre virtuális gépeket VirtualBox-ban, és hogyan telepítheted a Windows 2012 szervert.</p>
-        <button onclick="showVirtualMachineSteps()">Mutasd a telepítési lépéseket</button>
+        <button onclick="toggleVisibility('virtual-machine-steps')">Mutasd a telepítési lépéseket</button>
         <div id="virtual-machine-steps" style="display:none;">
             <ul>
                 <li>1. Nyisd meg a VirtualBox alkalmazást.</li>
@@ -113,7 +170,7 @@
     <section id="dhcp">
         <h2>DHCP Beállítás</h2>
         <p>Ismertetjük, hogyan konfigurálhatod a DHCP szolgáltatást a szervered és a kliensek közötti IP-címek kiosztásához.</p>
-        <button onclick="showDHCPConfig()">Mutasd a DHCP beállításokat</button>
+        <button onclick="toggleVisibility('dhcp-steps')">Mutasd a DHCP beállításokat</button>
         <div id="dhcp-steps" style="display:none;">
             <ul>
                 <li>1. Nyisd meg a DHCP Server alkalmazást a Windows Server-en.</li>
@@ -126,45 +183,30 @@
     <section id="teszteles">
         <h2>Tesztelés</h2>
         <p>Miután befejeztük a beállításokat, teszteljük, hogy minden megfelelően működik-e.</p>
-        <button onclick="runTest()">Futtasd a tesztet</button>
+        <button onclick="toggleVisibility('test-result')">Futtasd a tesztet</button>
         <div id="test-result" style="display:none;">
-            <p>Tesztelés sikeres! A DHCP és fájlmegosztás működik.</p>
+            <p style="margin-top: 15px;">✅ Tesztelés sikeres! A DHCP és fájlmegosztás működik.</p>
         </div>
     </section>
     
     <section id="dokumentacio">
         <h2>Dokumentáció</h2>
         <p>A projekt során végrehajtott lépések teljes dokumentációja letölthető.</p>
-        <a href="project-doc.pdf" download>Letöltés</a>
+        <a href="project-doc.pdf" download>📥 Letöltés</a>
     </section>
 </main>
 
+<footer>
+    &copy; 2025 Hierarchikus Projekt | <a href="#bevezeto">Vissza a tetejére</a>
+</footer>
+
 <script>
-    // script.js
-    function showVirtualMachineSteps() {
-        var vmSteps = document.getElementById("virtual-machine-steps");
-        if (vmSteps.style.display === "none") {
-            vmSteps.style.display = "block";
+    function toggleVisibility(id) {
+        const el = document.getElementById(id);
+        if (el.style.display === "none" || el.style.display === "") {
+            el.style.display = "block";
         } else {
-            vmSteps.style.display = "none";
-        }
-    }
-
-    function showDHCPConfig() {
-        var dhcpSteps = document.getElementById("dhcp-steps");
-        if (dhcpSteps.style.display === "none") {
-            dhcpSteps.style.display = "block";
-        } else {
-            dhcpSteps.style.display = "none";
-        }
-    }
-
-    function runTest() {
-        var testResult = document.getElementById("test-result");
-        if (testResult.style.display === "none") {
-            testResult.style.display = "block";
-        } else {
-            testResult.style.display = "none";
+            el.style.display = "none";
         }
     }
 </script>
