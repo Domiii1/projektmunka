@@ -1,13 +1,13 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Vil·gos sz¸rke h·ttÈr */
-    color: #333; /* SˆtÈtsz¸rke szˆveg szÌn */
+    background-color: #f0f0f0; /* Vil√°gos sz√ºrke h√°tt√©r */
+    color: #333; /* S√∂t√©tsz√ºrke sz√∂veg sz√≠n */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333; /* SˆtÈt h·ttÈr */
+    background-color: #333; /* S√∂t√©t h√°tt√©r */
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -37,7 +37,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff9900; /* S·rga ·rnyalat a hover effektushoz */
+    color: #ff9900; /* S√°rga √°rnyalat a hover effektushoz */
     text-decoration: underline;
 }
 
@@ -47,7 +47,7 @@ section {
 }
 
 h2 {
-    color: #444; /* Egy ·rnyalatnyi sˆtÈtebb sz¸rke */
+    color: #444; /* Egy √°rnyalatnyi s√∂t√©tebb sz√ºrke */
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -82,15 +82,28 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: #ff6600; /* Narancss·rga szÌn hover esetÈn */
+    color: #ff6600; /* Narancss√°rga sz√≠n hover eset√©n */
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #1a1a1a; /* Fekete h√°tt√©r */
+    color: #e60000; /* Piros sz√∂veg sz√≠n */
     text-align: center;
-    padding: 10px;
+    padding: 15px 0;
+    font-size: 16px;
     position: fixed;
     width: 100%;
     bottom: 0;
-    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Finom √°rny√©k a footer alatt */
+}
+
+footer a {
+    color: #ff3333; /* √âl√©nk piros link sz√≠n */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ff1a1a; /* S√∂t√©tebb piros a hover effektushoz */
+}
