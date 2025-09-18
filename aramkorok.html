@@ -7,17 +7,16 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
         header {
             background-color: #333;
             color: white;
-            padding: 1.5em;
             text-align: center;
+            padding: 1.5em;
         }
 
         nav {
@@ -28,50 +27,44 @@
 
         nav ul {
             list-style: none;
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            display: inline-block;
+            margin: 0 15px;
         }
 
-        nav a {
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             text-decoration: underline;
         }
 
         section {
-            padding: 2em;
-            max-width: 900px;
-            margin: auto;
+            max-width: 1000px;
+            margin: 30px auto;
             background-color: #fff;
-            margin-top: 20px;
+            padding: 2em;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        section h2 {
-            color: #2c3e50;
-            margin-top: 0;
+        h2 {
+            color: #333;
         }
 
         ul {
             padding-left: 20px;
         }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            margin-top: 40px;
+        ul li {
+            margin-bottom: 10px;
         }
 
         a[href^="mailto"] {
@@ -83,13 +76,20 @@
             text-decoration: underline;
         }
 
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 40px;
+        }
+
         .highlight {
             color: #007BFF;
             font-weight: bold;
         }
     </style>
 </head>
-
 <body>
 
     <header>
@@ -110,45 +110,42 @@
 
     <section id="bevezetes">
         <h2>Bevezetés</h2>
-        <p>Az áramkörök mérése kulcsfontosságú része az elektronikai rendszerek tervezésének és hibakeresésének. A különböző elektromos paraméterek — mint például a <span class="highlight">feszültség</span>, <span class="highlight">áram</span> vagy <span class="highlight">ellenállás</span> — pontos mérése elengedhetetlen ahhoz, hogy az eszközök megfelelően működjenek.</p>
-        <p>Ebben a dokumentumban áttekintjük az alapvető mérési módszereket, eszközöket, a legfontosabb komponenseket, valamint gyakori hibákat és azok elkerülését.</p>
+        <p>Az áramkörök mérése kulcsszerepet játszik az elektronikai rendszerek tervezésében és karbantartásában. A <span class="highlight">feszültség</span>, <span class="highlight">áram</span>, és <span class="highlight">ellenállás</span> pontos meghatározása elengedhetetlen a hibamentes működéshez.</p>
+        <p>Ez az oldal bemutatja az alapvető mérési eljárásokat, a szükséges műszereket, valamint gyakorlati tanácsokat ad a mérések végrehajtásához.</p>
     </section>
 
     <section id="meresek">
         <h2>A Mérések Típusai</h2>
-        <p>A különböző mérések segítenek megérteni és optimalizálni az áramkörök működését:</p>
         <ul>
-            <li><strong>Feszültségmérés:</strong> A feszültségmérőt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
+            <li><strong>Feszültségmérés:</strong> A mérőeszközt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
             <li><strong>Árammérés:</strong> Az árammérőt <em>sorosan</em> kell bekötni az áramkörbe.</li>
-            <li><strong>Ellenállásmérés:</strong> Az ellenállások méréséhez a tápellátást le kell választani.</li>
-            <li><strong>Teljesítménymérés:</strong> A feszültség és áramerősség szorzatából számítható.</li>
+            <li><strong>Ellenállásmérés:</strong> A mérés csak <em>kikapcsolt</em> áramkörön történhet.</li>
+            <li><strong>Teljesítménymérés:</strong> A teljesítmény számítása: <code>P = U × I</code>.</li>
         </ul>
     </section>
 
     <section id="komponensek">
         <h2>A Mérési Áramkör Komponensei</h2>
-        <p>Az alábbi eszközök és komponensek gyakran használatosak az áramkörök vizsgálata során:</p>
         <ul>
-            <li><strong>Multiméter:</strong> Alkalmas feszültség, áram és ellenállás mérésére egyaránt.</li>
-            <li><strong>Árammérő:</strong> Kis belső ellenállású eszköz, sorosan bekötve használatos.</li>
-            <li><strong>Ohmmérő:</strong> Ellenállások és vezetékszakadások vizsgálatára szolgál.</li>
-            <li><strong>Passzív komponensek:</strong> Ellenállások, kondenzátorok, diódák, stb.</li>
+            <li><strong>Multiméter:</strong> Kombinált eszköz feszültség, áram és ellenállás mérésére.</li>
+            <li><strong>Árammérő:</strong> Kis ellenállású eszköz, melyet sorba kell kötni a mérendő áramkörrel.</li>
+            <li><strong>Ohmmérő:</strong> Szakadások és zárlatok felderítésére szolgáló műszer.</li>
+            <li><strong>Passzív komponensek:</strong> Kondenzátorok, ellenállások és egyéb elemek, amelyek az áramkör stabilitását biztosítják.</li>
         </ul>
     </section>
 
     <section id="hibak">
         <h2>Gyakori Hibák és Megoldások</h2>
-        <p>A mérés során gyakori problémák és azok elkerülésének módjai:</p>
         <ul>
-            <li><strong>Rossz kapcsolás:</strong> Mindig ellenőrizd a kapcsolási rajzot és a bekötéseket.</li>
-            <li><strong>Kábelezési hibák:</strong> Sérült vagy elhasználódott vezetékek befolyásolják a mérést.</li>
-            <li><strong>Nem megfelelő műszerbeállítás:</strong> Válaszd ki a megfelelő mérési módot és tartományt.</li>
+            <li><strong>Rossz kapcsolás:</strong> Mindig ellenőrizd a kapcsolási rajz alapján a bekötéseket.</li>
+            <li><strong>Kábelezési problémák:</strong> Hibás vagy elhasználódott kábelek pontatlan mérési eredményekhez vezetnek.</li>
+            <li><strong>Nem megfelelő műszerbeállítás:</strong> Ügyelj arra, hogy a multiméter megfelelő üzemmódban és tartományban legyen.</li>
         </ul>
     </section>
 
     <section id="kapcsolat">
         <h2>Kapcsolat</h2>
-        <p>Ha bármilyen kérdésed van, vagy segítségre van szükséged, lépj kapcsolatba velünk az alábbi címen:</p>
+        <p>Ha kérdésed van, vagy segítségre van szükséged az áramkörök méréseivel kapcsolatban, keress minket:</p>
         <p>Email: <a href="mailto:info@terplanszki.hu">info@terplanszki.hu</a></p>
     </section>
 
