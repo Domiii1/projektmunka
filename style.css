@@ -1,109 +1,127 @@
+/* Alap stílus */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Világos szürke háttér */
-    color: #333; /* Sötétszürke szöveg szín */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafcff; /* Tiszta világos háttér */
+    color: #222; /* Sötétszürke szöveg */
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* Fejléc */
 header {
-    background-color: #333; /* Sötét háttér */
+    background-color: #4a90e2; /* Világoskék háttér */
     color: white;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 600;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
 }
 
+/* Navigáció */
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 20px 0;
+    text-align: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 12px;
 }
 
 nav ul li a {
-    color: white;
+    background-color: #e0f0ff;
+    color: #4a90e2;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ff9900; /* Sárga árnyalat a hover effektushoz */
-    text-decoration: underline;
+    background-color: #4a90e2;
+    color: white;
 }
 
+/* Főtartalom */
 section {
-    margin: 20px auto;
-    max-width: 1200px;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
 }
 
+/* Címek */
 h2 {
-    color: #444; /* Egy árnyalatnyi sötétebb szürke */
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
+/* Projekt doboz */
 .projekt {
-    background-color: white;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 25px;
     margin-bottom: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.projekt:hover {
+    transform: translateY(-5px);
 }
 
 .projekt h3 {
     margin-top: 0;
     font-size: 22px;
-    color: #333;
-    font-weight: bold;
+    color: #4a4a4a;
 }
 
 .projekt p {
     font-size: 16px;
-    line-height: 1.6;
 }
 
+/* Általános linkek */
 a {
-    color: #0066cc;
+    color: #1e88e5;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: 500;
 }
 
 a:hover {
+    color: #1565c0;
     text-decoration: underline;
-    color: #ff6600; /* Narancssárga szín hover esetén */
 }
 
+/* Lábléc */
 footer {
-    background-color: #1a1a1a; /* Fekete háttér */
-    color: #e60000; /* Piros szöveg szín */
+    background-color: #f3f3f3;
+    color: #888;
     text-align: center;
-    padding: 15px 0;
-    font-size: 16px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Finom árnyék a footer alatt */
+    padding: 20px 0;
+    font-size: 15px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
 }
 
 footer a {
-    color: #ff3333; /* Élénk piros link szín */
-    text-decoration: none;
+    color: #4a90e2;
     font-weight: bold;
 }
 
 footer a:hover {
+    color: #1565c0;
     text-decoration: underline;
-    color: #ff1a1a; /* Sötétebb piros a hover effektushoz */
 }
