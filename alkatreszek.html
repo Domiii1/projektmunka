@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-
-    <nav>
-        <a href="szamitogep.html">Vissza a fõoldalra</a>
-    </nav>
-    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alkatrészek</title></title>
+    <title>Alkatrészek</title>
     <style>
-        
+        /* Alap stílus */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafcff; /* Tiszta világos háttér */
+            color: #222; /* Sötétszürke szöveg */
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
+        /* Fejléc */
         header {
-            background-color: #333;
+            background-color: #4a90e2; /* Világoskék háttér */
             color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 1em;
+            font-size: 26px;
+            font-weight: 600;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        header h1 {
+            margin: 0;
+        }
+
+        /* Navigáció */
         nav {
             background-color: #444;
             padding: 1em;
@@ -38,28 +47,52 @@
             font-weight: bold;
         }
 
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Főtartalom */
         section {
             padding: 2em;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
+        /* Címek */
         h2 {
             color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
         }
 
+        /* Alkatrészek doboz */
         .part {
             margin-bottom: 1em;
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 1em;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        /* Lábléc */
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #f3f3f3;
+            color: #888;
             text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+            padding: 20px 0;
+            font-size: 15px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        footer a {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #1565c0;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -70,13 +103,13 @@
 </header>
 
 <nav>
-
+    <a href="szamitogep.html">Vissza a fõoldalra</a>
 </nav>
 
 <section id="cpu">
     <h2>1. Processzor (CPU)</h2>
     <div class="part">
-        <p>A CPU (angol: Central Processing Unit – központi feldolgozóegység) más néven processzor ill. mikroprocesszor, a számítógép „agya”, azon egysége, amely az utasítások értelmezését és végrehajtását vezérli, félvezetős kivitelezésű, összetett elektronikus áramkör..</p>
+        <p>A CPU (angol: Central Processing Unit – központi feldolgozóegység) más néven processzor ill. mikroprocesszor, a számítógép „agya”, azon egysége, amely az utasítások értelmezését és végrehajtását vezérli, félvezetős kivitelezésű, összetett elektronikus áramkör.</p>
     </div>
 </section>
 
@@ -108,10 +141,9 @@
     </div>
 </section>
 
-<section id="szereles">
-    
-</section>
+<footer>
+    <p>&copy; 2025 Számítógép Szerelés | Minden jog fenntartva</p>
+</footer>
 
 </body>
 </html>
-
