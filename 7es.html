@@ -4,7 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hierarchikus Kisvállalati Hálózat Projekt</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,13 +89,13 @@
 </header>
 
 <main>
-    <!-- Bevezető rész -->
+
     <section id="bevezeto">
         <h2>Bevezető</h2>
         <p>Ebben a projektben a tanulók megismerkednek a Windows szerverek verzióival és telepítési módjaikkal, miközben létrehoznak egy hierarchikus kisvállalati hálózatot.</p>
     </section>
 
-    <!-- Virtuális gépek létrehozása -->
+
     <section id="virtualis-gepek">
         <h2>Virtuális Gépek és Szerver Telepítése</h2>
         <p>Ez a szakasz bemutatja, hogyan hozhatsz létre virtuális gépeket VirtualBox-ban, és hogyan telepítheted a Windows 2012 szervert.</p>
@@ -43,7 +110,6 @@
         </div>
     </section>
 
-    <!-- DHCP beállítások -->
     <section id="dhcp">
         <h2>DHCP Beállítás</h2>
         <p>Ismertetjük, hogyan konfigurálhatod a DHCP szolgáltatást a szervered és a kliensek közötti IP-címek kiosztásához.</p>
@@ -57,7 +123,6 @@
         </div>
     </section>
 
-    <!-- Tesztelés -->
     <section id="teszteles">
         <h2>Tesztelés</h2>
         <p>Miután befejeztük a beállításokat, teszteljük, hogy minden megfelelően működik-e.</p>
@@ -66,8 +131,7 @@
             <p>Tesztelés sikeres! A DHCP és fájlmegosztás működik.</p>
         </div>
     </section>
-
-    <!-- Projekt Dokumentáció -->
+    
     <section id="dokumentacio">
         <h2>Dokumentáció</h2>
         <p>A projekt során végrehajtott lépések teljes dokumentációja letölthető.</p>
@@ -79,6 +143,35 @@
     <p>&copy; 2025 Hierarchikus Kisvállalati Hálózat Projekt</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+    // script.js
+    function showVirtualMachineSteps() {
+        var vmSteps = document.getElementById("virtual-machine-steps");
+        if (vmSteps.style.display === "none") {
+            vmSteps.style.display = "block";
+        } else {
+            vmSteps.style.display = "none";
+        }
+    }
+
+    function showDHCPConfig() {
+        var dhcpSteps = document.getElementById("dhcp-steps");
+        if (dhcpSteps.style.display === "none") {
+            dhcpSteps.style.display = "block";
+        } else {
+            dhcpSteps.style.display = "none";
+        }
+    }
+
+    function runTest() {
+        var testResult = document.getElementById("test-result");
+        if (testResult.style.display === "none") {
+            testResult.style.display = "block";
+        } else {
+            testResult.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>
