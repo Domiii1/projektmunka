@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierarchikus Kisvállalati Hálózat Projekt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Hierarchikus Kisvállalati Hálózat Projekt</h1>
+    <nav>
+        <ul>
+            <li><a href="#bevezeto">Bevezető</a></li>
+            <li><a href="#virtualis-gepek">Virtuális Gépek</a></li>
+            <li><a href="#dhcp">DHCP Beállítás</a></li>
+            <li><a href="#teszteles">Tesztelés</a></li>
+            <li><a href="#dokumentacio">Dokumentáció</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Bevezető rész -->
+    <section id="bevezeto">
+        <h2>Bevezető</h2>
+        <p>Ebben a projektben a tanulók megismerkednek a Windows szerverek verzióival és telepítési módjaikkal, miközben létrehoznak egy hierarchikus kisvállalati hálózatot.</p>
+    </section>
+
+    <!-- Virtuális gépek létrehozása -->
+    <section id="virtualis-gepek">
+        <h2>Virtuális Gépek és Szerver Telepítése</h2>
+        <p>Ez a szakasz bemutatja, hogyan hozhatsz létre virtuális gépeket VirtualBox-ban, és hogyan telepítheted a Windows 2012 szervert.</p>
+        <button onclick="showVirtualMachineSteps()">Mutasd a telepítési lépéseket</button>
+        <div id="virtual-machine-steps" style="display:none;">
+            <ul>
+                <li>1. Nyisd meg a VirtualBox alkalmazást.</li>
+                <li>2. Kattints az "Új" gombra a virtuális gép létrehozásához.</li>
+                <li>3. Válaszd ki a Windows 2012 operációs rendszert.</li>
+                <li>4. Kövesd az utasításokat a telepítés befejezéséhez.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- DHCP beállítások -->
+    <section id="dhcp">
+        <h2>DHCP Beállítás</h2>
+        <p>Ismertetjük, hogyan konfigurálhatod a DHCP szolgáltatást a szervered és a kliensek közötti IP-címek kiosztásához.</p>
+        <button onclick="showDHCPConfig()">Mutasd a DHCP beállításokat</button>
+        <div id="dhcp-steps" style="display:none;">
+            <ul>
+                <li>1. Nyisd meg a DHCP Server alkalmazást a Windows Server-en.</li>
+                <li>2. Kattints a "Configure DHCP" lehetőségre.</li>
+                <li>3. Add meg a tartományokat és az IP-címek kiosztási szabályait.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tesztelés -->
+    <section id="teszteles">
+        <h2>Tesztelés</h2>
+        <p>Miután befejeztük a beállításokat, teszteljük, hogy minden megfelelően működik-e.</p>
+        <button onclick="runTest()">Futtasd a tesztet</button>
+        <div id="test-result" style="display:none;">
+            <p>Tesztelés sikeres! A DHCP és fájlmegosztás működik.</p>
+        </div>
+    </section>
+
+    <!-- Projekt Dokumentáció -->
+    <section id="dokumentacio">
+        <h2>Dokumentáció</h2>
+        <p>A projekt során végrehajtott lépések teljes dokumentációja letölthető.</p>
+        <a href="project-doc.pdf" download>Letöltés</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Hierarchikus Kisvállalati Hálózat Projekt</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
