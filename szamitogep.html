@@ -3,60 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-</nav>
-
-
-    
     <title>Számítógép Szerelés</title>
     <style>
+        /* Alap stílus */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafcff; /* Tiszta világos háttér */
+            color: #222; /* Sötétszürke szöveg */
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
+
+        /* Fejléc */
         header {
-            background-color: #333;
+            background-color: #4a90e2; /* Világoskék háttér */
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Navigáció */
         nav {
             background-color: #444;
             overflow: hidden;
         }
+
         nav a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             display: inline-block;
         }
+
         nav a:hover {
             background-color: #575757;
         }
+
+        /* Főtartalom */
         .content {
             padding: 20px;
         }
+
+        /* Címek */
         .section-title {
             color: #333;
             font-size: 24px;
             margin-bottom: 10px;
         }
+
+        /* Alap szöveg */
         .section-content {
             color: #555;
             font-size: 18px;
         }
+
+        /* Projekt doboz */
+        .projekt {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .projekt:hover {
+            transform: translateY(-5px);
+        }
+
+        .projekt h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #4a4a4a;
+        }
+
+        .projekt p {
+            font-size: 16px;
+        }
+
+        /* Általános linkek */
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #1565c0;
+            text-decoration: underline;
+        }
+
+        /* Lábléc */
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #f3f3f3;
+            color: #888;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            font-size: 15px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        footer a {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #1565c0;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -65,12 +131,13 @@
         <h1>Számítógép Szerelés</h1>
         <p>Segítség a számítógép hibáinak elhárításában és javításában</p>
     </header>
-<nav>
+
+    <nav>
+        <a href="index.html">Vissza a Projektekhez</a>
         <a href="szereles.html">Szerelés</a>
         <a href="arajanlat.html">Árajanlat</a>
         <a href="alkatreszek.html">Alkatrészek</a>
     </nav>
-    
     
     <div class="content">
         <section id="bevezeto">
@@ -117,6 +184,8 @@
         </section>
     </div>
 
-   
+    <footer>
+        <p>&copy; 2025 Számítógép Szerelés | Minden jog fenntartva</p>
+    </footer>
 </body>
 </html>
