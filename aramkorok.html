@@ -7,22 +7,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
             background-color: #333;
             color: white;
-            padding: 1em 0;
+            padding: 1.5em;
             text-align: center;
         }
 
         nav {
             background-color: #444;
             text-align: center;
-            padding: 1em 0;
+            padding: 1em;
         }
 
         nav ul {
@@ -33,14 +34,13 @@
 
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
         }
 
         nav a:hover {
@@ -49,15 +49,21 @@
 
         section {
             padding: 2em;
-            background-color: white;
-            margin: 20px auto;
-            max-width: 1000px;
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            margin-top: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         section h2 {
-            color: #333;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 20px;
         }
 
         footer {
@@ -65,27 +71,38 @@
             color: white;
             text-align: center;
             padding: 1em;
-            margin-top: 2em;
+            margin-top: 40px;
         }
 
-        a[href^="mailto"], a[href^="http"] {
+        a[href^="mailto"] {
             color: #007BFF;
+            text-decoration: none;
+        }
+
+        a[href^="mailto"]:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #007BFF;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
+
     <header>
-        <h1>Áramkörök Méréseinek Áramköre</h1>
+        <h1>Áramkörök Méréseinek Áttekintése</h1>
     </header>
 
     <nav>
         <ul>
             <li><a href="index.html">Főoldal</a></li>
             <li><a href="#bevezetes">Bevezetés</a></li>
-            <li><a href="#meresek">Mérések Típusai</a></li>
+            <li><a href="#meresek">Mérések</a></li>
             <li><a href="#komponensek">Komponensek</a></li>
-            <li><a href="#hibak">Gyakori Hibák</a></li>
+            <li><a href="#hibak">Hibák</a></li>
             <li><a href="#kapcsolat">Kapcsolat</a></li>
             <li><a href="meres.html">Mérés</a></li>
         </ul>
@@ -93,47 +110,51 @@
 
     <section id="bevezetes">
         <h2>Bevezetés</h2>
-        <p>A mérési áramkörök kritikus szerepet játszanak az elektronikai rendszerek hibáinak elhárításában és optimalizálásában. Az áramkörökben zajló elektromos paraméterek — például feszültség, áram, ellenállás — mérésére alkalmas eszközök segítenek pontos adatokat nyújtani a fejlesztőknek.</p>
-        <p>Ebben a dokumentumban bemutatjuk az áramkörök méréseinek típusait, az ezekhez használt mérőeszközöket, valamint a legfontosabb komponensek működését.</p>
+        <p>Az áramkörök mérése kulcsfontosságú része az elektronikai rendszerek tervezésének és hibakeresésének. A különböző elektromos paraméterek — mint például a <span class="highlight">feszültség</span>, <span class="highlight">áram</span> vagy <span class="highlight">ellenállás</span> — pontos mérése elengedhetetlen ahhoz, hogy az eszközök megfelelően működjenek.</p>
+        <p>Ebben a dokumentumban áttekintjük az alapvető mérési módszereket, eszközöket, a legfontosabb komponenseket, valamint gyakori hibákat és azok elkerülését.</p>
     </section>
 
     <section id="meresek">
         <h2>A Mérések Típusai</h2>
+        <p>A különböző mérések segítenek megérteni és optimalizálni az áramkörök működését:</p>
         <ul>
-            <li><strong>Feszültségmérés:</strong> A mérőeszközt párhuzamosan kell csatlakoztatni a mérendő két pont közé.</li>
-            <li><strong>Árammérés:</strong> Az árammérőt sorba kell kötni az áramkörbe.</li>
-            <li><strong>Ellenállásmérés:</strong> A méréshez az áramkört ki kell kapcsolni.</li>
-            <li><strong>Teljesítménymérés:</strong> Az áram és a feszültség szorzataként számolható ki.</li>
+            <li><strong>Feszültségmérés:</strong> A feszültségmérőt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
+            <li><strong>Árammérés:</strong> Az árammérőt <em>sorosan</em> kell bekötni az áramkörbe.</li>
+            <li><strong>Ellenállásmérés:</strong> Az ellenállások méréséhez a tápellátást le kell választani.</li>
+            <li><strong>Teljesítménymérés:</strong> A feszültség és áramerősség szorzatából számítható.</li>
         </ul>
     </section>
 
     <section id="komponensek">
         <h2>A Mérési Áramkör Komponensei</h2>
+        <p>Az alábbi eszközök és komponensek gyakran használatosak az áramkörök vizsgálata során:</p>
         <ul>
-            <li><strong>Multiméter:</strong> Alkalmas feszültség, áram és ellenállás mérésére.</li>
-            <li><strong>Árammérő:</strong> Sorba kötve méri az átfolyó áramot.</li>
-            <li><strong>Ohmmérő:</strong> Az ellenállások mérésére szolgál — fontos a zárlatok keresésénél.</li>
-            <li><strong>Kondenzátorok és ellenállások:</strong> Alapvető passzív elemek a mérési folyamatban.</li>
+            <li><strong>Multiméter:</strong> Alkalmas feszültség, áram és ellenállás mérésére egyaránt.</li>
+            <li><strong>Árammérő:</strong> Kis belső ellenállású eszköz, sorosan bekötve használatos.</li>
+            <li><strong>Ohmmérő:</strong> Ellenállások és vezetékszakadások vizsgálatára szolgál.</li>
+            <li><strong>Passzív komponensek:</strong> Ellenállások, kondenzátorok, diódák, stb.</li>
         </ul>
     </section>
 
     <section id="hibak">
         <h2>Gyakori Hibák és Megoldások</h2>
+        <p>A mérés során gyakori problémák és azok elkerülésének módjai:</p>
         <ul>
-            <li><strong>Hiba: Rossz kapcsolás:</strong> Ellenőrizd a kapcsolási rajzot, és a csatlakozásokat.</li>
-            <li><strong>Hiba: Kábelezési problémák:</strong> Rendszeres karbantartás szükséges.</li>
-            <li><strong>Hiba: Hibás beállítás:</strong> Mindig válaszd ki a megfelelő mérési módot és tartományt.</li>
+            <li><strong>Rossz kapcsolás:</strong> Mindig ellenőrizd a kapcsolási rajzot és a bekötéseket.</li>
+            <li><strong>Kábelezési hibák:</strong> Sérült vagy elhasználódott vezetékek befolyásolják a mérést.</li>
+            <li><strong>Nem megfelelő műszerbeállítás:</strong> Válaszd ki a megfelelő mérési módot és tartományt.</li>
         </ul>
     </section>
 
     <section id="kapcsolat">
         <h2>Kapcsolat</h2>
-        <p>Ha kérdésed van, vagy segítségre van szükséged:</p>
+        <p>Ha bármilyen kérdésed van, vagy segítségre van szükséged, lépj kapcsolatba velünk az alábbi címen:</p>
         <p>Email: <a href="mailto:info@terplanszki.hu">info@terplanszki.hu</a></p>
     </section>
 
     <footer>
         <p>&copy; 2025 Áramkörök Mérése. Minden jog fenntartva.</p>
     </footer>
+
 </body>
 </html>
