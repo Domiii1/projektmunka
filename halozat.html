@@ -4,104 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hálózati Alapok és Python</title>
+    <link rel="stylesheet" href="stilus.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            color: #333;
-            line-height: 1.6;
         }
-
+        
         header {
-            background-color: #007BFF;
+            background-color: #333;
             color: white;
             text-align: center;
-            padding: 1.5em 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            padding: 1em;
         }
 
         nav {
-            background-color: #333;
+            background-color: #444;
             padding: 1em;
             text-align: center;
             font-weight: bold;
         }
 
         nav a {
-            color: #007BFF;
+            color: white;
             margin: 0 15px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-weight: bold;
         }
-
+        
         nav a:hover {
-            text-decoration: underline;
-            color: #0056b3;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 2em auto;
-            background-color: white;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2, h3 {
             color: #007BFF;
-            margin-top: 1.5em;
+        }
+
+        section {
+            padding: 2em;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 2em;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h3 {
+            color: #333;
         }
 
         p, ul {
             font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         ul {
-            padding-left: 1.5em;
+            padding-left: 1.2em;
         }
 
-        strong {
+        pre {
+            background-color: #eee;
+            padding: 1em;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 3em;
+        }
+
+        .highlight {
             font-weight: bold;
+            color: #007BFF;
         }
 
         .python-example {
             background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: "Courier New", monospace;
-            white-space: pre-wrap;
             padding: 1em;
-            margin: 1em 0 2em 0;
-            font-size: 1.1rem;
-            color: #2a2a2a;
-        }
-
-        footer {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            margin-top: 3em;
-        }
-
-        /* Visszalink kis szürke színnel */
-        .back-link {
-            font-size: 1rem;
-            color: #808080;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 1em;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-            color: #555;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-family: "Courier New", monospace;
+            margin-top: 1em;
+            margin-bottom: 2em;
+            white-space: pre-wrap;
         }
     </style>
 </head>
@@ -117,39 +114,35 @@
     <h1>Hálózati Alapok és Python</h1>
 </header>
 
-<main>
-    <section>
-        <h2>Üdvözlünk a Hálózati és Programozási Alapok oldalán!</h2>
-        <p>Válaszd ki a kívánt témakört a fenti menü segítségével.</p>
-    </section>
+<section>
+    <h2>Üdvözlünk a Hálózati és Programozási Alapok oldalán!</h2>
+    <p>Válaszd ki a kívánt témakört a fenti menü segítségével.</p>
+</section>
 
-    <section>
-        <h2>Hálózatok alapjai és Python</h2>
+<section>
+    <h2>Hálózatok alapjai és Python</h2>
 
-        <h3>Hálózatok alapjai</h3>
-        <p>A hálózatok olyan rendszerek, amelyek lehetővé teszik az adatcserét két vagy több számítógép vagy eszköz között. A legfontosabb komponensek közé tartozik:</p>
-        <ul>
-            <li><strong>IP-címek</strong>: Minden hálózaton lévő eszköznek egyedi cím szükséges az azonosításhoz, ezt az IP-cím biztosítja.</li>
-            <li><strong>Alhálózatok</strong>: A nagyobb hálózatok kisebb egységekre (alhálózatokra) vannak bontva, hogy könnyebben kezelhetők és biztonságosabbak legyenek.</li>
-            <li><strong>Protokollok</strong>: A hálózaton történő kommunikáció szabályait protokollok határozzák meg, például az TCP/IP vagy HTTP.</li>
-            <li><strong>Routerek és switch-ek</strong>: Olyan eszközök, amelyek a különböző hálózati szegmensek közötti adatforgalmat irányítják.</li>
-        </ul>
-    </section>
+    <h3>Hálózatok alapjai</h3>
+    <p>A hálózatok olyan rendszerek, amelyek lehetővé teszik az adatcserét két vagy több számítógép vagy eszköz között. A legfontosabb komponensek közé tartozik:</p>
+    <ul>
+        <li><span class="highlight">IP-címek</span>: Minden hálózaton lévő eszköznek egyedi cím szükséges az azonosításhoz, ezt az IP-cím biztosítja.</li>
+        <li><span class="highlight">Alhálózatok</span>: A nagyobb hálózatok kisebb egységekre (alhálózatokra) vannak bontva, hogy könnyebben kezelhetők és biztonságosabbak legyenek.</li>
+        <li><span class="highlight">Protokollok</span>: A hálózaton történő kommunikáció szabályait protokollok határozzák meg, például az TCP/IP vagy HTTP.</li>
+        <li><span class="highlight">Routerek és switch-ek</span>: Olyan eszközök, amelyek a különböző hálózati szegmensek közötti adatforgalmat irányítják.</li>
+    </ul>
 
-    <section>
-        <h3>Hálózati programozás Pythonban</h3>
-        <p>A Python kiváló eszköz a hálózati programozáshoz, mivel több könyvtárat is biztosít, amelyek segítenek a hálózati alkalmazások fejlesztésében. A leggyakoribb Python könyvtárak közé tartoznak:</p>
-        <ul>
-            <li><strong><code>socket</code> modul</strong>: Ez az egyik legfontosabb modul a hálózati programozásban. Lehetővé teszi TCP/IP kapcsolatok létrehozását, adatküldést és -fogadást.</li>
-            <li><strong><code>requests</code> könyvtár</strong>: Ez a könyvtár HTTP kérések küldésére és válaszok fogadására szolgál, amely hasznos webes alkalmazások esetén.</li>
-            <li><strong><code>asyncio</code> modul</strong>: Ez az aszinkron programozásra szolgáló modul, amely lehetővé teszi a nagy teljesítményű, több szálas hálózati alkalmazások készítését.</li>
-        </ul>
-    </section>
+    <h3>Hálózati programozás Pythonban</h3>
+    <p>A Python kiváló eszköz a hálózati programozáshoz, mivel több könyvtárat is biztosít, amelyek segítenek a hálózati alkalmazások fejlesztésében. A leggyakoribb Python könyvtárak közé tartoznak:</p>
+    <ul>
+        <li><span class="highlight"><code>socket</code> modul</span>: Ez az egyik legfontosabb modul a hálózati programozásban. Lehetővé teszi TCP/IP kapcsolatok létrehozását, adatküldést és -fogadást.</li>
+        <li><span class="highlight"><code>requests</code> könyvtár</span>: Ez a könyvtár HTTP kérések küldésére és válaszok fogadására szolgál, amely hasznos webes alkalmazások esetén.</li>
+        <li><span class="highlight"><code>asyncio</code> modul</span>: Ez az aszinkron programozásra szolgáló modul, amely lehetővé teszi a nagy teljesítményű, több szálas hálózati alkalmazások készítését.</li>
+    </ul>
 
-    <section>
-        <h3>Példa Python kódok</h3>
-        <p>Itt bemutatok egy egyszerű Python kódot, amely TCP kapcsolatot létesít egy szerverrel:</p>
-        <pre class="python-example"><code>import socket
+    <h3>Példa Python kódok</h3>
+    <p>Itt bemutatok egy egyszerű Python kódot, amely TCP kapcsolatot létesít egy szerverrel:</p>
+
+    <pre class="python-example"><code>import socket
 
 # Létrehozunk egy TCP kapcsolatot
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -163,11 +156,10 @@ data = s.recv(1024)
 print('Received', repr(data))
 
 s.close()
-        </code></pre>
+</code></pre>
 
-        <p>Ez a kód bemutatja, hogyan tudunk egyszerűen TCP kapcsolatot létrehozni a Python <code>socket</code> moduljával.</p>
-    </section>
-</main>
+    <p>Ez a kód bemutatja, hogyan tudunk egyszerűen TCP kapcsolatot létrehozni a Python <code>socket</code> moduljával.</p>
+</section>
 
 <footer>
     <p>&copy; 2025 Hálózati Alapok</p>
