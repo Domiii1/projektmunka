@@ -1,91 +1,209 @@
 <!DOCTYPE html>
-<html>
-<head> 
-    <title>Projekt Munka</title>
-	<link rel="stylesheet" href="style.css">
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projekt Munka</title>
+  <style>
+    /* --- Reset & alap --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+      background-attachment: fixed;
+      color: #1f2937;
+      line-height: 1.6;
+      padding-bottom: 100px;
+    }
+
+    /* --- Fejléc --- */
+    header {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #1d4ed8;
+    }
+
+    /* --- Navigáció --- */
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1d4ed8;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid #c7d2fe;
+    }
+
+    nav a:hover {
+      background-color: #1d4ed8;
+      color: white;
+    }
+
+    /* --- Szakaszok --- */
+    section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #111827;
+      margin-bottom: 1rem;
+      border-left: 5px solid #60a5fa;
+      padding-left: 0.6rem;
+    }
+
+    .projekt {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid #dbeafe;
+    }
+
+    .projekt h3 {
+      font-size: 1.3rem;
+      color: #1e40af;
+      margin-bottom: 0.5rem;
+    }
+
+    .projekt p {
+      margin-bottom: 1rem;
+    }
+
+    .projekt a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #1d4ed8;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      margin: 0.3rem 0.5rem 0 0;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .projekt a:hover {
+      background-color: #2563eb;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Projekt Munka</h1>
-        <nav>
-            <ul>
-                <li><a href="#evfolyam9">9. évfolyam</a></li>
-                <li><a href="#evfolyam10">10. évfolyam</a></li>
-		<li><a href="#evfolyam11">11. évfolyam</a></li>
-				<li><a href="#evfolyam12">12. évfolyam</a></li>
-		
-		    
-		    
-            </ul>
-        </nav>
-    </header>
 
-    <section id="evfolyam9">
-        <h2>9. évfolyam Projekt Munkák</h2>
-        <div class="projekt">
-            <h3>1. Projekt</h3>
-            <p>Áramkörök, mérések áramkörökben.</p>
-			<a href="dokumentacio.html" target="_blank">Dokumentacio</a><br>
-            <a href="aramkorok.html" target="_blank">weboldal </a>			
-        </div>
-        <div class="projekt">
-            <h3>2. Projekt</h3>
-            <p>Számítógép Részei és Szerelése.</p>
-			<a href="dokumentaci2.html" target="_blank">Dokumentacio</a><br>
-            <a href="szamitogep.html" target="_blank"> Weboldal</a>
-			
-        </div>
-    </section>
+  <header>
+    <h1>Projekt Munka</h1>
+    <nav>
+      <ul>
+        <li><a href="#evfolyam9">9. évfolyam</a></li>
+        <li><a href="#evfolyam10">10. évfolyam</a></li>
+        <li><a href="#evfolyam11">11. évfolyam</a></li>
+        <li><a href="#evfolyam12">12. évfolyam</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="evfolyam10">
-        <h2>10. évfolyam Projekt Munkák</h2>
-       <div class="projekt">
-            <h3>3. Projekt</h3>
-            <p>Kapcsoló és router alapkonfigurácio.</p>
-			<a href="dokumentaci3.html" target="_blank">Dokumentacio</a><br>
-            <a href="halozat.html" target="_blank"> Weboldal</a>
-       </div>
-        <div class="projekt">
-            <h3>4. Projekt</h3>
-            <p>Kis vállalat hálozat tervezés</p>
-			<a href="dokumentaci4.html" target="_blank">Dokumentacio</a><br>
-            <a href="cisco.html" target="_blank"> Weboldal</a>
-        </div>
-    </section>
-	 <section id="evfolyam11">
-        <h2>11. évfolyam Projekt Munkák</h2>
-       <div class="projekt">
-            <h3>5. Projekt</h3>
-            <p>Kis-közepes vállalati hálozat</p>
-			<a href="dokumentaci5.html" target="_blank">Dokumentacio</a><br>
-            <a href="projekt5.html" target="_blank"> Weboldal</a>
-       </div>
-        <div class="projekt">
-            <h3>6. Projekt</h3>
-            <p>Kis-közepes vállalati hálozat</p>
-			<a href="dokumentaci4.html" target="_blank">Dokumentacio</a><br>
-            <a href="cisco.html" target="_blank"> Weboldal</a>
-			  <section id="evfolyam11">
-		</div>
-		 <h2>12. évfolyam Projekt Munkák</h2>
-       <div class="projekt">
-            <h3>7. Projekt</h3>
-            <p>Hierarchikus kisvállalati hálózat</p>
-			<a href="projekt6.html" target="_blank">Dokumentacio</a><br>
-            <a href="7es.html" target="_blank"> Weboldal</a>
-		    <section id="evfolyam12">
-				  
+  <!-- 9. évfolyam -->
+  <section id="evfolyam9">
+    <h2>9. évfolyam Projekt Munkák</h2>
+
+    <div class="projekt">
+      <h3>1. Projekt</h3>
+      <p>Áramkörök, mérések áramkörökben.</p>
+      <a href="dokumentacio.html" target="_blank">Dokumentáció</a>
+      <a href="aramkorok.html" target="_blank">Weboldal</a>
+    </div>
+
+    <div class="projekt">
+      <h3>2. Projekt</h3>
+      <p>Számítógép részei és szerelése.</p>
+      <a href="dokumentaci2.html" target="_blank">Dokumentáció</a>
+      <a href="szamitogep.html" target="_blank">Weboldal</a>
+    </div>
+  </section>
+
+  <!-- 10. évfolyam -->
+  <section id="evfolyam10">
+    <h2>10. évfolyam Projekt Munkák</h2>
+
+    <div class="projekt">
+      <h3>3. Projekt</h3>
+      <p>Kapcsoló és router alapkonfiguráció.</p>
+      <a href="dokumentaci3.html" target="_blank">Dokumentáció</a>
+      <a href="halozat.html" target="_blank">Weboldal</a>
+    </div>
+
+    <div class="projekt">
+      <h3>4. Projekt</h3>
+      <p>Kisvállalat hálózat tervezés.</p>
+      <a href="dokumentaci4.html" target="_blank">Dokumentáció</a>
+      <a href="cisco.html" target="_blank">Weboldal</a>
+    </div>
+  </section>
+
+  <!-- 11. évfolyam -->
+  <section id="evfolyam11">
+    <h2>11. évfolyam Projekt Munkák</h2>
+
+    <div class="projekt">
+      <h3>5. Projekt</h3>
+      <p>Kis-közepes vállalati hálózat.</p>
+      <a href="dokumentaci5.html" target="_blank">Dokumentáció</a>
+      <a href="projekt5.html" target="_blank">Weboldal</a>
+    </div>
+
+    <div class="projekt">
+      <h3>6. Projekt</h3>
+      <p>Kis-közepes vállalati hálózat.</p>
+      <a href="dokumentaci4.html" target="_blank">Dokumentáció</a>
+      <a href="cisco.html" target="_blank">Weboldal</a>
+    </div>
+  </section>
+
+  <!-- 12. évfolyam -->
+  <section id="evfolyam12">
+    <h2>12. évfolyam Projekt Munkák</h2>
+
+    <div class="projekt">
+      <h3>7. Projekt</h3>
+      <p>Hierarchikus kisvállalati hálózat.</p>
+      <a href="projekt6.html" target="_blank">Dokumentáció</a>
+      <a href="7es.html" target="_blank">Weboldal</a>
+    </div>
+  </section>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
