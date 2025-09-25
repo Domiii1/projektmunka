@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-     <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-          <link rel="stylesheet" href="stilus.css">
-</nav>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kapcsoló és Router Alapkonfiguráció</title>
-   <style>
+    <link rel="stylesheet" href="stilus.css" />
+    <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -66,18 +63,31 @@
             color: #007BFF;
         }
 
-       div .video {
+        div.video {
             width: 360px;
             height: 360px;
             background-color: black;
-            
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 1em;
+            border-radius: 6px;
+            overflow-x: auto;
         }
     </style>
-    
 </head>
 <body>
-    <h1>Kapcsoló és Router Alapkonfiguráció</h1>
 
+<nav>
+    <a href="index.html">Vissza a Projektekhez</a>
+</nav>
+
+<header>
+    <h1>Kapcsoló és Router Alapkonfiguráció</h1>
+</header>
+
+<section>
     <h2>Bevezetés</h2>
     <p>A hálózati eszközök, mint a kapcsolók (switch) és routerek alapvető szerepet játszanak a számítógépes hálózatokban. A kapcsolók lehetővé teszik az eszközök közötti adatátvitelt a helyi hálózatban, míg a routerek a különböző hálózatok közötti adatforgalmat irányítják. Az alábbi dokumentáció célja, hogy bemutassa a kapcsolók és routerek alapvető konfigurálását és azok szerepét egy hálózati környezetben.</p>
 
@@ -147,6 +157,11 @@ Router1# write memory</code></pre>
         <li><code>show ip interface brief</code>: Az interfészek állapotának és IP-címeinek megtekintése</li>
         <li><code>show ip route</code>: Az útválasztási táblázat megtekintése</li>
     </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 Hálózati Alapok</p>
+</footer>
 
 </body>
 </html>
