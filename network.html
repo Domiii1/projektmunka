@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hálózati Konfiguráció</title>
     <style>
-        
+        /* Alap stílusok */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8fbfd; /* Világos háttér */
             color: #333;
         }
 
-      
+        /* Fejléc */
         header {
-            background-color: #2196F3; /* Zöld helyett kék */
+            background-color: #5fa8d3; /* Világoskék */
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -27,41 +27,55 @@
             font-size: 2.5rem;
         }
 
-        
+        /* Navigációs menü */
         nav {
-            background-color: #333;
+            background-color: #dbe9f4;
             overflow: hidden;
             display: flex;
             justify-content: space-around;
-            padding: 10px;
+            padding: 12px;
+            border-bottom: 2px solid #c3dce8;
         }
 
         nav a {
-            color: white;
-            padding: 14px 20px;
+            color: #005f99;
+            background-color: #eaf4fb;
+            padding: 10px 20px;
             text-decoration: none;
             text-align: center;
             font-size: 1.1rem;
+            border-radius: 20px; /* Lekerekített gomb */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #b5d5ea;
+            color: white;
         }
 
-        
+        .menu-item {
+            font-weight: bold;
+        }
+
+        /* Tartalomdoboz */
         .container {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
         }
 
         h2, h3 {
-            color: #2196F3; /* Zöld helyett kék */
+            color: #2196F3;
             font-size: 1.8rem;
+            margin-top: 30px;
         }
 
         p, ul {
@@ -69,36 +83,7 @@
             line-height: 1.8;
         }
 
-        
-        .menu-item {
-            font-weight: bold;
-        }
-
-        
-        .back-link {
-            font-size: 16px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .image-container img {
-            max-width: 80%;
-            height: auto;
-            border: 5px solid #333333;
-            border-radius: 10px;
-        }
-
-        
+        /* Példák megjelenítése */
         .network-example {
             background-color: #f9f9f9;
             padding: 20px;
@@ -115,42 +100,69 @@
             font-size: 1.2rem;
         }
 
-        
+        /* Képek */
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+            border: 5px solid #ccc;
+            border-radius: 10px;
+        }
+
+        /* Linkek */
         a {
-            color: #2196F3; /* Zöld helyett kék */
+            color: #0077cc;
             text-decoration: none;
+            transition: 0.2s ease-in-out;
         }
 
         a:hover {
             text-decoration: underline;
+            color: #004e80;
         }
 
-        
+        /* Footer */
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 12px;
             background-color: #333;
             color: white;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
+            margin-top: 40px;
+        }
+
+        /* Reszponzív navigáció */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+                width: 90%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    
+    <!-- Fejléc -->
     <header>
         <h1>Hálózati Konfiguráció</h1>
     </header>
 
-    
+    <!-- Navigáció -->
     <nav>
         <a href="halozat.html" class="menu-item">Főoldal</a>
         <a href="python.html" class="menu-item">Python Alapok</a>
     </nav>
 
-    
+    <!-- Tartalom -->
     <div class="container">
         <h1>Kapcsoló és Router Alapkonfiguráció</h1>
 
@@ -179,17 +191,17 @@ no shutdown
 exit
             </code>
         </div>
-    
 
         <h2>3. Haladó hálózati beállítások</h2>
-        <p>Statikus útvonal beállítása:</p>
+
+        <p><strong>Statikus útvonal beállítása:</strong></p>
         <div class="network-example">
             <code>
 ip route 192.168.2.0 255.255.255.0 192.168.1.2
             </code>
         </div>
 
-        <p>DHCP konfiguráció egy routeren:</p>
+        <p><strong>DHCP konfiguráció egy routeren:</strong></p>
         <div class="network-example">
             <code>
 ip dhcp pool LAN
@@ -201,9 +213,15 @@ exit
         </div>
     </div>
 
+    <!-- Kép -->
     <div class="image-container">
-            <img src="kapkap.jpg" alt="Hálózat">
-        </div>
+        <img src="kapkap.jpg" alt="Hálózat">
+    </div>
+
+    <!-- Lábléc -->
+    <footer>
+        &copy; 2025 Hálózati Konfiguráció – Minden jog fenntartva.
+    </footer>
 
 </body>
 </html>
