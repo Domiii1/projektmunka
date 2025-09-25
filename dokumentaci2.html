@@ -1,78 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-<body>
- <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
- <style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Számítógép Részei és Szerelése</title>
+    <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafcff;
+            color: #222;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        
+
         header {
-            background-color: #333;
+            background-color: #4a90e2;
             color: white;
+            padding: 30px 20px;
             text-align: center;
-            padding: 1em;
+            font-weight: 600;
+            font-size: 28px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         nav {
-            background-color: #444;
-            padding: 1em;
+            background-color: #ffffff;
             text-align: center;
-            font-weight: bold;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         nav a {
-            color: white;
-            margin: 0 15px;
+            background-color: #e3f2fd;
+            color: #1a73e8;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 20px;
+            margin: 0 12px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        section {
-            padding: 2em;
+
+        nav a:hover {
+            background-color: #bbdefb;
+            color: #0d47a1;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
         h2 {
-            color: #333;
+            color: #1976d2;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 600;
         }
 
-        .quote {
-            margin-bottom: 1em;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        h3 {
+            color: #1565c0;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #f3f3f3;
+            color: #777;
             text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+            padding: 20px 10px;
+            font-size: 15px;
+            margin-top: 50px;
+            border-top: 1px solid #ddd;
         }
 
+        /* Szövegkiemelés */
         .highlight {
-            font-weight: bold;
+            font-weight: 700;
             color: #007BFF;
         }
 
-       div .video {
-            width: 360px;
+        /* Szép dobozos idézet vagy extra tartalom lehet */
+        .quote {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Reszponzív videó vagy kép helye, ha kell */
+        .video {
+            width: 100%;
+            max-width: 360px;
             height: 360px;
             background-color: black;
-            
+            margin: 25px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-    </style>
-    
-</nav>
-    <h1>Számítógép Részei és Szerelése</h1>
 
+    </style>
+</head>
+<body>
+
+<header>
+    Számítógép Részei és Szerelése
+</header>
+
+<nav>
+    <a href="index.html">Vissza a Projektekhez</a>
+</nav>
+
+<main>
     <h2>1. Bevezetés</h2>
     <p>A számítógép szerelése és karbantartása alapvető ismereteket kíván a számítógép alkatrészeiről, azok funkcióiról és az összeszerelési folyamatokról. A számítógép a modern élet szerves része, és az ismeretek a hatékony karbantartás, bővítés és hibaelhárítás szempontjából elengedhetetlenek. A dokumentáció célja, hogy áttekintést nyújtson a számítógép fő alkatrészeiről és azok szereléséről.</p>
 
@@ -123,6 +178,11 @@
 
     <h2>4. Záró Megjegyzések</h2>
     <p>A számítógép összeszerelése nemcsak szórakoztató, hanem hasznos feladat is. A megfelelő alkatrészek kiválasztása és a precíz összeszerelés biztosítja a stabil és hosszú távú működést. A rendszeres karbantartás és tisztítás elengedhetetlen a számítógép optimális teljesítményének megőrzéséhez.</p>
+</main>
+
+<footer>
+    &copy; 2025 Számítógép Szerelés | Minden jog fenntartva
+</footer>
 
 </body>
 </html>
