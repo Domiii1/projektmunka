@@ -7,53 +7,133 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8fbfd;
             margin: 0;
             padding: 0;
-            background-color: #2c3e50; 
-            text-align: center;
+            color: #333;
         }
+
+        header {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #eaf4fb;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 2px solid #c3dce8;
+        }
+
+        nav a {
+            background-color: #dbe9f4;
+            color: #005f99;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #b5d5ea;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #2196F3;
+            margin-top: 20px;
+        }
+
+        p, ul, pre {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f3f3f3;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
         .back-button {
             display: inline-block;
-            margin: 10px 0 20px 0;
-            padding: 10px 20px;
-            background-color: #2c3e50; 
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            position: absolute; 
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .back-button:hover {
-            background-color: #34495e; 
-        }
-        .header {
-            background-color: #34495e; 
-            color: white;
-            padding: 15px;
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 50px; 
-        }
-        .container {
-            max-width: 900px;
-            background: white;
             margin: 20px auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0b7dda;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .container {
+                margin: 20px 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="projekt5.html" class="back-button">Vissza az előző oldalra</a> <!-- Back button at the top -->
-    <div class="header">Hálózat Működésének Részletei</div>
+
+    <!-- Fejléc -->
+    <header>
+        <h1>Hálózat Működésének Részletei</h1>
+    </header>
+
+    <!-- Navigáció -->
+    <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="projekt5.html">Topológia</a>
+    </nav>
+
+    <!-- Tartalom -->
     <div class="container">
         <h2>Hálózat Felépítése</h2>
         <p>A hálózat egy routert, több switchet és klienseket tartalmaz, VLAN-okkal és különböző alhálózatokkal konfigurálva.</p>
-        
+
         <h2>IP Címzés</h2>
         <p>A hálózat IPv4 és IPv6 címzést használ. A következő IP-cím tartományokat alkalmazzuk:</p>
         <ul>
@@ -61,17 +141,27 @@
             <li>Felhasználói hálózat: 192.168.2.0/24</li>
             <li>Szerverhálózat: 192.168.3.0/24</li>
         </ul>
-        
+
         <h2>Forgalomirányítás és Biztonság</h2>
         <p>A router végzi a forgalomirányítást a VLAN-ok között. ACL-ek (Access Control List) biztosítják a jogosulatlan hozzáférések blokkolását.</p>
-        
+
         <h2>Hálózati Hibakeresés</h2>
         <p>Diagnosztikai parancsok:</p>
         <pre>
-        Router# show ip route
-        Router# ping 192.168.1.1
-        Router# traceroute 192.168.1.10
+Router# show ip route
+Router# ping 192.168.1.1
+Router# traceroute 192.168.1.10
         </pre>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="projekt5.html" class="back-button">Vissza az előző oldalra</a>
+        </div>
     </div>
+
+    <!-- Lábléc -->
+    <footer>
+        <p>&copy; 2025 Hálózati Projektek</p>
+    </footer>
+
 </body>
 </html>
