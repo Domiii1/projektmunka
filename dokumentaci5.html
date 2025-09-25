@@ -1,147 +1,183 @@
 <!DOCTYPE html>
+<html lang="hu">
 <head>
-    <title>Kis- és Közepes Vállalati Hálózat Tervezése és Adatbázis Implementálás</title>
-     <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kis- és Közepes Vállalati Hálózat + Adatbázis</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f4f8fb;
             margin: 0;
             padding: 0;
-        }
-        
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 1em;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        section {
-            padding: 2em;
-        }
-
-        h2 {
             color: #333;
         }
 
-        .quote {
-            margin-bottom: 1em;
-            background-color: #fff;
-            padding: 1em;
+        header {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #eaf4fb;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 2px solid #c3dce8;
+        }
+
+        nav a {
+            background-color: #dbe9f4;
+            color: #005f99;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #b5d5ea;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2, h3 {
+            color: #2196F3;
+        }
+
+        p, ul, pre {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f3f3f3;
+            padding: 16px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 1rem;
         }
 
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+            padding: 15px;
+            margin-top: 40px;
         }
 
-        .highlight {
-            font-weight: bold;
-            color: #007BFF;
-        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
 
-       div .video {
-            width: 360px;
-            height: 360px;
-            background-color: black;
-            
+            .container {
+                margin: 20px 15px;
+            }
         }
     </style>
-    
 </head>
 <body>
 
-    <div class="content-wrapper">
-         <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-</nav>
-        <header>
-            <h1>Kis- és Közepes Vállalati Hálózat Tervezése és Adatbázis Implementálás</h1>
-        </header>
+    <!-- Fejléc -->
+    <header>
+        <h1>Kis- és Közepes Vállalati Hálózat és Adatbázis</h1>
+    </header>
 
-        <section>
-            <h2>1. Bevezetés</h2>
-            <p>Ez a dokumentáció bemutatja egy kis- és közepes méretű vállalat számára készült hálózati infrastruktúra tervezését, megvalósítását IPv4 címzéssel, valamint egy egyszerű egytáblás adatbázis tervezését és implementálását.</p>
-        </section>
+    <!-- Navigáció -->
+    <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="projekt5.html">Topológia</a>
+        <a href="projekt5a.html">Működés</a>
+    </nav>
 
-        <section>
-            <h2>2. Kis- és Közepes Vállalati Hálózat Tervezése IPv4 Címzéssel</h2>
-            <h3>2.1. Hálózati igények és célok</h3>
-            <p>A vállalat számára szükséges egy stabil, gyors és biztonságos hálózati infrastruktúra, amely képes kiszolgálni a mindennapi üzleti műveleteket. Az IPv4 címzés használatával történik a hálózati eszközök azonosítása.</p>
+    <!-- Tartalom -->
+    <div class="container">
+        <h2>1. Bevezetés</h2>
+        <p>Ez a dokumentáció bemutatja egy kis- és közepes méretű vállalat számára készült hálózati infrastruktúra tervezését, megvalósítását IPv4 címzéssel, valamint egy egyszerű egytáblás adatbázis tervezését és implementálását.</p>
 
-            <h3>2.2. IPv4 Címzési Tervezés</h3>
-            <p>A hálózati címek tervezéséhez figyelembe kell venni a vállalat eszközeinek számát, a különböző alhálózatokat és a hálózaton belüli kommunikációt. A tervezéshez a következő címzés javasolt:</p>
-            <pre><code>192.168.0.0/24</code></pre>
-            <p>Ez biztosítja a vállalat összes eszközének azonosítását egy 254 eszközig. Az alhálózatokat szükség szerint tovább lehet bontani.</p>
-        </section>
+        <h2>2. Hálózat Tervezése IPv4 Címzéssel</h2>
 
-        <section>
-            <h2>3. Egytáblás Adatbázis Tervezése</h2>
-            <h3>3.1. Adatbázis célja</h3>
-            <p>A cél egy egyszerű, egytáblás adatbázis létrehozása, amely tárolja a vállalat munkatársainak adatait.</p>
+        <h3>2.1 Hálózati igények és célok</h3>
+        <p>A vállalat számára szükséges egy stabil, gyors és biztonságos hálózati infrastruktúra, amely képes kiszolgálni a mindennapi üzleti műveleteket. Az IPv4 címzés használatával történik a hálózati eszközök azonosítása.</p>
 
-            <h3>3.2. Adatbázis szerkezete</h3>
-            <p>A táblázatnak a következő mezőket kell tartalmaznia:</p>
-            <ul>
-                <li><strong>ID:</strong> Egyedi azonosító</li>
-                <li><strong>Vezetéknév:</strong> A munkavállaló vezetékneve</li>
-                <li><strong>Keresztnév:</strong> A munkavállaló keresztneve</li>
-                <li><strong>Email:</strong> A munkavállaló email címe</li>
-                <li><strong>Telefonszám:</strong> A munkavállaló telefonszáma</li>
-            </ul>
+        <h3>2.2 IPv4 Címzési Tervezés</h3>
+        <p>A hálózati címek tervezéséhez figyelembe kell venni a vállalat eszközeinek számát, a különböző alhálózatokat és a hálózaton belüli kommunikációt. A tervezéshez a következő címzés javasolt:</p>
+        <pre><code>192.168.0.0/24</code></pre>
+        <p>Ez biztosítja a vállalat összes eszközének azonosítását egy 254 eszközig. Az alhálózatokat szükség szerint tovább lehet bontani.</p>
 
-            <h3>3.3. SQL Táblázat létrehozása</h3>
-            <pre><code>
-CREATE TABLE Munkavallalok (
+        <h2>3. Egytáblás Adatbázis Tervezése</h2>
+
+        <h3>3.1 Adatbázis célja</h3>
+        <p>A cél egy egyszerű, egytáblás adatbázis létrehozása, amely tárolja a vállalat munkatársainak adatait.</p>
+
+        <h3>3.2 Adatbázis szerkezete</h3>
+        <ul>
+            <li><strong>ID:</strong> Egyedi azonosító</li>
+            <li><strong>Vezetéknév:</strong> A munkavállaló vezetékneve</li>
+            <li><strong>Keresztnév:</strong> A munkavállaló keresztneve</li>
+            <li><strong>Email:</strong> A munkavállaló email címe</li>
+            <li><strong>Telefonszám:</strong> A munkavállaló telefonszáma</li>
+        </ul>
+
+        <h3>3.3 SQL Táblázat létrehozása</h3>
+        <pre><code>CREATE TABLE Munkavallalok (
     id INT PRIMARY KEY AUTO_INCREMENT,
     vezeteknev VARCHAR(50),
     keresztnev VARCHAR(50),
     email VARCHAR(100),
     telefonszam VARCHAR(20)
-);
-            </code></pre>
+);</code></pre>
 
-            <h3>3.4. Módosítás és Adatok Lekérdezése</h3>
-            <p>Az adatok módosítására és lekérdezésére az alábbi SQL parancsokat használhatjuk:</p>
-            <pre><code>
--- Új munkavállaló hozzáadása
+        <h3>3.4 Módosítás és Lekérdezés</h3>
+        <pre><code>-- Új munkavállaló hozzáadása
 INSERT INTO Munkavallalok (vezeteknev, keresztnev, email, telefonszam)
 VALUES ('Kovács', 'Anna', 'anna.kovacs@example.com', '06201234567');
 
--- Munkavállaló adatainak módosítása
+-- Módosítás
 UPDATE Munkavallalok
 SET email = 'anna.newemail@example.com'
 WHERE id = 1;
 
--- Munkavállaló adatainak lekérdezése
+-- Lekérdezés
 SELECT * FROM Munkavallalok WHERE id = 1;
-            </code></pre>
-        </section>
+</code></pre>
 
-        <section>
-            <h2>4. Összegzés</h2>
-            <p>Az IPv4 alapú hálózati tervezés biztosítja a vállalat számára szükséges eszközkészlet és alhálózati struktúra kialakítását, míg az egytáblás adatbázis lehetőséget biztosít az adatok hatékony kezelésére és lekérdezésére. A megfelelő tervezés és kivitelezés hozzájárul a vállalati rendszer zavartalan működéséhez.</p>
-        </section>
+        <h2>4. Összegzés</h2>
+        <p>Az IPv4 alapú hálózati tervezés biztosítja a vállalat számára szükséges eszközkészlet és alhálózati struktúra kialakítását, míg az egytáblás adatbázis lehetőséget biztosít az adatok hatékony kezelésére és lekérdezésére. A megfelelő tervezés és kivitelezés hozzájárul a vállalati rendszer zavartalan működéséhez.</p>
     </div>
+
+    <!-- Lábléc -->
+    <footer>
+        <p>&copy; 2025 Hálózati és Adatbázis Projekt</p>
+    </footer>
 
 </body>
 </html>
