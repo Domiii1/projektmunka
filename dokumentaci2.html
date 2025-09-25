@@ -1,133 +1,158 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Számítógép Részei és Szerelése</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafcff;
-            color: #222;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Számítógép Részei és Szerelése</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: #4a90e2;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 28px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #f1f5f9);
+      color: #1f2937;
+      line-height: 1.6;
+      background-attachment: fixed;
+    }
 
-        nav {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+    header {
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      background-color: rgba(74, 144, 226, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      font-size: 2rem;
+      font-weight: bold;
+    }
 
-        nav a {
-            background-color: #e3f2fd;
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: 700;
-            padding: 10px 18px;
-            border-radius: 20px;
-            margin: 0 12px;
-            display: inline-block;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-        nav a:hover {
-            background-color: #bbdefb;
-            color: #0d47a1;
-        }
+    nav a {
+      background-color: #e3f2fd;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 25px;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.3s;
+      border: 1px solid #cfe2ff;
+    }
 
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+    nav a:hover {
+      background-color: #1a73e8;
+      color: white;
+    }
 
-        h2 {
-            color: #1976d2;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            font-size: 24px;
-            font-weight: 600;
-        }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(6px);
+    }
 
-        h3 {
-            color: #1565c0;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+    h2 {
+      color: #1976d2;
+      margin-top: 30px;
+      font-size: 1.8rem;
+      border-left: 5px solid #60a5fa;
+      padding-left: 12px;
+    }
 
-        p {
-            margin-bottom: 16px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
+    h3 {
+      color: #1565c0;
+      margin-top: 25px;
+      font-size: 1.2rem;
+    }
 
-        footer {
-            background-color: #f3f3f3;
-            color: #777;
-            text-align: center;
-            padding: 20px 10px;
-            font-size: 15px;
-            margin-top: 50px;
-            border-top: 1px solid #ddd;
-        }
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: #374151;
+    }
 
-        /* Szövegkiemelés */
-        .highlight {
-            font-weight: 700;
-            color: #007BFF;
-        }
+    .highlight {
+      font-weight: bold;
+      color: #0d47a1;
+    }
 
-        /* Szép dobozos idézet vagy extra tartalom lehet */
-        .quote {
-            background-color: #fff;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
-            font-style: italic;
-            color: #555;
-        }
+    .quote {
+      background-color: #ffffffcc;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin: 25px 0;
+      font-style: italic;
+      color: #555;
+    }
 
-        /* Reszponzív videó vagy kép helye, ha kell */
-        .video {
-            width: 100%;
-            max-width: 360px;
-            height: 360px;
-            background-color: black;
-            margin: 25px auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .video {
+      width: 100%;
+      max-width: 360px;
+      height: 360px;
+      background-color: black;
+      margin: 25px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-    </style>
+    footer {
+      background-color: rgba(74, 144, 226, 0.7);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px auto;
+        max-width: 220px;
+      }
+
+      main {
+        margin: 20px;
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <header>
     Számítógép Részei és Szerelése
-</header>
+  </header>
 
-<nav>
+  <nav>
     <a href="index.html">Vissza a Projektekhez</a>
-</nav>
+  </nav>
 
-<main>
+  <main>
     <h2>1. Bevezetés</h2>
     <p>A számítógép szerelése és karbantartása alapvető ismereteket kíván a számítógép alkatrészeiről, azok funkcióiról és az összeszerelési folyamatokról. A számítógép a modern élet szerves része, és az ismeretek a hatékony karbantartás, bővítés és hibaelhárítás szempontjából elengedhetetlenek. A dokumentáció célja, hogy áttekintést nyújtson a számítógép fő alkatrészeiről és azok szereléséről.</p>
 
@@ -159,30 +184,30 @@
     <p>A számítógép összeszerelése során fontos, hogy a különböző alkatrészeket megfelelően és biztonságosan csatlakoztassuk. A következő lépések segítséget nyújtanak a számítógép szereléséhez:</p>
 
     <h3>3.1. Alaplap előkészítése</h3>
-    <p>Az első lépés az alaplap előkészítése. Helyezd el az alaplapot egy tiszta, statikus földelt felületen, és győződj meg róla, hogy a megfelelő csatlakozókat találod.</p>
+    <p>Helyezd el az alaplapot egy tiszta, statikus földelt felületen, és győződj meg róla, hogy a megfelelő csatlakozókat találod.</p>
 
     <h3>3.2. Processzor Telepítése</h3>
-    <p>A processzort a CPU foglalatba kell helyezni. Ehhez először nyisd fel a foglalatot, majd illeszd be a processzort úgy, hogy a megfelelő pines csatlakozások passzoljanak. Használj hőpasztát a jobb hőátadás érdekében.</p>
+    <p>A processzort a CPU foglalatba kell helyezni. Használj hőpasztát a jobb hőátadás érdekében.</p>
 
     <h3>3.3. Memória (RAM) Telepítése</h3>
-    <p>A RAM modulokat helyezd a megfelelő RAM foglalatokba az alaplapon. Ügyelj arra, hogy a RAMot a helyes irányba helyezd be, és óvatosan nyomd le, amíg a rögzítő klipszek nem kattannak a helyükre.</p>
+    <p>Helyezd be a RAM modulokat a megfelelő foglalatokba, és ügyelj a rögzítésre.</p>
 
     <h3>3.4. Videokártya Telepítése</h3>
-    <p>A videokártyát a PCIe foglalatba kell helyezni. Miután behelyezted, ügyelj arra, hogy a kártya megfelelően illeszkedjen, és rögzítsd a helyén.</p>
+    <p>A videokártyát illeszd be a PCIe foglalatba, és rögzítsd a házhoz.</p>
 
     <h3>3.5. Tápegység (PSU) Telepítése</h3>
-    <p>A tápegységet a számítógép házába kell beépíteni. A kábeleket ügyesen el kell vezetni, hogy ne akadályozzák a légáramlást. Minden egyes alkatrészt csatlakoztatni kell a tápegység megfelelő kimeneteihez.</p>
+    <p>Szereld be a tápegységet, és csatlakoztasd a megfelelő kábeleket minden eszközhöz.</p>
 
     <h3>3.6. Hűtőrendszer Telepítése</h3>
-    <p>A CPU és a videokártya hűtését megfelelő hűtőventilátorok és hűtőbordák segítségével biztosíthatjuk. Telepítsd a ventilátorokat a megfelelő helyekre, és ügyelj a megfelelő légáramlásra a házban.</p>
+    <p>Telepítsd a ventilátorokat a házba, és biztosítsd a megfelelő légáramlást.</p>
 
     <h2>4. Záró Megjegyzések</h2>
-    <p>A számítógép összeszerelése nemcsak szórakoztató, hanem hasznos feladat is. A megfelelő alkatrészek kiválasztása és a precíz összeszerelés biztosítja a stabil és hosszú távú működést. A rendszeres karbantartás és tisztítás elengedhetetlen a számítógép optimális teljesítményének megőrzéséhez.</p>
-</main>
+    <p>A számítógép összeszerelése szórakoztató és hasznos tevékenység. A precíz munka, a jó alkatrészek és a rendszeres karbantartás hosszú távú stabilitást eredményez.</p>
+  </main>
 
-<footer>
+  <footer>
     &copy; 2025 Számítógép Szerelés | Minden jog fenntartva
-</footer>
+  </footer>
 
 </body>
 </html>
