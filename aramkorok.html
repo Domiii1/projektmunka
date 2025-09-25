@@ -1,172 +1,202 @@
+csak másold be egy új fájlba (pl. aramkorok.html) vagy használd meglévőként, felülírva a régit.
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="css6.css">
-    <title>Áramkörök Mérése</title>
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Áramkörök Mérése</title>
+  <style>
+    /* Alap reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9fbfd;
-        margin: 0;
-        padding: 0;
-        color: #333;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+      color: #1f2937;
+      line-height: 1.6;
+      background-attachment: fixed;
+      padding-bottom: 100px;
     }
 
     header {
-        background-color: #4a90e2;
-        color: white;
-        text-align: center;
-        padding: 1.5em;
-        border-radius: 0 0 12px 12px;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      background-color: rgba(74, 144, 226, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
     }
 
     nav {
-        background-color: #ffffff;
-        text-align: center;
-        padding: 1em;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      list-style: none;
     }
 
     nav ul li {
-        display: inline-block;
-        margin: 0 12px;
+      display: inline-block;
+      margin: 0 10px;
     }
 
     nav ul li a {
-        background-color: #e3f2fd;
-        color: #1a73e8;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 16px;
-        border-radius: 20px;
-        transition: background-color 0.3s, color 0.3s;
+      background-color: #e3f2fd;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 25px;
+      display: inline-block;
+      transition: 0.3s;
+      border: 1px solid #cfe2ff;
     }
 
     nav ul li a:hover {
-        background-color: #bbdefb;
-        color: #0d47a1;
+      background-color: #1a73e8;
+      color: white;
     }
 
     section {
-        max-width: 1000px;
-        margin: 30px auto;
-        background-color: #ffffff;
-        padding: 2em;
-        border-radius: 12px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(6px);
     }
 
     h2 {
-        color: #1976d2;
+      font-size: 1.8rem;
+      color: #1976d2;
+      margin-bottom: 1rem;
+      border-left: 5px solid #60a5fa;
+      padding-left: 10px;
     }
 
     ul {
-        padding-left: 20px;
+      padding-left: 20px;
+      margin-bottom: 1.5rem;
     }
 
     ul li {
-        margin-bottom: 10px;
-    }
-
-    a[href^="mailto"] {
-        color: #1a73e8;
-        text-decoration: none;
-    }
-
-    a[href^="mailto"]:hover {
-        text-decoration: underline;
-    }
-
-    footer {
-        background-color: #4a90e2;
-        color: white;
-        text-align: center;
-        padding: 1em;
-        margin-top: 40px;
-        border-radius: 12px 12px 0 0;
+      margin-bottom: 0.75rem;
     }
 
     .highlight {
-        color: #0d47a1;
-        font-weight: bold;
+      color: #0d47a1;
+      font-weight: bold;
     }
-</style>
 
+    footer {
+      background-color: rgba(74, 144, 226, 0.7);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+    }
+
+    a[href^="mailto"] {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    a[href^="mailto"]:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        display: block;
+        margin: 0 auto;
+        max-width: 200px;
+      }
+
+      section {
+        margin: 20px;
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Áramkörök Méréseinek Áttekintése</h1>
+  </header>
 
-    <header>
-        <h1>Áramkörök Méréseinek Áttekintése</h1>
-    </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="#bevezetes">Bevezetés</a></li>
+      <li><a href="#meresek">Mérések</a></li>
+      <li><a href="#komponensek">Komponensek</a></li>
+      <li><a href="#hibak">Hibák</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+      <li><a href="meres.html">Mérés</a></li>
+    </ul>
+  </nav>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Főoldal</a></li>
-            <li><a href="#bevezetes">Bevezetés</a></li>
-            <li><a href="#meresek">Mérések</a></li>
-            <li><a href="#komponensek">Komponensek</a></li>
-            <li><a href="#hibak">Hibák</a></li>
-            <li><a href="#kapcsolat">Kapcsolat</a></li>
-            <li><a href="meres.html">Mérés</a></li>
-        </ul>
-    </nav>
+  <section id="bevezetes">
+    <h2>Bevezetés</h2>
+    <p>Az áramkörök mérése kulcsszerepet játszik az elektronikai rendszerek tervezésében és karbantartásában. A <span class="highlight">feszültség</span>, <span class="highlight">áram</span>, és <span class="highlight">ellenállás</span> pontos meghatározása elengedhetetlen a hibamentes működéshez.</p>
+    <p>Ez az oldal bemutatja az alapvető mérési eljárásokat, a szükséges műszereket, valamint gyakorlati tanácsokat ad a mérések végrehajtásához.</p>
+  </section>
 
-    <section id="bevezetes">
-        <h2>Bevezetés</h2>
-        <p>Az áramkörök mérése kulcsszerepet játszik az elektronikai rendszerek tervezésében és karbantartásában. A <span class="highlight">feszültség</span>, <span class="highlight">áram</span>, és <span class="highlight">ellenállás</span> pontos meghatározása elengedhetetlen a hibamentes működéshez.</p>
-        <p>Ez az oldal bemutatja az alapvető mérési eljárásokat, a szükséges műszereket, valamint gyakorlati tanácsokat ad a mérések végrehajtásához.</p>
-    </section>
+  <section id="meresek">
+    <h2>A Mérések Típusai</h2>
+    <ul>
+      <li><strong>Feszültségmérés:</strong> A mérőeszközt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
+      <li><strong>Árammérés:</strong> Az árammérőt <em>sorosan</em> kell bekötni az áramkörbe.</li>
+      <li><strong>Ellenállásmérés:</strong> A mérés csak <em>kikapcsolt</em> áramkörön történhet.</li>
+      <li><strong>Teljesítménymérés:</strong> A teljesítmény számítása: <code>P = U × I</code>.</li>
+    </ul>
+  </section>
 
-    <section id="meresek">
-        <h2>A Mérések Típusai</h2>
-        <ul>
-            <li><strong>Feszültségmérés:</strong> A mérőeszközt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
-            <li><strong>Árammérés:</strong> Az árammérőt <em>sorosan</em> kell bekötni az áramkörbe.</li>
-            <li><strong>Ellenállásmérés:</strong> A mérés csak <em>kikapcsolt</em> áramkörön történhet.</li>
-            <li><strong>Teljesítménymérés:</strong> A teljesítmény számítása: <code>P = U × I</code>.</li>
-        </ul>
-    </section>
+  <section id="komponensek">
+    <h2>A Mérési Áramkör Komponensei</h2>
+    <ul>
+      <li><strong>Multiméter:</strong> Kombinált eszköz feszültség, áram és ellenállás mérésére.</li>
+      <li><strong>Árammérő:</strong> Kis ellenállású eszköz, melyet sorba kell kötni a mérendő áramkörrel.</li>
+      <li><strong>Ohmmérő:</strong> Szakadások és zárlatok felderítésére szolgáló műszer.</li>
+      <li><strong>Passzív komponensek:</strong> Kondenzátorok, ellenállások és egyéb elemek, amelyek az áramkör stabilitását biztosítják.</li>
+    </ul>
+  </section>
 
-    <section id="komponensek">
-        <h2>A Mérési Áramkör Komponensei</h2>
-        <ul>
-            <li><strong>Multiméter:</strong> Kombinált eszköz feszültség, áram és ellenállás mérésére.</li>
-            <li><strong>Árammérő:</strong> Kis ellenállású eszköz, melyet sorba kell kötni a mérendő áramkörrel.</li>
-            <li><strong>Ohmmérő:</strong> Szakadások és zárlatok felderítésére szolgáló műszer.</li>
-            <li><strong>Passzív komponensek:</strong> Kondenzátorok, ellenállások és egyéb elemek, amelyek az áramkör stabilitását biztosítják.</li>
-        </ul>
-    </section>
+  <section id="hibak">
+    <h2>Gyakori Hibák és Megoldások</h2>
+    <ul>
+      <li><strong>Rossz kapcsolás:</strong> Mindig ellenőrizd a kapcsolási rajz alapján a bekötéseket.</li>
+      <li><strong>Kábelezési problémák:</strong> Hibás vagy elhasználódott kábelek pontatlan mérési eredményekhez vezetnek.</li>
+      <li><strong>Nem megfelelő műszerbeállítás:</strong> Ügyelj arra, hogy a multiméter megfelelő üzemmódban és tartományban legyen.</li>
+    </ul>
+  </section>
 
-    <section id="hibak">
-        <h2>Gyakori Hibák és Megoldások</h2>
-        <ul>
-            <li><strong>Rossz kapcsolás:</strong> Mindig ellenőrizd a kapcsolási rajz alapján a bekötéseket.</li>
-            <li><strong>Kábelezési problémák:</strong> Hibás vagy elhasználódott kábelek pontatlan mérési eredményekhez vezetnek.</li>
-            <li><strong>Nem megfelelő műszerbeállítás:</strong> Ügyelj arra, hogy a multiméter megfelelő üzemmódban és tartományban legyen.</li>
-        </ul>
-    </section>
-
-    <section id="kapcsolat">
-        <h2>Kapcsolat</h2>
-        <p>Ha kérdésed van, vagy segítségre van szükséged az áramkörök méréseivel kapcsolatban, keress minket:</p>
-        <p>Email: <a href="mailto:info@terplanszki.hu">info@terplanszki.hu</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Áramkörök Mérése. Minden jog fenntartva.</p>
-    </footer>
-
-</body>
-</html>
-
-
-
+  <section id="kapcsolat">
+    <h2>Kapcsolat</h2>
+    <p>Ha kérdés
