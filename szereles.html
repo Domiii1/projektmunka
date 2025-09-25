@@ -3,171 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <nav>
-        <a href="szamitogep.html">Vissza a fõoldalra</a>
-    </nav>
-    
     <title>Számítógép Szerelés - Főoldal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9fbfd;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #333;
+            background-color: #4a90e2;
             color: white;
-            padding: 20px 0;
+            padding: 30px 20px;
             text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header p {
+            font-size: 16px;
+            margin-top: 10px;
         }
 
         nav {
-            background-color: #444;
-            padding: 10px 0;
+            background-color: #ffffff;
             text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         nav a {
-            color: white;
-            margin: 0 15px;
+            background-color: #e3f2fd;
+            color: #1a73e8;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 20px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        section {
-            padding: 20px;
+        nav a:hover {
+            background-color: #bbdefb;
+            color: #0d47a1;
         }
 
         .highlight {
-            color: #007BFF;
+            color: #ffeb3b;
             font-weight: bold;
         }
 
-        .reviews {
-            margin: 20px 0;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .content {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        .review {
+        section {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            transition: 0.2s;
+        }
+
+        h2 {
+            color: #1976d2;
+            font-size: 24px;
             margin-bottom: 15px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
         }
 
-        .review:last-child {
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .reviews .review {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .reviews .review:last-child {
             border-bottom: none;
         }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+        em {
+            color: #444;
         }
 
         .contact-form {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .contact-form input,
-        .contact-form textarea,
-        .contact-form button {
+        .contact-form textarea {
             width: 100%;
             margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
         }
 
         .contact-form button {
-            background-color: #007BFF;
+            background-color: #1e88e5;
             color: white;
             border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: #0056b3;
+            background-color: #1565c0;
+        }
+
+        footer {
+            background-color: #f3f3f3;
+            color: #777;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 15px;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Számítógép Szerelés</h1>
-    <p>Professzionális számítógép-szerelés és karbantartás már <span class="highlight">3 éve</span>!</p>
-</header>
+    <header>
+        <h1>Számítógép Szerelés</h1>
+        <p>Professzionális számítógép-szerelés és karbantartás már <span class="highlight">3 éve</span>!</p>
+    </header>
 
-<nav>
-    <a href="#process">Szerelési folyamatok</a>
-    <a href="#reviews">Vélemények</a>
-    <a href="#contact">Kapcsolat</a>
-</nav>
+    <nav>
+        <a href="szamitogep.html">Főoldal</a>
+        <a href="#process">Szerelési folyamatok</a>
+        <a href="#reviews">Vélemények</a>
+        <a href="#contact">Kapcsolat</a>
+    </nav>
 
-<section id="process">
-    <h2>Szerelési Folyamataink</h2>
-    <p>A számítógép-szerelési szolgáltatásaink tartalmazzák:</p>
-    <ul>
-        <li><strong>Hiba diagnosztizálása</strong> és megoldása.</li>
-        <li><strong>Alaplap szerelése:</strong> Az alaplap beszerelése és csatlakoztatása.</li>
-        <li><strong>Processzor és hűtés:</strong> Telepítés és megfelelő hűtési megoldások kialakítása.</li>
-        <li><strong>Memória (RAM):</strong> Beszerelés és tesztelés.</li>
-        <li><strong>Tárhely:</strong> Merevlemez vagy SSD rögzítése és formázása.</li>
-        <li><strong>Videókártya:</strong> Telepítés és csatlakoztatás.</li>
-        <li><strong>Általános karbantartás:</strong> Pormentesítés, kábelezés.</li>
-    </ul>
-</section>
+    <div class="content">
 
-<section id="reviews">
-    <h2>Vásárlói Vélemények</h2>
-    <div class="reviews">
-        <div class="review">
-            <p><em>"Nagyon elégedett vagyok a szolgáltatással, gyorsan és precízen dolgoztak!"</em></p>
-            <p>- Fehér Dominik Márk</p>
-        </div>
-        <div class="review">
-            <p><em>"A számítógépem olyan, mint új korában. Köszönöm a profi munkát!"</em></p>
-            <p>- Károly Bálint</p>
-        </div>
-        <div class="review">
-            <p><em>"Régóta nem működött a gépem, de ők megoldották. Mindenkinek ajánlom őket!"</em></p>
-            <p>- Kovács Dominik</p>
-        </div>
+        <section id="process">
+            <h2>Szerelési Folyamataink</h2>
+            <p>A számítógép-szerelési szolgáltatásaink tartalmazzák:</p>
+            <ul>
+                <li><strong>Hiba diagnosztizálása</strong> és megoldása.</li>
+                <li><strong>Alaplap szerelése:</strong> Az alaplap beszerelése és csatlakoztatása.</li>
+                <li><strong>Processzor és hűtés:</strong> Telepítés és megfelelő hűtési megoldások kialakítása.</li>
+                <li><strong>Memória (RAM):</strong> Beszerelés és tesztelés.</li>
+                <li><strong>Tárhely:</strong> Merevlemez vagy SSD rögzítése és formázása.</li>
+                <li><strong>Videókártya:</strong> Telepítés és csatlakoztatás.</li>
+                <li><strong>Általános karbantartás:</strong> Pormentesítés, kábelezés.</li>
+            </ul>
+        </section>
+
+        <section id="reviews">
+            <h2>Vásárlói Vélemények</h2>
+            <div class="reviews">
+                <div class="review">
+                    <p><em>"Nagyon elégedett vagyok a szolgáltatással, gyorsan és precízen dolgoztak!"</em></p>
+                    <p>- Fehér Dominik Márk</p>
+                </div>
+                <div class="review">
+                    <p><em>"A számítógépem olyan, mint új korában. Köszönöm a profi munkát!"</em></p>
+                    <p>- Károly Bálint</p>
+                </div>
+                <div class="review">
+                    <p><em>"Régóta nem működött a gépem, de ők megoldották. Mindenkinek ajánlom őket!"</em></p>
+                    <p>- Kovács Dominik</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Kapcsolat</h2>
+            <div class="contact-form">
+                <form action="mailto:emailcim@email.com" method="post" enctype="text/plain">
+                    <label for="name">Név:</label>
+                    <input type="text" id="name" name="name" placeholder="Írja be a nevét..." required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Írja be az e-mail címét..." required>
+
+                    <label for="message">Üzenet:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Írja be üzenetét..." required></textarea>
+
+                    <button type="submit">Üzenet Küldése</button>
+                </form>
+            </div>
+        </section>
+
     </div>
-</section>
 
-<section id="contact">
-    <h2>Kapcsolat</h2>
-    <div class="contact-form">
-        <form action="mailto:emailcim@email.com" method="post" enctype="text/plain">
-            <label for="name">Név:</label>
-            <input type="text" id="name" name="name" placeholder="Írja be a nevét..." required>
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Írja be az e-mail címét..." required>
-
-            <label for="message">Üzenet:</label>
-            <textarea id="message" name="message" rows="5" placeholder="Írja be üzenetét..." required></textarea>
-
-            <button type="submit">Üzenet Küldése</button>
-        </form>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2025 Számítógép Szerelés. Minden jog fenntartva.</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Számítógép Szerelés. Minden jog fenntartva.</p>
+    </footer>
 
 </body>
 </html>
