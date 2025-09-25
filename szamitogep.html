@@ -2,9 +2,10 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Számítógép Szerelés</title>
   <style>
+    /* Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,143 +18,190 @@
       background-attachment: fixed;
       color: #1f2937;
       line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 80px;
     }
 
     header {
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1.5rem;
       color: white;
-      background-color: rgba(74, 144, 226, 0.85);
-      backdrop-filter: blur(8px);
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      background: rgba(74 144 226 / 0.75);
+      backdrop-filter: blur(15px);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 6px 22px rgb(0 0 0 / 0.15);
+      user-select: none;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
+      text-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
     }
 
     header p {
-      font-size: 1rem;
-      opacity: 0.9;
+      font-size: 1.15rem;
+      opacity: 0.85;
+      text-shadow: 0 1px 2px rgb(0 0 0 / 0.15);
     }
 
     nav {
-      text-align: center;
-      padding: 1rem;
-      background-color: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 1rem;
+      background: rgba(255 255 255 / 0.45);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 4px 18px rgb(0 0 0 / 0.07);
+      border-radius: 32px;
+      margin: 2rem auto 0;
+      max-width: 960px;
+      user-select: none;
     }
 
     nav a {
-      background-color: #e3f2fd;
+      background: rgba(227 242 253 / 0.8);
       color: #1a73e8;
       text-decoration: none;
-      font-weight: bold;
-      padding: 10px 16px;
-      border-radius: 20px;
-      margin: 0 8px;
-      display: inline-block;
-      transition: 0.3s;
-      border: 1px solid #bbdefb;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 32px;
+      border: 1.8px solid #bbdefb;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
+      white-space: nowrap;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       background-color: #1a73e8;
       color: white;
+      border-color: #145dbf;
+      box-shadow: 0 6px 16px rgb(26 115 232 / 0.6);
+      outline: none;
     }
 
     .content {
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 3.5rem auto 0;
+      padding: 0 20px 80px;
     }
 
     section {
-      background-color: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(6px);
-      padding: 25px;
-      margin-bottom: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      background: rgba(255 255 255 / 0.65);
+      backdrop-filter: blur(12px);
+      padding: 28px 32px;
+      margin-bottom: 36px;
+      border-radius: 20px;
+      box-shadow: 0 10px 26px rgb(0 0 0 / 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      user-select: text;
     }
 
-    section:hover {
-      transform: translateY(-4px);
+    section:hover,
+    section:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgb(0 0 0 / 0.15);
     }
 
     .section-title {
       color: #1976d2;
-      font-size: 1.6rem;
-      margin-bottom: 12px;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      user-select: text;
     }
 
     .section-content {
       color: #374151;
-      font-size: 1rem;
-      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      user-select: text;
     }
 
     ul {
-      padding-left: 20px;
-      margin-top: 10px;
+      padding-left: 22px;
+      margin-top: 12px;
+      color: #374151;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      user-select: text;
     }
 
     li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     li strong {
       color: #1565c0;
+      font-weight: 600;
     }
 
     a {
       color: #1a73e8;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
+      user-select: text;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       color: #0d47a1;
       text-decoration: underline;
+      outline: none;
     }
 
     footer {
-      background-color: rgba(74, 144, 226, 0.8);
+      background: rgba(74 144 226 / 0.75);
       color: white;
       text-align: center;
-      padding: 20px 0;
-      font-size: 0.95rem;
-      margin-top: 60px;
+      padding: 24px 12px;
+      font-size: 1rem;
+      margin-top: 80px;
       border-radius: 20px 20px 0 0;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(15px);
+      user-select: none;
+      box-shadow: 0 -4px 18px rgb(0 0 0 / 0.12);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 0.7rem;
       }
 
       nav a {
-        display: block;
-        margin: 10px auto;
-        max-width: 220px;
+        flex-grow: 1;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        max-width: 140px;
       }
 
       .content {
-        padding: 0 15px;
+        padding: 0 15px 60px;
       }
 
       .section-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
       }
 
-      .section-content {
-        font-size: 0.95rem;
+      .section-content,
+      ul {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      nav a {
+        max-width: 100%;
       }
     }
   </style>
@@ -174,7 +222,7 @@
 
   <div class="content">
 
-    <section id="bevezeto">
+    <section id="bevezeto" tabindex="0">
       <h2 class="section-title">Bevezetés</h2>
       <p class="section-content">
         A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. 
@@ -182,7 +230,7 @@
       </p>
     </section>
 
-    <section id="alkatreszek">
+    <section id="alkatreszek" tabindex="0">
       <h2 class="section-title">Alkatrészek</h2>
       <p class="section-content">
         A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következők:
@@ -196,7 +244,7 @@
       </ul>
     </section>
 
-    <section id="hiba">
+    <section id="hiba" tabindex="0">
       <h2 class="section-title">Hibák és Megoldások</h2>
       <p class="section-content">
         A számítógépek néha hibáznak, de sok esetben a probléma egyszerűen orvosolható. Néhány gyakori hiba:
@@ -208,7 +256,7 @@
       </ul>
     </section>
 
-    <section id="kapcsolat">
+    <section id="kapcsolat" tabindex="0">
       <h2 class="section-title">Kapcsolat</h2>
       <p class="section-content">
         Ha bármilyen kérdésed van a számítógép szerelésével kapcsolatban, vagy segítségre van szükséged, bátran vedd fel velünk a kapcsolatot!
@@ -225,4 +273,4 @@
   </footer>
 
 </body>
-</html
+</html>
