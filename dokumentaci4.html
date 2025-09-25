@@ -1,62 +1,87 @@
 <!DOCTYPE html>
+<html lang="hu">
 <head>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kisvállalati Hálózatok Dokumentációja</title>
-  
-	 <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-</nav>
-       <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
-        }
-        
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 1em;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        section {
-            padding: 2em;
-        }
-
-        h2 {
             color: #333;
         }
 
-        .quote {
+        header {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 2em 1em;
+        }
+
+        nav {
+            background-color: #e3f2fd;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            background-color: #ffffff;
+            color: #007BFF;
+            margin: 5px 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            border: 1px solid #007BFF;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        section {
+            padding: 1.5em 0;
+        }
+
+        h2 {
+            color: #007BFF;
+            margin-bottom: 0.5em;
+        }
+
+        h3 {
+            margin-top: 1em;
+            color: #333;
+        }
+
+        ul {
+            padding-left: 1.5em;
             margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        .quote {
+            margin-bottom: 1.5em;
             background-color: #fff;
             padding: 1em;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            margin-top: 2em;
         }
 
         .highlight {
@@ -64,15 +89,31 @@
             color: #007BFF;
         }
 
-       div .video {
+        div.video {
             width: 360px;
             height: 360px;
             background-color: black;
-            
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav a {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+
+            main {
+                margin: 1em;
+                padding: 1em;
+            }
+
+            div.video {
+                width: 100%;
+                height: 200px;
+            }
         }
     </style>
-     
-    
 </head>
 <body>
 
@@ -81,10 +122,11 @@
 </header>
 
 <nav>
+    <a href="index.html">Vissza a Projektekhez</a>
     <a href="#bevezeto">Bevezetés</a>
     <a href="#halozati-tipusok">Hálózati Típusok</a>
     <a href="#eszközök">Hálózati Eszközök</a>
-    <a href="#telepites">Telepítés és Beállítás</a>
+    <a href="#telepites">Telepítés</a>
     <a href="#karbantartas">Karbantartás</a>
 </nav>
 
@@ -96,17 +138,18 @@
 
     <section id="halozati-tipusok">
         <h2>Hálózati Típusok</h2>
+
         <h3>LAN (Helyi hálózat)</h3>
         <p>A helyi hálózat (LAN) olyan hálózat, amely kisebb területen, például egy irodában vagy egy épületen belül működik. Jellemzően gyors adatátvitelt biztosít, és könnyen kezelhető.</p>
-        
+
         <h3>WAN (Széleskörű hálózat)</h3>
         <p>A WAN olyan hálózat, amely nagyobb földrajzi területen működik, és különböző városokat, régiókat, vagy akár országokat is összekapcsolhat. A WAN általában a telekommunikációs szolgáltatók infrastruktúráját használja.</p>
-        
+
         <h3>VPN (Virtuális Privát Hálózat)</h3>
         <p>A VPN lehetővé teszi a biztonságos adatátvitelt az interneten keresztül. A kisvállalatok gyakran használják távoli munkavállalók számára, hogy hozzáférjenek a vállalati hálózathoz, miközben megőrzik a hálózat biztonságát.</p>
     </section>
 
-    <section id="eszközok">
+    <section id="eszközök">
         <h2>Hálózati Eszközök</h2>
         <p>A kisvállalati hálózatokhoz szükséges eszközök közé tartoznak a következő alapvető elemek:</p>
         <ul>
