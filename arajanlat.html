@@ -1,95 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
-    	<nav>
-        <a href="szamitogep.html">Vissza a fõoldalra</a>
-           <link rel="stylesheet" href="css6.css">
-    </nav>
-    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Árajánlat</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fbfd;
             margin: 0;
             padding: 0;
+            color: #333;
+            line-height: 1.6;
         }
-        
+
         header {
-            background-color: #333;
+            background-color: #4a90e2;
             color: white;
+            padding: 30px 20px;
             text-align: center;
-            padding: 1em;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav {
-            background-color: #444;
-            padding: 1em;
+            background-color: #ffffff;
             text-align: center;
-            font-weight: bold;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         nav a {
-            color: white;
-            margin: 0 15px;
+            background-color: #e3f2fd;
+            color: #1a73e8;
             text-decoration: none;
             font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 20px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
         }
-        
+
+        nav a:hover {
+            background-color: #bbdefb;
+            color: #0d47a1;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
         section {
-            padding: 2em;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
         }
 
         h2 {
-            color: #333;
+            color: #1976d2;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        .quote {
-            margin-bottom: 1em;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            margin-top: 2em;
+        .quote p {
+            margin-bottom: 12px;
+            font-size: 17px;
         }
 
         .highlight {
             font-weight: bold;
-            color: #007BFF;
+            color: #1e88e5;
+        }
+
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0d47a1;
+        }
+
+        footer {
+            background-color: #f3f3f3;
+            color: #777;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 15px;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Árajánlat</h1>
-</header>
+    <header>
+        <h1>Árajánlat</h1>
+        <p>Számítógép szerelés és hibaelhárítás díjszabása</p>
+    </header>
 
-<section id="arajanlat">
-    <h2>Árajánlat Részletei</h2>
-    <div class="quote">
-        <p><span class="highlight">Munka típusa:</span> Számítógép szerelés és hiba feltárás.</p>
-        <p><span class="highlight">Munkadíj:</span> 15 000 Ft.</p>
-        <p><span class="highlight">Alkatrészek ára:</span> Az alkatrészek költsége külön kerül meghatározásra, a szükséges komponensek függvényében.</p>
-        <p><span class="highlight">Munkaidő:</span> A szerelés és tesztelés várhatóan 2-3 óra.</p>
-        <p><span class="highlight">Hiba feltárás díja:</span> 5 000 Ft, amely a javítás összegébe beszámításra kerül.</p>
-        <p><span class="highlight">Garancia:</span> A munkára 6 hónap garanciát biztosítunk.</p>
-        <p><span class="highlight">Árajánlat érvényessége:</span> Az ajánlat 1 hétig érvényes.</p>
-        <p><span class="highlight">Visszajelzés:</span> Kérjük, hogy az ajánlat elfogadásáról az alábbi e-mail címen jelezzenek vissza: <a href="mailto:kispetya@gmail.com">kispetya@gmail.com</a></p>
+    <nav>
+        <a href="szamitogep.html">Vissza a főoldalra</a>
+    </nav>
+
+    <div class="content">
+        <section id="arajanlat">
+            <h2>Árajánlat Részletei</h2>
+            <div class="quote">
+                <p><span class="highlight">Munka típusa:</span> Számítógép szerelés és hiba feltárás.</p>
+                <p><span class="highlight">Munkadíj:</span> 15 000 Ft.</p>
+                <p><span class="highlight">Alkatrészek ára:</span> Az alkatrészek költsége külön kerül meghatározásra, a szükséges komponensek függvényében.</p>
+                <p><span class="highlight">Munkaidő:</span> A szerelés és tesztelés várhatóan 2-3 óra.</p>
+                <p><span class="highlight">Hiba feltárás díja:</span> 5 000 Ft, amely a javítás összegébe beszámításra kerül.</p>
+                <p><span class="highlight">Garancia:</span> A munkára 6 hónap garanciát biztosítunk.</p>
+                <p><span class="highlight">Árajánlat érvényessége:</span> Az ajánlat 1 hétig érvényes.</p>
+                <p><span class="highlight">Visszajelzés:</span> Kérjük, hogy az ajánlat elfogadásáról az alábbi e-mail címen jelezzenek vissza: 
+                    <a href="mailto:kispetya@gmail.com">kispetya@gmail.com</a>
+                </p>
+            </div>
+        </section>
     </div>
-</section>
 
-<footer>
-    <p>Köszönjük, hogy bennünket választott!</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Számítógép Szerelés | Köszönjük, hogy bennünket választott!</p>
+    </footer>
 
 </body>
 </html>
