@@ -1,199 +1,228 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Számítógép Szerelés</title>
-    <style>
-        /* Alap stílus */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9fbfd;
-            color: #222;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Számítógép Szerelés</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background-color: #4a90e2;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 26px;
-            font-weight: 600;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f9f9ff);
+      background-attachment: fixed;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-        header p {
-            font-size: 16px;
-            margin-top: 10px;
-        }
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: white;
+      background-color: rgba(74, 144, 226, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Navigáció */
-        nav {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
 
-        nav a {
-            background-color: #e3f2fd;
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 16px;
-            border-radius: 20px;
-            margin: 0 10px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
 
-        nav a:hover {
-            background-color: #bbdefb;
-            color: #0d47a1;
-        }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-        .content {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+    nav a {
+      background-color: #e3f2fd;
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 16px;
+      border-radius: 20px;
+      margin: 0 8px;
+      display: inline-block;
+      transition: 0.3s;
+      border: 1px solid #bbdefb;
+    }
 
-        section {
-            background-color: #ffffff;
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
-        }
+    nav a:hover {
+      background-color: #1a73e8;
+      color: white;
+    }
 
-        section:hover {
-            transform: translateY(-4px);
-        }
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-        .section-title {
-            color: #1976d2;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+    section {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
 
-        .section-content {
-            color: #555;
-            font-size: 17px;
-            margin-bottom: 15px;
-        }
+    section:hover {
+      transform: translateY(-4px);
+    }
 
-        ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
+    .section-title {
+      color: #1976d2;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
 
-        li {
-            margin-bottom: 8px;
-        }
+    .section-content {
+      color: #374151;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
 
-        a {
-            color: #1e88e5;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
 
-        a:hover {
-            color: #1565c0;
-            text-decoration: underline;
-        }
+    li {
+      margin-bottom: 8px;
+    }
 
-        footer {
-            background-color: #f3f3f3;
-            color: #888;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 15px;
-            margin-top: 40px;
-            border-top: 1px solid #ddd;
-        }
+    li strong {
+      color: #1565c0;
+    }
 
-        footer a {
-            color: #4a90e2;
-            font-weight: bold;
-        }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        footer a:hover {
-            color: #1565c0;
-            text-decoration: underline;
-        }
-    </style>
+    a:hover {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: rgba(74, 144, 226, 0.8);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.95rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px auto;
+        max-width: 220px;
+      }
+
+      .content {
+        padding: 0 15px;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .section-content {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Számítógép Szerelés</h1>
-        <p>Segítség a számítógép hibáinak elhárításában és javításában</p>
-    </header>
+  <header>
+    <h1>Számítógép Szerelés</h1>
+    <p>Segítség a számítógép hibáinak elhárításában és javításában</p>
+  </header>
 
-    <nav>
-        <a href="index.html">Vissza a Projektekhez</a>
-        <a href="szereles.html">Szerelés</a>
-        <a href="arajanlat.html">Árajánlat</a>
-        <a href="alkatreszek.html">Alkatrészek</a>
-    </nav>
+  <nav>
+    <a href="index.html">Vissza a Projektekhez</a>
+    <a href="szereles.html">Szerelés</a>
+    <a href="arajanlat.html">Árajánlat</a>
+    <a href="alkatreszek.html">Alkatrészek</a>
+  </nav>
 
-    <div class="content">
+  <div class="content">
 
-        <section id="bevezeto">
-            <h2 class="section-title">Bevezetés</h2>
-            <p class="section-content">
-                A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. 
-                Ezen az oldalon bemutatjuk a leggyakoribb hibákat és megoldásokat, valamint segítünk abban, hogyan végezhetünk el kisebb javításokat otthon.
-            </p>
-        </section>
+    <section id="bevezeto">
+      <h2 class="section-title">Bevezetés</h2>
+      <p class="section-content">
+        A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. 
+        Ezen az oldalon bemutatjuk a leggyakoribb hibákat és megoldásokat, valamint segítünk abban, hogyan végezhetünk el kisebb javításokat otthon.
+      </p>
+    </section>
 
-        <section id="alkatreszek">
-            <h2 class="section-title">Alkatrészek</h2>
-            <p class="section-content">
-                A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következők:
-            </p>
-            <ul>
-                <li><strong>Alaplap:</strong> A számítógép központi egysége, amely összeköti az összes többi alkatrészt.</li>
-                <li><strong>Processzor (CPU):</strong> Az agy, amely a számításokat végzi.</li>
-                <li><strong>Memória (RAM):</strong> Az ideiglenes tároló, amely gyors hozzáférést biztosít az aktív adatokhoz.</li>
-                <li><strong>Grafikus kártya (GPU):</strong> A képi megjelenítésért felelős alkatrész.</li>
-                <li><strong>Tápegység (PSU):</strong> Biztosítja az áramellátást a rendszer minden alkatrésze számára.</li>
-            </ul>
-        </section>
+    <section id="alkatreszek">
+      <h2 class="section-title">Alkatrészek</h2>
+      <p class="section-content">
+        A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következők:
+      </p>
+      <ul>
+        <li><strong>Alaplap:</strong> A számítógép központi egysége, amely összeköti az összes többi alkatrészt.</li>
+        <li><strong>Processzor (CPU):</strong> Az agy, amely a számításokat végzi.</li>
+        <li><strong>Memória (RAM):</strong> Az ideiglenes tároló, amely gyors hozzáférést biztosít az aktív adatokhoz.</li>
+        <li><strong>Grafikus kártya (GPU):</strong> A képi megjelenítésért felelős alkatrész.</li>
+        <li><strong>Tápegység (PSU):</strong> Biztosítja az áramellátást a rendszer minden alkatrésze számára.</li>
+      </ul>
+    </section>
 
-        <section id="hiba">
-            <h2 class="section-title">Hibák és Megoldások</h2>
-            <p class="section-content">
-                A számítógépek néha hibáznak, de sok esetben a probléma egyszerűen orvosolható. Néhány gyakori hiba:
-            </p>
-            <ul>
-                <li><strong>Nem indul el a számítógép:</strong> Ellenőrizd, hogy az áramellátás rendben van-e, és hogy az összes kábel megfelelően csatlakozik.</li>
-                <li><strong>Képernyő probléma:</strong> Ha a monitor nem kap jelet, próbáld meg újra csatlakoztatni a videókábelt vagy ellenőrizd a grafikus kártyát.</li>
-                <li><strong>Hangprobléma:</strong> Ellenőrizd a hangkártya illesztőprogramjait, és győződj meg arról, hogy a hangszórók megfelelően csatlakoznak.</li>
-            </ul>
-        </section>
+    <section id="hiba">
+      <h2 class="section-title">Hibák és Megoldások</h2>
+      <p class="section-content">
+        A számítógépek néha hibáznak, de sok esetben a probléma egyszerűen orvosolható. Néhány gyakori hiba:
+      </p>
+      <ul>
+        <li><strong>Nem indul el a számítógép:</strong> Ellenőrizd, hogy az áramellátás rendben van-e, és hogy az összes kábel megfelelően csatlakozik.</li>
+        <li><strong>Képernyő probléma:</strong> Ha a monitor nem kap jelet, próbáld meg újra csatlakoztatni a videókábelt vagy ellenőrizd a grafikus kártyát.</li>
+        <li><strong>Hangprobléma:</strong> Ellenőrizd a hangkártya illesztőprogramjait, és győződj meg arról, hogy a hangszórók megfelelően csatlakoznak.</li>
+      </ul>
+    </section>
 
-        <section id="kapcsolat">
-            <h2 class="section-title">Kapcsolat</h2>
-            <p class="section-content">
-                Ha bármilyen kérdésed van a számítógép szerelésével kapcsolatban, vagy segítségre van szükséged, bátran vedd fel velünk a kapcsolatot!
-            </p>
-            <p class="section-content">
-                Email: <a href="mailto:info@szamitogepszereles.hu">info@szamitogepszereles.hu</a>
-            </p>
-        </section>
-    </div>
+    <section id="kapcsolat">
+      <h2 class="section-title">Kapcsolat</h2>
+      <p class="section-content">
+        Ha bármilyen kérdésed van a számítógép szerelésével kapcsolatban, vagy segítségre van szükséged, bátran vedd fel velünk a kapcsolatot!
+      </p>
+      <p class="section-content">
+        Email: <a href="mailto:info@szamitogepszereles.hu">info@szamitogepszereles.hu</a>
+      </p>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Számítógép Szerelés | Minden jog fenntartva</p>
-    </footer>
+  </div>
+
+  <footer>
+    &copy; 2025 Számítógép Szerelés | Minden jog fenntartva
+  </footer>
 
 </body>
-</html>
+</html
