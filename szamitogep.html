@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="css6.css">
     <title>Számítógép Szerelés</title>
     <style>
         /* Alap stílus */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafcff; /* Tiszta világos háttér */
-            color: #222; /* Sötétszürke szöveg */
+            background-color: #f9fbfd;
+            color: #222;
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
-        /* Fejléc */
         header {
-            background-color: #4a90e2; /* Világoskék háttér */
+            background-color: #4a90e2;
             color: white;
-            padding: 20px 0;
+            padding: 30px 20px;
             text-align: center;
             font-size: 26px;
             font-weight: 600;
@@ -29,48 +27,43 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            margin: 0;
+        header p {
+            font-size: 16px;
+            margin-top: 10px;
         }
 
         /* Navigáció */
         nav {
-            background-color: #444;
-            overflow: hidden;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         nav a {
-            color: white;
-            padding: 14px 20px;
+            background-color: #e3f2fd;
+            color: #1a73e8;
             text-decoration: none;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 20px;
+            margin: 0 10px;
             display: inline-block;
-            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         nav a:hover {
-            background-color: #575757;
+            background-color: #bbdefb;
+            color: #0d47a1;
         }
 
-        /* Főtartalom */
         .content {
-            padding: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        /* Címek */
-        .section-title {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        /* Alap szöveg */
-        .section-content {
-            color: #555;
-            font-size: 18px;
-        }
-
-        /* Projekt doboz */
-        .projekt {
+        section {
             background-color: #ffffff;
             padding: 25px;
             margin-bottom: 30px;
@@ -80,21 +73,31 @@
             transition: transform 0.2s;
         }
 
-        .projekt:hover {
-            transform: translateY(-5px);
+        section:hover {
+            transform: translateY(-4px);
         }
 
-        .projekt h3 {
-            margin-top: 0;
-            font-size: 22px;
-            color: #4a4a4a;
+        .section-title {
+            color: #1976d2;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        .projekt p {
-            font-size: 16px;
+        .section-content {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 15px;
         }
 
-        /* Általános linkek */
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
         a {
             color: #1e88e5;
             text-decoration: none;
@@ -106,7 +109,6 @@
             text-decoration: underline;
         }
 
-        /* Lábléc */
         footer {
             background-color: #f3f3f3;
             color: #888;
@@ -129,6 +131,7 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>Számítógép Szerelés</h1>
         <p>Segítség a számítógép hibáinak elhárításában és javításában</p>
@@ -137,42 +140,44 @@
     <nav>
         <a href="index.html">Vissza a Projektekhez</a>
         <a href="szereles.html">Szerelés</a>
-        <a href="arajanlat.html">Árajanlat</a>
+        <a href="arajanlat.html">Árajánlat</a>
         <a href="alkatreszek.html">Alkatrészek</a>
     </nav>
-    
+
     <div class="content">
+
         <section id="bevezeto">
             <h2 class="section-title">Bevezetés</h2>
             <p class="section-content">
-                A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. Ezen az oldalon bemutatjuk a leggyakoribb hibákat és megoldásokat, valamint segítünk abban, hogyan végezhetünk el kisebb javításokat otthon.
+                A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. 
+                Ezen az oldalon bemutatjuk a leggyakoribb hibákat és megoldásokat, valamint segítünk abban, hogyan végezhetünk el kisebb javításokat otthon.
             </p>
         </section>
 
         <section id="alkatreszek">
             <h2 class="section-title">Alkatrészek</h2>
             <p class="section-content">
-                A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következő komponensek:
-                <ul>
-                    <li><strong>Alaplap</strong>: A számítógép központi egysége, amely összeköti az összes többi alkatrészt.</li>
-                    <li><strong>Processzor (CPU)</strong>: Az agy, amely a számításokat végzi.</li>
-                    <li><strong>Memória (RAM)</strong>: Az ideiglenes tároló, amely gyors hozzáférést biztosít az aktív adatokhoz.</li>
-                    <li><strong>Grafikus kártya (GPU)</strong>: A képi megjelenítésért felelős alkatrész.</li>
-                    <li><strong>Tápegység (PSU)</strong>: Biztosítja az áramellátást a rendszer minden alkatrésze számára.</li>
-                </ul>
+                A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következők:
             </p>
+            <ul>
+                <li><strong>Alaplap:</strong> A számítógép központi egysége, amely összeköti az összes többi alkatrészt.</li>
+                <li><strong>Processzor (CPU):</strong> Az agy, amely a számításokat végzi.</li>
+                <li><strong>Memória (RAM):</strong> Az ideiglenes tároló, amely gyors hozzáférést biztosít az aktív adatokhoz.</li>
+                <li><strong>Grafikus kártya (GPU):</strong> A képi megjelenítésért felelős alkatrész.</li>
+                <li><strong>Tápegység (PSU):</strong> Biztosítja az áramellátást a rendszer minden alkatrésze számára.</li>
+            </ul>
         </section>
 
         <section id="hiba">
             <h2 class="section-title">Hibák és Megoldások</h2>
             <p class="section-content">
                 A számítógépek néha hibáznak, de sok esetben a probléma egyszerűen orvosolható. Néhány gyakori hiba:
-                <ul>
-                    <li><strong>Nem indul el a számítógép:</strong> Ellenőrizd, hogy az áramellátás rendben van-e, és hogy az összes kábel megfelelően csatlakozik.</li>
-                    <li><strong>Képernyő probléma:</strong> Ha a monitor nem kap jelet, próbáld meg újra csatlakoztatni a videókábelt vagy ellenőrizd a grafikus kártyát.</li>
-                    <li><strong>Hangprobléma:</strong> Ellenőrizd a hangkártya illesztőprogramjait, és győződj meg arról, hogy a hangszórók megfelelően csatlakoznak.</li>
-                </ul>
             </p>
+            <ul>
+                <li><strong>Nem indul el a számítógép:</strong> Ellenőrizd, hogy az áramellátás rendben van-e, és hogy az összes kábel megfelelően csatlakozik.</li>
+                <li><strong>Képernyő probléma:</strong> Ha a monitor nem kap jelet, próbáld meg újra csatlakoztatni a videókábelt vagy ellenőrizd a grafikus kártyát.</li>
+                <li><strong>Hangprobléma:</strong> Ellenőrizd a hangkártya illesztőprogramjait, és győződj meg arról, hogy a hangszórók megfelelően csatlakoznak.</li>
+            </ul>
         </section>
 
         <section id="kapcsolat">
@@ -189,6 +194,6 @@
     <footer>
         <p>&copy; 2025 Számítógép Szerelés | Minden jog fenntartva</p>
     </footer>
+
 </body>
 </html>
-
