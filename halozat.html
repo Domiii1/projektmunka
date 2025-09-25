@@ -1,167 +1,216 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hálózati Alapok és Python</title>
-    <link rel="stylesheet" href="stilus.css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* világos háttér */
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hálózati Alapok és Python</title>
+  <style>
+    /* Alap reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: #4a90e2; /* világoskék fejléc */
-            color: white;
-            text-align: center;
-            padding: 1.5em;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #cfe9fc);
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-        nav {
-            background-color: #e3f2fd; /* nagyon világos kék */
-            padding: 1em;
-            text-align: center;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      text-align: center;
+      z-index: 100;
+    }
 
-        nav a {
-            background-color: #ffffff;
-            color: #007BFF;
-            margin: 0 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px; /* lekerekített */
-            border: 1px solid #007BFF;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+    header h1 {
+      color: #1e40af;
+      font-size: 2.5rem;
+    }
 
-        nav a:hover {
-            background-color: #007BFF;
-            color: white;
-        }
+    nav {
+      margin-top: 1.5rem;
+    }
 
-        section {
-            padding: 2em;
-            max-width: 1000px;
-            margin: 2em auto;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+    nav a {
+      text-decoration: none;
+      color: #1e40af;
+      background: rgba(255,255,255,0.6);
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.8);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
 
-        h2, h3 {
-            color: #333;
-        }
+    nav a:hover {
+      background: rgba(255,255,255,0.9);
+      color: #1e40af;
+      transform: translateY(-2px);
+    }
 
-        p, ul {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
 
-        ul {
-            padding-left: 1.2em;
-        }
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      border-left: 4px solid #93c5fd;
+      padding-left: 0.6rem;
+    }
 
-        pre {
-            background-color: #f1f1f1;
-            padding: 1em;
-            border-radius: 6px;
-            overflow-x: auto;
-        }
+    section h3 {
+      color: #1e40af;
+      margin-top: 1.5rem;
+    }
 
-        code {
-            font-family: "Courier New", monospace;
-            font-size: 1rem;
-        }
+    p, ul {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
 
-        footer {
-            background-color: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            margin-top: 3em;
-        }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-        .highlight {
-            font-weight: bold;
-            color: #007BFF;
-        }
+    pre {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
 
-        .python-example {
-            background-color: #f9f9f9;
-            padding: 1em;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            font-family: "Courier New", monospace;
-            margin-top: 1em;
-            margin-bottom: 2em;
-            white-space: pre-wrap;
-        }
-    </style>
+    code {
+      font-family: Consolas, monospace;
+      font-size: 1rem;
+    }
+
+    .python-example {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .python-example code {
+      display: block;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Szép “glass” gomb stílus (pl. link gombhoz) */
+    .btn-glass {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(30, 64, 175, 0.8);
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 24px rgba(30,64,175,0.3);
+      backdrop-filter: blur(8px);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-glass:hover {
+      background: rgba(30, 64, 175, 0.95);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0.3rem;
+      }
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-    <a href="network.html">Hálózati Konfiguráció</a>
-    <a href="python.html">Python Alapok</a>
-</nav>
-
-<header>
+  <header>
     <h1>Hálózati Alapok és Python</h1>
-</header>
+    <nav>
+      <a href="index.html" class="btn-glass">Projektek</a>
+      <a href="network.html" class="btn-glass">Hálózati Konfiguráció</a>
+      <a href="python.html" class="btn-glass">Python Alapok</a>
+    </nav>
+  </header>
 
-<section>
+  <section>
     <h2>Üdvözlünk a Hálózati és Programozási Alapok oldalán!</h2>
     <p>Válaszd ki a kívánt témakört a fenti menü segítségével.</p>
-</section>
+  </section>
 
-<section>
+  <section>
     <h2>Hálózatok alapjai és Python</h2>
 
     <h3>Hálózatok alapjai</h3>
     <p>A hálózatok olyan rendszerek, amelyek lehetővé teszik az adatcserét két vagy több számítógép vagy eszköz között. A legfontosabb komponensek közé tartozik:</p>
     <ul>
-        <li><span class="highlight">IP-címek</span>: Minden hálózaton lévő eszköznek egyedi cím szükséges az azonosításhoz, ezt az IP-cím biztosítja.</li>
-        <li><span class="highlight">Alhálózatok</span>: A nagyobb hálózatok kisebb egységekre (alhálózatokra) vannak bontva, hogy könnyebben kezelhetők és biztonságosabbak legyenek.</li>
-        <li><span class="highlight">Protokollok</span>: A hálózaton történő kommunikáció szabályait protokollok határozzák meg, például az TCP/IP vagy HTTP.</li>
-        <li><span class="highlight">Routerek és switch-ek</span>: Olyan eszközök, amelyek a különböző hálózati szegmensek közötti adatforgalmat irányítják.</li>
+      <li><strong>IP-címek</strong>: Minden hálózaton lévő eszköznek egyedi cím szükséges az azonosításhoz.</li>
+      <li><strong>Alhálózatok</strong>: A nagyobb hálózatok kisebb egységekre vannak bontva.</li>
+      <li><strong>Protokollok</strong>: Kommunikáció szabályai, pl. TCP/IP, HTTP.</li>
+      <li><strong>Routerek & switch-ek</strong>: Adatforgalom irányítása a hálózaton belül.</li>
     </ul>
 
     <h3>Hálózati programozás Pythonban</h3>
-    <p>A Python kiváló eszköz a hálózati programozáshoz, mivel több könyvtárat is biztosít, amelyek segítenek a hálózati alkalmazások fejlesztésében. A leggyakoribb Python könyvtárak közé tartoznak:</p>
+    <p>A Python remek választás hálózati alkalmazásokhoz.</p>
     <ul>
-        <li><span class="highlight"><code>socket</code> modul</span>: Ez az egyik legfontosabb modul a hálózati programozásban. Lehetővé teszi TCP/IP kapcsolatok létrehozását, adatküldést és -fogadást.</li>
-        <li><span class="highlight"><code>requests</code> könyvtár</span>: Ez a könyvtár HTTP kérések küldésére és válaszok fogadására szolgál, amely hasznos webes alkalmazások esetén.</li>
-        <li><span class="highlight"><code>asyncio</code> modul</span>: Ez az aszinkron programozásra szolgáló modul, amely lehetővé teszi a nagy teljesítményű, több szálas hálózati alkalmazások készítését.</li>
+      <li><code>socket</code> modul – TCP/IP kapcsolatok létrehozása</li>
+      <li><code>requests</code> – HTTP kérések küldése, fogadása</li>
+      <li><code>asyncio</code> – aszinkron hálózati programozás</li>
     </ul>
 
-    <h3>Példa Python kódok</h3>
-    <p>Itt bemutatok egy egyszerű Python kódot, amely TCP kapcsolatot létesít egy szerverrel:</p>
+    <p>Íme egy példa:</p>
+    <div class="python-example">
+      <code>
+import socket
 
-    <pre class="python-example"><code>import socket
-
-# Létrehozunk egy TCP kapcsolatot
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('localhost', 8080))
-
-# Üzenet küldése a szervernek
 s.sendall(b'Hello, Server')
-
-# Válasz fogadása a szervertől
 data = s.recv(1024)
 print('Received', repr(data))
-
 s.close()
-</code></pre>
+      </code>
+    </div>
 
-    <p>Ez a kód bemutatja, hogyan tudunk egyszerűen TCP kapcsolatot létrehozni a Python <code>socket</code> moduljával.</p>
-</section>
+    <p>Ez a kód bemutatja, hogyan lehet egyszerű TCP kapcsolatot létesíteni a Python <code>socket</code> moduljával.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Hálózati & Programozási Alapok
+  </footer>
 
 </body>
 </html>
