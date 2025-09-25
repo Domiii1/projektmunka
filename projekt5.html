@@ -9,72 +9,190 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eef1f5;
-            text-align: center;
+            background-color: #f8fbfd;
+            color: #333;
         }
-        .header {
-            background-color: #2c3e50;
+
+        header {
+            background-color: #5fa8d3;
             color: white;
-            padding: 15px;
-            font-size: 22px;
-            font-weight: bold;
+            text-align: center;
+            padding: 20px;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            background-color: #eaf4fb;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 2px solid #c3dce8;
+        }
+
+        nav a {
+            background-color: #dbe9f4;
+            color: #005f99;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #b5d5ea;
+            color: white;
+        }
+
         .container {
             max-width: 1000px;
+            margin: 30px auto;
             background: white;
-            margin: 20px auto;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
+
+        h2 {
+            color: #2196F3;
+            margin-top: 0;
+        }
+
+        p, pre {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        pre {
+            background-color: #f3f3f3;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #34495e;
-            color: white;
-        }
-        img {
-            margin-top: 20px;
-            width: 80%;
-            max-width: 600px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .button-container {
             margin: 20px 0;
         }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        td {
+            background-color: #fdfdfd;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            border: 5px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
         .back-button {
-            background-color: #34495e;
+            background-color: #2196F3;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
+
         .back-button:hover {
-            background-color: #2980b9;
+            background-color: #0b7dda;
+        }
+
+        .download-link {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 15px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .download-link:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                margin: 20px 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">Vállalati Hálózati Topológia</div>
+
+    <!-- Fejléc -->
+    <header>
+        <h1>Vállalati Hálózati Topológia</h1>
+    </header>
+
+    <!-- Navigáció -->
+    <nav>
+        <a href="index.html">Főoldal</a>
+        <a href="projekt5a.html">Hálózat Részletei</a>
+    </nav>
+
+    <!-- Gombok -->
     <div class="button-container">
         <a href="index.html" class="back-button">Vissza a Projektekhez</a>
+        <a href="projekt5a.html" class="back-button">Hálózat Részletei</a>
     </div>
-    <div class="button-container">
-            <a href="projekt5a.html" class="back-button">Hálózat Részletei</a>
-        </div
+
+    <!-- Tartalom -->
     <div class="container">
         <h2>Hálózati Eszközök és IP-címek</h2>
         <p>Ez a hálózati topológia egy minta struktúrát ábrázol, amely tartalmazza a routert, switcheket és PC-ket egyaránt.</p>
+
         <table>
             <tr>
                 <th>Eszköz</th>
@@ -82,7 +200,7 @@
                 <th>Leírás</th>
             </tr>
             <tr><td>Router1</td><td>192.168.1.1</td><td>Hálózati forgalom irányítása</td></tr>
-             <tr><td>Router2</td><td>192.168.1.2</td><td>Hálózati forgalom irányítása</td></tr>
+            <tr><td>Router2</td><td>192.168.1.2</td><td>Hálózati forgalom irányítása</td></tr>
             <tr><td>Switch1</td><td>N/A</td><td>Hálózati eszközök összekapcsolása</td></tr>
             <tr><td>Switch2</td><td>N/A</td><td>Hálózati eszközök összekapcsolása</td></tr>
             <tr><td>PC1</td><td>192.168.1.10</td><td>Felhasználói számítógép</td></tr>
@@ -90,8 +208,10 @@
             <tr><td>PC3</td><td>192.168.1.30</td><td>Felhasználói számítógép</td></tr>
             <tr><td>Szerver</td><td>192.168.1.50</td><td>Weboldal és fájlszerver</td></tr>
         </table>
+
         <h2>Hálózati Diagram</h2>
         <img src="cicamica.png" alt="Hálózati Diagram">
+
         <h2>Hálózati Beállítások</h2>
         <p>A router és eszközök beállításaira példák:</p>
         <pre>
@@ -99,14 +219,20 @@ Router(config)# interface gig0/0
 Router(config-if)# ip address 192.168.1.1 255.255.255.0
 Router(config-if)# no shutdown
         </pre>
+
         <h2>Tesztelés</h2>
         <p>Ping teszt indítása:</p>
         <pre>
 C:\> ping 192.168.1.1
         </pre>
+
         <h2>Letöltés Cisco Packet Tracer fájlhoz</h2>
-        <p>Letölthető a hálózati topológia Packet Tracer formátumban:</p>
-        <a href="topologia.pkt">Letöltés</a>
+        <a href="topologia.pkt" class="download-link" download>Letöltés: topologia.pkt</a>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Hálózati Projektek</p>
+    </footer>
+
 </body>
 </html>
