@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hálózati Konfiguráció</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Alapok</title>
   <style>
-    /* Alap stílus */
+    /* Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,144 +13,156 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #cfe8ff, #e4f1fb);
-      background-attachment: fixed;
-      color: #1f2937;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+      color: #1e293b;
       line-height: 1.6;
-      padding-bottom: 100px;
+      min-height: 100vh;
+      padding-bottom: 80px;
     }
 
     /* Fejléc */
     header {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(255 255 255 / 0.3);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 25px rgb(0 0 0 / 0.05);
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
     header h1 {
-      font-size: 2.5rem;
       color: #2563eb;
+      font-size: 2.75rem;
+      font-weight: 700;
     }
 
     /* Navigáció */
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #d1d5db;
+      background: rgba(255 255 255 / 0.3);
+      backdrop-filter: blur(15px);
+      padding: 1rem 0;
+      border-bottom: 1px solid #93c5fd;
+      position: sticky;
+      top: 88px; /* header magasság + 8px */
+      z-index: 999;
     }
 
     nav a {
-      text-decoration: none;
       color: #2563eb;
+      text-decoration: none;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.6);
-      border: 1px solid #93c5fd;
-      padding: 0.6rem 1.4rem;
+      padding: 0.65rem 1.6rem;
       border-radius: 30px;
-      transition: all 0.3s ease;
+      background: rgba(255 255 255 / 0.7);
+      border: 1px solid #93c5fd;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+      user-select: none;
     }
 
     nav a:hover {
-      background: #2563eb;
+      background-color: #2563eb;
       color: white;
     }
 
-    /* Tartalom doboz */
+    /* Tartalom */
     .container {
-      max-width: 1000px;
+      max-width: 900px;
+      background: rgba(255 255 255 / 0.6);
+      backdrop-filter: blur(15px);
       margin: 3rem auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
+      padding: 2rem 2.5rem;
       border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 30px rgb(0 0 0 / 0.1);
       border: 1px solid #dbeafe;
     }
 
     .container h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #111827;
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
+      color: #1e293b;
+      font-weight: 700;
+      text-align: center;
     }
 
     h2 {
       font-size: 1.6rem;
-      color: #1d4ed8;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p, ul {
-      font-size: 1.1rem;
+      margin-top: 2.5rem;
       margin-bottom: 1rem;
+      color: #2563eb;
+      font-weight: 600;
+      border-bottom: 2px solid #93c5fd;
+      padding-bottom: 0.3rem;
     }
 
-    ul {
-      padding-left: 1.4rem;
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      color: #334155;
     }
 
-    /* Kódrészlet doboz */
-    .network-example {
-      background: rgba(243, 244, 246, 0.6);
-      border: 1px solid #d1d5db;
-      padding: 1rem;
-      border-radius: 10px;
+    /* Kódblokkok */
+    .python-example {
+      background: rgba(243 244 246 / 0.85);
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
       font-family: 'Courier New', monospace;
+      font-size: 1.15rem;
+      color: #1e293b;
       white-space: pre-wrap;
-      margin-bottom: 1.5rem;
-      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+      word-break: break-word;
+      margin-bottom: 2rem;
+      box-shadow: inset 0 1px 4px rgb(0 0 0 / 0.05);
     }
 
-    .network-example code {
-      color: #111827;
-      font-size: 1rem;
-    }
-
-    /* Képek */
+    /* Kép */
     .image-container {
       text-align: center;
-      margin: 2rem 0;
+      margin-top: 2.5rem;
     }
 
     .image-container img {
       max-width: 90%;
       border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+      border: 4px solid #93c5fd;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.05);
-      color: #4b5563;
-      margin-top: 4rem;
+    /* Linkek */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.25s ease;
     }
 
-    /* Reszponzív navigáció */
+    a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    /* Reszponzív */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
+        gap: 0.6rem;
+        position: static;
       }
-
-      nav a {
-        width: 100%;
-        text-align: center;
-      }
-
       .container {
-        margin: 1rem;
+        margin: 1.5rem 1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -159,75 +171,137 @@
 
   <!-- Fejléc -->
   <header>
-    <h1>Hálózati Konfiguráció</h1>
+    <h1>Python Alapok</h1>
   </header>
 
   <!-- Navigáció -->
   <nav>
     <a href="halozat.html">Főoldal</a>
-    <a href="python.html">Python Alapok</a>
+    <a href="network.html">Hálózati Konfiguráció</a>
   </nav>
 
   <!-- Tartalom -->
   <div class="container">
-    <h1>Kapcsoló és Router Alapkonfiguráció</h1>
+    <h1>Python Programozási Alapok</h1>
 
-    <h2>1. Kapcsoló alapvető beállításai</h2>
-    <div class="network-example">
+    <h2>1. Változók és kiíratás</h2>
+    <div class="python-example">
       <code>
-enable
-configure terminal
-hostname Switch1
-interface vlan 1
-ip address 192.168.1.1 255.255.255.0
-no shutdown
-exit
+name = "Tanuló"
+print("Helló,", name)
       </code>
     </div>
 
-    <h2>2. Router alapszintű konfiguráció</h2>
-    <div class="network-example">
+    <h2>2. Feltételes elágazás</h2>
+    <div class="python-example">
       <code>
-enable
-configure terminal
-hostname Router1
-interface GigabitEthernet0/0
-ip address 192.168.1.254 255.255.255.0
-no shutdown
-exit
+age = 18
+if age &gt;= 18:
+    print("Felnőtt vagy.")
+else:
+    print("Még nem vagy felnőtt.")
       </code>
     </div>
 
-    <h2>3. Haladó hálózati beállítások</h2>
-
-    <p><strong>Statikus útvonal beállítása:</strong></p>
-    <div class="network-example">
+    <h2>3. Ciklusok</h2>
+    <div class="python-example">
       <code>
-ip route 192.168.2.0 255.255.255.0 192.168.1.2
+for i in range(5):
+    print("Szám:", i)
       </code>
     </div>
 
-    <p><strong>DHCP konfiguráció egy routeren:</strong></p>
-    <div class="network-example">
+    <h2>4. Függvények</h2>
+    <div class="python-example">
       <code>
-ip dhcp pool LAN
-network 192.168.1.0 255.255.255.0
-default-router 192.168.1.254
-dns-server 8.8.8.8
-exit
+def osszeg(a, b):
+    return a + b
+
+print(osszeg(3, 5))
       </code>
+    </div>
+
+    <h2>5. Listák</h2>
+    <p>A listák olyan adattípusok, amelyek több elemet képesek tárolni egyetlen változóban. A lista elemei különböző típusúak lehetnek, és a lista hossza dinamikusan változhat. A listák indexelése 0-tól kezdődik, és a negatív indexek a lista végétől számítanak visszafelé.</p>
+    <div class="python-example">
+      <code>
+gyumolcsok = ["alma", "banán", "cseresznye"]
+print(gyumolcsok[0])  # Kimenet: alma
+gyumolcsok.append("datolya")
+print(gyumolcsok)  # Kimenet: ['alma', 'banán', 'cseresznye', 'datolya']
+      </code>
+    </div>
+    <p>Ebben a példában létrehoztunk egy 'gyumolcsok' nevű listát, amely három gyümölcs nevét tartalmazza. Az első elem eléréséhez az indexelést használtuk, majd a <code>append()</code> metódussal hozzáadtunk egy új elemet a lista végéhez.</p>
+
+    <h2>6. Szótárak (Dictionary)</h2>
+    <div class="python-example">
+      <code>
+szemely = {"név": "János", "kor": 25, "város": "Budapest"}
+print(szemely["név"])  # Kimenet: János
+szemely["kor"] = 26
+print(szemely)  # Kimenet: {'név': 'János', 'kor': 26, 'város': 'Budapest'}
+      </code>
+    </div>
+
+    <h2>7. Szekvenciák (Stringek)</h2>
+    <div class="python-example">
+      <code>
+szoveg = "Helló világ!"
+print(szoveg.lower())  # Kimenet: helló világ!
+print(szoveg.upper())  # Kimenet: HELLÓ VILÁG!
+      </code>
+    </div>
+
+    <h2>8. Listák szűrése és műveletek (List Comprehensions)</h2>
+    <div class="python-example">
+      <code>
+szamok = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+paros_szamok = [szam for szam in szamok if szam % 2 == 0]
+print(paros_szamok)  # Kimenet: [2, 4, 6, 8]
+      </code>
+    </div>
+
+    <h2>9. Osztályok és objektumok (Class and Objects)</h2>
+    <div class="python-example">
+      <code>
+class Szemely:
+    def __init__(self, nev, kor):
+        self.nev = nev
+        self.kor = kor
+
+    def bemutatkozas(self):
+        print(f"Hello, én {self.nev} vagyok és {self.kor} éves vagyok.")
+
+szemely1 = Szemely("Anna", 30)
+szemely1.bemutatkozas()  # Kimenet: Hello, én Anna vagyok és 30 éves vagyok.
+      </code>
+    </div>
+
+    <h2>10. Lambda függvények</h2>
+    <div class="python-example">
+      <code>
+negyzet = lambda x: x ** 2
+print(negyzet(4))  # Kimenet: 16
+      </code>
+    </div>
+
+    <h2>11. Modulok importálása</h2>
+    <div class="python-example">
+      <code>
+import math
+print(math.sqrt(16))  # Kimenet: 4.0
+      </code>
+    </div>
+
+    <h2>12. Példa: Haladó python feladat</h2>
+    <p>
+      Egy egyszerű program ami számológépet valósít meg néhány alapművelettel (összeadás, kivonás, szorzás, osztás). A program bekéri a felhasználótól a művelet sorszámát, majd két számot kér be, és elvégzi a kiválasztott műveletet. Az osztás esetén figyel a nullával való osztás elkerülésére, és hibaüzenetet ad, ha a felhasználó érvénytelen műveletet választ.
+    </p>
+
+    <!-- Kép -->
+    <div class="image-container">
+      <img src="pyalapfeladat.jpg" alt="Python programozás alapok" />
     </div>
   </div>
-
-  <!-- Kép -->
-  <div class="image-container">
-    <img src="kapkap.jpg" alt="Hálózati diagram">
-  </div>
-
-  <!-- Lábléc -->
-  <footer>
-    &copy; 2025 Hálózati Konfiguráció – Minden jog fenntartva.
-  </footer>
-
 </body>
 </html>
