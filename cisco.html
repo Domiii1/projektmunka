@@ -3,229 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vállalati Hálózati Topológia</title>
+  <title>Hálózati Alapok és Python</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    * {
       margin: 0;
       padding: 0;
-      color: #1a1a1a;
+      box-sizing: border-box;
     }
 
-    header, nav, section, footer {
-      margin: 20px auto;
-      max-width: 1000px;
-      padding: 20px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #cfe9fc);
+      color: #1f2937;
+      line-height: 1.6;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
       text-align: center;
-      color: white;
-      background: rgba(33, 150, 243, 0.3);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
     }
 
     header h1 {
-      margin: 0;
+      color: #1e40af;
       font-size: 2.5rem;
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      margin-top: 1.5rem;
     }
 
     nav a {
-      background-color: rgba(255, 255, 255, 0.3);
-      color: #007BFF;
-      padding: 10px 20px;
-      border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
+      color: #1e40af;
+      background: rgba(255,255,255,0.6);
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.8);
       transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      margin: 0 0.5rem;
+      display: inline-block;
     }
 
     nav a:hover {
-      background-color: rgba(255, 255, 255, 0.6);
-      color: #0056b3;
+      background: rgba(255,255,255,0.9);
+      transform: translateY(-2px);
     }
 
-    button {
-      background-color: rgba(0, 123, 255, 0.6);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 15px;
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
 
-    button:hover {
-      background-color: rgba(0, 123, 255, 0.8);
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      border-left: 4px solid #93c5fd;
+      padding-left: 0.6rem;
     }
 
-    h2, h3 {
-      color: #007BFF;
-      margin-top: 0;
+    section h3 {
+      color: #1e40af;
+      margin-top: 1.5rem;
     }
 
     p, ul {
+      margin-bottom: 1rem;
       font-size: 1.1rem;
-      line-height: 1.7;
     }
 
     ul {
-      padding-left: 1.5em;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background-color: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(6px);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    th, td {
-      padding: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    th {
-      background-color: rgba(0, 123, 255, 0.6);
-      color: white;
-    }
-
-    td {
-      background-color: rgba(255, 255, 255, 0.5);
+      padding-left: 1.5rem;
     }
 
     pre {
-      background-color: rgba(255, 255, 255, 0.3);
-      padding: 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      padding: 1rem;
+      border-radius: 10px;
       overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.8);
     }
 
     code {
-      font-family: "Courier New", monospace;
+      font-family: Consolas, monospace;
       font-size: 1rem;
     }
 
-    .network-diagram {
-      text-align: center;
-      margin-top: 30px;
+    .python-example {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .network-diagram img {
-      max-width: 90%;
-      height: auto;
-      border: 5px solid rgba(255, 255, 255, 0.3);
+    .python-example code {
+      display: block;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(8px);
+      padding: 1rem;
       border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.8);
     }
 
-    a.download-link {
+    .btn-glass {
       display: inline-block;
-      background-color: rgba(33, 150, 243, 0.6);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
       text-decoration: none;
-      margin-top: 20px;
-      transition: background-color 0.3s;
+      color: #fff;
+      background: rgba(30, 64, 175, 0.8);
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 24px rgba(30,64,175,0.3);
+      backdrop-filter: blur(8px);
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    a.download-link:hover {
-      background-color: rgba(33, 150, 243, 0.8);
+    .btn-glass:hover {
+      background: rgba(30, 64, 175, 0.95);
+      transform: translateY(-2px);
     }
 
     footer {
       text-align: center;
-      color: white;
-      background-color: rgba(51, 51, 51, 0.6);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.3);
     }
 
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0.3rem;
       }
 
-      button, a.download-link {
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Főoldal</a>
-    <a href="network.html">Hálózati Konfiguráció</a>
-    <a href="python.html">Python Alapok</a>
-  </nav>
-
   <header>
-    <h1>Vállalati Hálózati Topológia</h1>
-    <button onclick="window.location.href='python.html';">Tovább a Python oldalra</button>
-  </header>
-
-  <section>
-    <h2>Hálózati Eszközök és IP-címek</h2>
-    <p>Ez a hálózati topológia egy egyszerű vállalati hálózatot mutat be, amely tartalmazza a routert, switch-et, PC-ket és egy szervert.</p>
-    <h3>Hálózati Eszközök</h3>
-    <table>
-      <tr><th>Eszköz</th><th>IP-cím</th><th>Leírás</th></tr>
-      <tr><td>Router</td><td>192.168.1.1</td><td>Hálózati forgalom irányítása</td></tr>
-      <tr><td>Switch</td><td>N/A</td><td>Hálózati eszközök összekapcsolása</td></tr>
-      <tr><td>PC1</td><td>192.168.1.10</td><td>Felhasználói számítógép</td></tr>
-      <tr><td>PC2</td><td>192.168.1.20</td><td>Felhasználói számítógép</td></tr>
-      <tr><td>PC3</td><td>192.168.1.30</td><td>Felhasználói számítógép</td></tr>
-      <tr><td>Szerver</td><td>192.168.1.50</td><td>Web és fájl szerver</td></tr>
-    </table>
-    <div class="network-diagram">
-      <h3>Hálózati Diagram</h3>
-      <img src="cisco.png" alt="Hálózati diagram">
-    </div>
-  </section>
-
-  <section>
-    <h3>Hálózati Beállítások</h3>
-    <p>A routeren a következő beállítások szerepelnek:</p>
-    <pre><code>Router> enable
-Router# config terminal
-Router(config)# interface g0/0
-Router(config-if)# ip address 192.168.1.1 255.255.255.0
-Router(config-if)# no shutdown</code></pre>
-
-    <p>A PC-k IP-cím beállítása:</p>
-    <pre><code>PC1: 192.168.1.10
-PC2: 192.168.1.20
-PC3: 192.168.1.30
-Szerver: 192.168.1.50</code></pre>
-  </section>
-
-  <section>
-    <h3>Tesztelés</h3>
-    <p>Ping teszt a hálózat tesztelésére:</p>
-    <pre><code>C:\> ping 192.168.1.1
-C:\> ping 192.168.1.50</code></pre>
-
-    <h3>Letöltés Cisco Packet Tracer fájlhoz</h3>
-    <a class="download-link"
+    <h1>Hálózati Alapok és Python</h1>
+    <nav>
+      <a href="index.html" class="btn-glass">Projektek</a>
+      <a href="network.html" class="btn-glass">Hálózati Konfigur
