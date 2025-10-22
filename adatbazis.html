@@ -3,51 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <title>Stílusos Táblás Adatbázis</title>
-     <link rel="stylesheet" href="css6.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8fafc;
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
+
+    * {
       margin: 0;
-      padding: 20px;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.6;
+      padding: 2rem;
     }
 
     h2 {
       text-align: center;
-      color: #0f172a;
+      color: var(--hover);
+      margin-bottom: 2rem;
     }
 
     .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: #ffffff;
-      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--bg-section);
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
     .form-group {
       display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 1rem;
+      margin-bottom: 2rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     input {
-      padding: 10px;
+      padding: 0.8rem;
       border-radius: 6px;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #3b82f6;
       font-size: 1rem;
       width: 200px;
+      background-color: #0f172a;
+      color: var(--text-light);
+    }
+
+    input::placeholder {
+      color: #94a3b8;
     }
 
     button {
-      background-color: #3b82f6;
+      background-color: var(--hover);
       color: white;
       border: none;
-      padding: 10px 16px;
+      padding: 0.8rem 1.4rem;
       font-size: 1rem;
       border-radius: 6px;
       cursor: pointer;
@@ -55,24 +77,29 @@
     }
 
     button:hover {
-      background-color: #2563eb;
+      background-color: #60a5fa;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
+      margin-top: 1rem;
     }
 
     th, td {
-      border: 1px solid #e2e8f0;
+      border: 1px solid #3b82f6;
       padding: 12px;
       text-align: center;
     }
 
     th {
-      background-color: #f1f5f9;
-      color: #1e293b;
+      background-color: var(--accent);
+      color: white;
+    }
+
+    td {
+      background-color: var(--card-bg);
+      color: var(--text-light);
     }
 
     td button {
@@ -80,6 +107,9 @@
       padding: 6px 12px;
       font-size: 0.9rem;
       border-radius: 6px;
+      border: none;
+      color: white;
+      cursor: pointer;
     }
 
     td button:hover {
@@ -101,7 +131,7 @@
 <body>
 
   <div class="container">
-    <h2>Adatbázis Táblázat (Modern kinézet)</h2>
+    <h2>Adatbázis Táblázat (Sötét stílus)</h2>
 
     <div class="form-group">
       <input type="text" id="name" placeholder="Név">
@@ -119,7 +149,7 @@
         </tr>
       </thead>
       <tbody>
-        
+        <!-- Dinamikus tartalom -->
       </tbody>
     </table>
   </div>
