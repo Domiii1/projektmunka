@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Számítógép Részei és Szerelése</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -12,108 +22,88 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f2fe, #f1f5f9);
-      color: #1f2937;
-      line-height: 1.6;
-      background-attachment: fixed;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.7;
+      padding-bottom: 100px;
     }
 
     header {
       text-align: center;
       padding: 2rem;
-      color: white;
-      background-color: rgba(74, 144, 226, 0.8);
-      backdrop-filter: blur(8px);
-      border-radius: 0 0 20px 20px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      font-size: 2rem;
-      font-weight: bold;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--hover);
+      letter-spacing: 1px;
     }
 
     nav {
       text-align: center;
       padding: 1rem;
-      background-color: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      background-color: rgba(30, 58, 138, 0.8);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
-      background-color: #e3f2fd;
-      color: #1a73e8;
       text-decoration: none;
-      font-weight: bold;
-      padding: 10px 18px;
-      border-radius: 25px;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
       margin: 0 10px;
-      display: inline-block;
-      transition: 0.3s;
-      border: 1px solid #cfe2ff;
+      transition: all 0.3s ease;
+      border: 1px solid var(--hover);
     }
 
     nav a:hover {
-      background-color: #1a73e8;
+      background-color: var(--hover);
       color: white;
     }
 
     main {
       max-width: 1000px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.7);
+      margin: 3rem auto;
+      background-color: var(--card-bg);
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.8s ease forwards;
     }
 
     h2 {
-      color: #1976d2;
-      margin-top: 30px;
-      font-size: 1.8rem;
-      border-left: 5px solid #60a5fa;
+      font-size: 2rem;
+      color: var(--hover);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--hover);
       padding-left: 12px;
     }
 
     h3 {
-      color: #1565c0;
-      margin-top: 25px;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      color: #60a5fa;
+      margin-top: 1.5rem;
     }
 
     p {
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-      color: #374151;
+      margin-bottom: 1rem;
+      color: #cbd5e1;
     }
 
     .highlight {
       font-weight: bold;
-      color: #0d47a1;
-    }
-
-    .quote {
-      background-color: #ffffffcc;
-      padding: 15px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      margin: 25px 0;
-      font-style: italic;
-      color: #555;
-    }
-
-    .video {
-      width: 100%;
-      max-width: 360px;
-      height: 360px;
-      background-color: black;
-      margin: 25px auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: #60a5fa;
     }
 
     footer {
-      background-color: rgba(74, 144, 226, 0.7);
+      background-color: rgba(30, 58, 138, 0.8);
       color: white;
       text-align: center;
       padding: 1.5rem;
@@ -123,10 +113,14 @@
       font-size: 0.95rem;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 600px) {
-      header {
-        font-size: 1.5rem;
-        padding: 1.5rem;
+      header h1 {
+        font-size: 2rem;
       }
 
       nav a {
@@ -145,66 +139,60 @@
 <body>
 
   <header>
-    Számítógép Részei és Szerelése
+    <h1>Számítógép Részei és Szerelése</h1>
   </header>
 
   <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
+    <a href="index.html">← Vissza a Projektekhez</a>
   </nav>
 
   <main>
     <h2>1. Bevezetés</h2>
-    <p>A számítógép szerelése és karbantartása alapvető ismereteket kíván a számítógép alkatrészeiről, azok funkcióiról és az összeszerelési folyamatokról. A számítógép a modern élet szerves része, és az ismeretek a hatékony karbantartás, bővítés és hibaelhárítás szempontjából elengedhetetlenek. A dokumentáció célja, hogy áttekintést nyújtson a számítógép fő alkatrészeiről és azok szereléséről.</p>
+    <p>A számítógép szerelése és karbantartása alapvető ismereteket kíván a hardverelemekről, azok funkcióiról és az összeszerelési folyamatokról. Ez a dokumentáció bemutatja a főbb alkatrészeket és a szerelés lépéseit.</p>
 
     <h2>2. A Számítógép Fő Alkatrészei</h2>
-    <p>A számítógép egyes alkatrészei meghatározzák annak teljesítményét, megbízhatóságát és bővíthetőségét. Az alábbiakban ismertetjük a legfontosabb számítógépes komponenseket:</p>
-
     <h3>2.1. Alaplap (Motherboard)</h3>
-    <p>Az alaplap a számítógép legfontosabb alkatrésze, mivel ezen találhatóak a rendszer alapvető összekötői, mint például a processzor (CPU), a memória (RAM), a tároló eszközök, és egyéb kiegészítők csatlakozó felületei. Az alaplap biztosítja az összes alkatrész közötti kommunikációt.</p>
+    <p>Az alaplap az összes alkatrész központi kapcsolódási pontja. Itt található a CPU foglalat, RAM slotok, bővítőhelyek és csatlakozók.</p>
 
     <h3>2.2. Processzor (CPU)</h3>
-    <p>A processzor (Central Processing Unit) a számítógép „agya”, amely felelős a számítási műveletek végrehajtásáért. A CPU végzi el az utasításokat, és dolgozza fel az adatokat.</p>
+    <p>A számítógép „agya”, amely végrehajtja az utasításokat és feldolgozza az adatokat.</p>
 
     <h3>2.3. Memória (RAM)</h3>
-    <p>A RAM (Random Access Memory) a számítógép működő memória területe, ahol ideiglenesen tárolják a futó alkalmazások és a rendszerműveletek adatait.</p>
+    <p>Ideiglenes adattároló, amely gyors hozzáférést biztosít a futó programok számára.</p>
 
-    <h3>2.4. Tároló Eszközök (HDD/SSD)</h3>
-    <p>A tárolóeszközök (például HDD – Hard Disk Drive és SSD – Solid State Drive) felelősek a számítógép adatainak végleges tárolásáért, mint operációs rendszer, programok és személyes fájlok.</p>
+    <h3>2.4. Tárolóeszközök (HDD/SSD)</h3>
+    <p>Az operációs rendszer, programok és fájlok tárolására szolgálnak.</p>
 
     <h3>2.5. Videokártya (GPU)</h3>
-    <p>A videokártya felelős a számítógép grafikai feldolgozásáért, beleértve a képernyőn megjelenő képek és videók renderelését.</p>
+    <p>Felelős a grafikai megjelenítésért, különösen játékok és vizuális alkalmazások esetén.</p>
 
     <h3>2.6. Tápegység (PSU)</h3>
-    <p>A tápegység biztosítja az összes alkatrész számára szükséges energiát. A számítógép minden egyes komponensét táplálja az árammal, és biztosítja, hogy a megfelelő feszültség és áram eljusson hozzájuk.</p>
+    <p>Biztosítja az összes alkatrész számára a megfelelő feszültséget és áramot.</p>
 
-    <h3>2.7. Hűtés (Ventilátorok, Hűtőbordák)</h3>
-    <p>A számítógép alkatrészei, mint például a CPU, GPU és a tápegység, működés közben hőt termelnek. A hűtőrendszer feladata, hogy eltávolítja ezt a hőt, és megakadályozza az alkatrészek túlmelegedését.</p>
+    <h3>2.7. Hűtés</h3>
+    <p>Ventilátorok és hűtőbordák gondoskodnak a hő elvezetéséről, megakadályozva a túlmelegedést.</p>
 
-    <h2>3. A Számítógép Szerelése</h2>
-    <p>A számítógép összeszerelése során fontos, hogy a különböző alkatrészeket megfelelően és biztonságosan csatlakoztassuk. A következő lépések segítséget nyújtanak a számítógép szereléséhez:</p>
+    <h2>3. A Számítógép Összeszerelése</h2>
+    <h3>3.1. Előkészületek</h3>
+    <p>Statikusmentes környezet, megfelelő szerszámok és dokumentáció előkészítése.</p>
 
-    <h3>3.1. Alaplap előkészítése</h3>
-    <p>Helyezd el az alaplapot egy tiszta, statikus földelt felületen, és győződj meg róla, hogy a megfelelő csatlakozókat találod.</p>
+    <h3>3.2. Alaplap beszerelése</h3>
+    <p>Az alaplapot a házba kell rögzíteni, ügyelve a távtartókra és a csavarokra.</p>
 
-    <h3>3.2. Processzor Telepítése</h3>
-    <p>A processzort a CPU foglalatba kell helyezni. Használj hőpasztát a jobb hőátadás érdekében.</p>
+    <h3>3.3. CPU és RAM telepítése</h3>
+    <p>A CPU-t a foglalatba helyezzük, hőpasztával, majd a RAM modulokat a megfelelő slotokba illesztjük.</p>
 
-    <h3>3.3. Memória (RAM) Telepítése</h3>
-    <p>Helyezd be a RAM modulokat a megfelelő foglalatokba, és ügyelj a rögzítésre.</p>
+    <h3>3.4. Tápegység és kábelezés</h3>
+    <p>A PSU-t rögzítjük, majd a szükséges tápkábeleket csatlakoztatjuk az alaplaphoz, CPU-hoz, GPU-hoz és tárolókhoz.</p>
 
-    <h3>3.4. Videokártya Telepítése</h3>
-    <p>A videokártyát illeszd be a PCIe foglalatba, és rögzítsd a házhoz.</p>
+    <h3>3.5. GPU és tárolók beszerelése</h3>
+    <p>A videokártyát a PCIe foglalatba illesztjük, a HDD/SSD eszközöket pedig a meghajtóhelyekbe rögzítjük.</p>
 
-    <h3>3.5. Tápegység (PSU) Telepítése</h3>
-    <p>Szereld be a tápegységet, és csatlakoztasd a megfelelő kábeleket minden eszközhöz.</p>
+    <h3>3.6. Hűtés és zárás</h3>
+    <p>Ventilátorokat telepítünk, biztosítva a megfelelő légáramlást, majd lezárjuk a házat.</p>
 
-    <h3>3.6. Hűtőrendszer Telepítése</h3>
-    <p>Telepítsd a ventilátorokat a házba, és biztosítsd a megfelelő légáramlást.</p>
-
-    <h2>4. Záró Megjegyzések</h2>
-    <p>A számítógép összeszerelése szórakoztató és hasznos tevékenység. A precíz munka, a jó alkatrészek és a rendszeres karbantartás hosszú távú stabilitást eredményez.</p>
-  </main>
-
+    <h2>4. Összegzés</h2>
+    <p>A számítógép összeszerelése nem
   <footer>
     &copy; 2025 Számítógép Szerelés | Minden jog fenntartva
   </footer>
@@ -212,15 +200,5 @@
 </body>
 </html>
 
-<h2>4. Záró Megjegyzések</h2>
-    <p>A számítógép összeszerelése szórakoztató és hasznos tevékenység. A precíz munka, a jó alkatrészek és a rendszeres karbantartás hosszú távú stabilitást eredményez.</p>
-  </main>
-
-  <footer>
-    &copy; 2025 Számítógép Szerelés | Minden jog fenntartva
-  </footer>
-
-</body>
-</html>
 
 
