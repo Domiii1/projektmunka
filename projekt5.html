@@ -1,109 +1,137 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vállalati Hálózati Topológia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f8fbfd;
-      color: #333;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.6;
+      padding-bottom: 100px;
     }
 
     header {
-      background-color: #5fa8d3;
-      color: white;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
       text-align: center;
-      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      color: var(--hover);
+      letter-spacing: 1px;
     }
 
-    nav {
-      background-color: #eaf4fb;
+    nav ul {
+      list-style: none;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      padding: 12px 0;
-      border-bottom: 2px solid #c3dce8;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 1rem;
     }
 
     nav a {
-      background-color: #dbe9f4;
-      color: #005f99;
-      padding: 10px 20px;
-      border-radius: 20px;
       text-decoration: none;
-      font-weight: bold;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
       transition: all 0.3s ease;
+      border: 1px solid var(--hover);
     }
 
     nav a:hover {
-      background-color: #b5d5ea;
+      background-color: var(--hover);
       color: white;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
+    section {
+      background-color: var(--bg-section);
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
-    h2 {
-      color: #2196F3;
-      margin-top: 0;
+    section h2 {
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--hover);
+      padding-left: 0.6rem;
     }
 
-    p, pre {
+    p, pre, table {
+      color: #cbd5e1;
       font-size: 1.1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     pre {
-      background-color: #f3f3f3;
-      padding: 16px;
+      background-color: #0f172a;
+      border: 1px solid #3b82f6;
+      padding: 1rem;
       border-radius: 8px;
       overflow-x: auto;
-      border: 1px solid #ddd;
+      font-family: "Courier New", monospace;
+      color: #f1f5f9;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
+      margin: 1.5rem 0;
     }
 
     th, td {
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #3b82f6;
       text-align: left;
     }
 
     th {
-      background-color: #2196F3;
+      background-color: var(--accent);
       color: white;
     }
 
     td {
-      background-color: #fdfdfd;
+      background-color: var(--card-bg);
     }
 
     img {
       display: block;
-      margin: 20px auto;
+      margin: 2rem auto;
       width: 90%;
       max-width: 600px;
-      border: 5px solid #ccc;
+      border: 5px solid #3b82f6;
       border-radius: 10px;
     }
 
@@ -112,11 +140,11 @@
       justify-content: center;
       gap: 10px;
       flex-wrap: wrap;
-      margin: 20px 0;
+      margin: 2rem 0;
     }
 
-    .back-button {
-      background-color: #2196F3;
+    .back-button, .download-link {
+      background-color: var(--hover);
       color: white;
       padding: 10px 20px;
       text-decoration: none;
@@ -125,42 +153,33 @@
       transition: background-color 0.3s ease;
     }
 
-    .back-button:hover {
-      background-color: #0b7dda;
-    }
-
-    .download-link {
-      display: inline-block;
-      background-color: #007BFF;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      margin-top: 15px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .download-link:hover {
-      background-color: #0056b3;
+    .back-button:hover, .download-link:hover {
+      background-color: #60a5fa;
     }
 
     footer {
-      background-color: #333;
+      background-color: rgba(30, 58, 138, 0.8);
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Vállalati Hálózati Topológia</h1>
   </header>
 
   <nav>
-    <a href="index.html">Főoldal</a>
-    <a href="projekt5a.html">Hálózat Részletei</a>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="projekt5a.html">Hálózat Részletei</a></li>
+    </ul>
   </nav>
 
   <div class="button-container">
@@ -168,7 +187,7 @@
     <a href="projekt5a.html" class="back-button">Hálózat Részletei</a>
   </div>
 
-  <div class="container">
+  <section>
     <h2>Hálózati Eszközök és IP-címek</h2>
     <p>Ez a hálózati topológia egy minta struktúrát ábrázol, amely tartalmazza a routert, switcheket és PC-ket egyaránt.</p>
     <table>
@@ -202,10 +221,7 @@ C:\> ping 192.168.1.1
 
     <h2>Letöltés Cisco Packet Tracer fájlhoz</h2>
     <a href="topologia.pkt" class="download-link" download>Letöltés: topologia.pkt</a>
-  </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Hálózati Projektek</p>
-  </footer>
-</body>
-</html>
+    <p>&copy; 2025 Hálózati Projektek
