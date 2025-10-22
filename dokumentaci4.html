@@ -1,175 +1,197 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kisvállalati Hálózatok Dokumentációja</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kisvállalati Hálózatok Dokumentációja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
 
-        header {
-            background-color: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 2em 1em;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav {
-            background-color: #e3f2fd;
-            padding: 1em;
-            text-align: center;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.6;
+      padding-bottom: 100px;
+    }
 
-        nav a {
-            background-color: #ffffff;
-            color: #007BFF;
-            margin: 5px 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            border: 1px solid #007BFF;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+    header {
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a:hover {
-            background-color: #007BFF;
-            color: white;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--hover);
+      letter-spacing: 1px;
+    }
 
-        main {
-            max-width: 1000px;
-            margin: 2em auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
 
-        section {
-            padding: 1.5em 0;
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid var(--hover);
+    }
 
-        h2 {
-            color: #007BFF;
-            margin-bottom: 0.5em;
-        }
+    nav a:hover {
+      background-color: var(--hover);
+      color: white;
+    }
 
-        h3 {
-            margin-top: 1em;
-            color: #333;
-        }
+    section {
+      background-color: var(--bg-section);
+      border-radius: 12px;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
 
-        ul {
-            padding-left: 1.5em;
-            margin-bottom: 1em;
-        }
+    section h2 {
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--hover);
+      padding-left: 0.6rem;
+    }
 
-        li {
-            margin-bottom: 0.5em;
-        }
+    h3 {
+      font-size: 1.4rem;
+      color: #60a5fa;
+      margin-top: 1.5rem;
+    }
 
-        .quote {
-            margin-bottom: 1.5em;
-            background-color: #fff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    p, ul {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
 
-        .highlight {
-            font-weight: bold;
-            color: #007BFF;
-        }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-        div.video {
-            width: 360px;
-            height: 360px;
-            background-color: black;
-            border-radius: 10px;
-        }
+    li {
+      margin-bottom: 0.75rem;
+    }
 
-        @media screen and (max-width: 768px) {
-            nav a {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-            }
+    .quote {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--hover);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      margin-bottom: 1.5rem;
+    }
 
-            main {
-                margin: 1em;
-                padding: 1em;
-            }
+    .highlight {
+      font-weight: bold;
+      color: #3b82f6;
+    }
 
-            div.video {
-                width: 100%;
-                height: 200px;
-            }
-        }
-    </style>
+    .video {
+      width: 360px;
+      height: 360px;
+      background-color: black;
+      border-radius: 10px;
+      margin: 1rem auto;
+    }
+
+    footer {
+      background-color: rgba(30, 58, 138, 0.8);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <header>
     <h1>Kisvállalati Hálózatok Dokumentációja</h1>
-</header>
+  </header>
 
-<nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-    <a href="#bevezeto">Bevezetés</a>
-    <a href="#halozati-tipusok">Hálózati Típusok</a>
-    <a href="#eszközök">Hálózati Eszközök</a>
-    <a href="#telepites">Telepítés</a>
-    <a href="#karbantartas">Karbantartás</a>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Vissza a Projektekhez</a></li>
+      <li><a href="#bevezetes">Bevezetés</a></li>
+      <li><a href="#tervezes">Tervezés</a></li>
+      <li><a href="#eszkozok">Eszközök</a></li>
+    </ul>
+  </nav>
 
-<main>
-    <section id="bevezeto">
-        <h2>Bevezetés</h2>
-        <p>A kisvállalati hálózatok létfontosságú szerepet játszanak a napi működés hatékonyságában és biztonságában. A megfelelő hálózati infrastruktúra lehetővé teszi a vállalatok számára, hogy kommunikáljanak, adatokat osszanak meg és biztosítsák az üzleti folyamatokat.</p>
-    </section>
+  <section id="bevezetes">
+    <h2>Bevezetés</h2>
+    <p>A kisvállalati hálózatok célja, hogy biztosítsák az informatikai infrastruktúra megbízható működését, adatbiztonságát és hatékony kommunikációját. A dokumentáció célja, hogy bemutassa a tervezés, kivitelezés és üzemeltetés főbb lépéseit.</p>
+  </section>
 
-    <section id="halozati-tipusok">
-        <h2>Hálózati Típusok</h2>
+  <section id="tervezes">
+    <h2>Hálózat Tervezése</h2>
+    <p>A tervezés során figyelembe kell venni a vállalat méretét, az eszközök számát, a biztonsági követelményeket és a jövőbeli bővítési lehetőségeket.</p>
+    <ul>
+      <li><span class="highlight">IP-címzés:</span> Statikus vagy dinamikus címkiosztás</li>
+      <li><span class="highlight">VLAN-ok:</span> Logikai szegmentálás a hálózaton belül</li>
+      <li><span class="highlight">Routerek és Switch-ek:</span> Megfelelő eszközök kiválasztása</li>
+      <li><span class="highlight">Tűzfal:</span> Külső támadások elleni védelem</li>
+    </ul>
+  </section>
 
-        <h3>LAN (Helyi hálózat)</h3>
-        <p>A helyi hálózat (LAN) olyan hálózat, amely kisebb területen, például egy irodában vagy egy épületen belül működik. Jellemzően gyors adatátvitelt biztosít, és könnyen kezelhető.</p>
+  <section id="eszkozok">
+    <h2>Használt Eszközök</h2>
+    <p>A hálózat kialakításához szükséges eszközök:</p>
+    <ul>
+      <li><strong>Router:</strong> Hálózatok közötti adatforgalom irányítása</li>
+      <li><strong>Switch:</strong> Eszközök közötti adatkapcsolat biztosítása</li>
+      <li><strong>Access Point:</strong> Vezeték nélküli hozzáférés biztosítása</li>
+      <li><strong>NAS:</strong> Központi adattárolás és megosztás</li>
+    </ul>
+    <div class="quote">
+      „A jól megtervezett hálózat nemcsak gyors, hanem biztonságos is.”
+    </div>
+    <div class="video"></div>
+  </section>
 
-        <h3>WAN (Széleskörű hálózat)</h3>
-        <p>A WAN olyan hálózat, amely nagyobb földrajzi területen működik, és különböző városokat, régiókat, vagy akár országokat is összekapcsolhat. A WAN általában a telekommunikációs szolgáltatók infrastruktúráját használja.</p>
-
-        <h3>VPN (Virtuális Privát Hálózat)</h3>
-        <p>A VPN lehetővé teszi a biztonságos adatátvitelt az interneten keresztül. A kisvállalatok gyakran használják távoli munkavállalók számára, hogy hozzáférjenek a vállalati hálózathoz, miközben megőrzik a hálózat biztonságát.</p>
-    </section>
-
-    <section id="eszközök">
-        <h2>Hálózati Eszközök</h2>
-        <p>A kisvállalati hálózatokhoz szükséges eszközök közé tartoznak a következő alapvető elemek:</p>
-        <ul>
-            <li><strong>Router:</strong> Az internetkapcsolat és a belső hálózat közötti adatforgalmat irányítja.</li>
-            <li><strong>Switch:</strong> A hálózati eszközök közötti adatforgalmat kezeli a helyi hálózaton belül.</li>
-            <li><strong>Firewall:</strong> A hálózat biztonságát biztosítja, megakadályozva a jogosulatlan hozzáférést.</li>
-            <li><strong>Access Point:</strong> A vezeték nélküli eszközök csatlakozását biztosítja a hálózathoz.</li>
-        </ul>
-    </section>
-
-    <section id="telepites">
-        <h2>Telepítés és Beállítás</h2>
-        <p>A hálózat telepítésekor fontos, hogy a megfelelő eszközöket válasszuk ki, és azokat megfelelően konfiguráljuk. A telepítés magában foglalja a router és switch beállításait, a vezeték nélküli hozzáférési pontok elhelyezését, valamint a tűzfal konfigurálását.</p>
-    </section>
-
-    <section id="karbantartas">
-        <h2>Karbantartás</h2>
-        <p>A kisvállalati hálózatok folyamatos karbantartást igényelnek. Ez magában foglalja az eszközök rendszeres frissítését, a hálózati teljesítmény figyelését és a biztonsági protokollok naprakészen tartását. A megfelelő karbantartás biztosítja a hálózat zavartalan működését és védi az adatokat a külső fenyegetésektől.</p>
-    </section>
-</main>
+  <footer>
+    &copy; 2025 Kisvállalati Hálózatok | Minden jog fenntartva
+  </footer>
 
 </body>
 </html>
