@@ -3,213 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Áramkörök Mérése</title>
+  <title>Számítógép Szerelés</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e3f2fd, #f9f9ff);
-      background-attachment: fixed;
-      color: #1f2937;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
       line-height: 1.6;
-      min-height: 100vh;
-      padding-bottom: 80px;
+      padding-bottom: 100px;
     }
 
     header {
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
       text-align: center;
-      padding: 3rem 1.5rem;
-      color: white;
-      background: rgba(74, 144, 226, 0.75);
-      backdrop-filter: blur(15px);
-      border-bottom-left-radius: 24px;
-      border-bottom-right-radius: 24px;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      font-size: 2.8rem;
+      color: var(--hover);
+      letter-spacing: 1px;
     }
 
-    nav {
+    nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
       gap: 1rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
-      border-radius: 32px;
-      margin: 2rem auto 0;
-      max-width: 960px;
     }
 
     nav a {
-      background: rgba(227, 242, 253, 0.8);
-      color: #1a73e8;
       text-decoration: none;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
       font-weight: 600;
-      padding: 12px 22px;
-      border-radius: 32px;
-      border: 1.8px solid #bbdefb;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid var(--hover);
     }
 
     nav a:hover {
-      background-color: #1a73e8;
+      background-color: var(--hover);
       color: white;
-      border-color: #145dbf;
-      box-shadow: 0 6px 16px rgba(26, 115, 232, 0.6);
-    }
-
-    .content {
-      max-width: 1000px;
-      margin: 3.5rem auto 0;
-      padding: 0 20px 80px;
     }
 
     section {
-      background: rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(12px);
-      padding: 28px 32px;
-      margin-bottom: 36px;
-      border-radius: 20px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+      background-color: var(--bg-section);
+      border-radius: 12px;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
-    h2 {
-      color: #1976d2;
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 14px;
+    section h2 {
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--hover);
+      padding-left: 0.6rem;
     }
 
     p, ul {
-      color: #374151;
+      color: #cbd5e1;
       font-size: 1.1rem;
-      line-height: 1.55;
-      margin-bottom: 16px;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     ul {
-      padding-left: 22px;
+      padding-left: 1.5rem;
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 0.75rem;
     }
 
     li strong {
-      color: #1565c0;
-      font-weight: 600;
+      color: #60a5fa;
     }
 
-    .highlight {
-      color: #1a73e8;
-      font-weight: bold;
+    a[href^="mailto"] {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    a[href^="mailto"]:hover {
+      text-decoration: underline;
     }
 
     footer {
-      background: rgba(74, 144, 226, 0.75);
+      background-color: rgba(30, 58, 138, 0.8);
       color: white;
       text-align: center;
-      padding: 24px 12px;
-      font-size: 1rem;
-      margin-top: 80px;
+      padding: 1.5rem;
+      margin-top: 60px;
       border-radius: 20px 20px 0 0;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Áramkörök Méréseinek Áttekintése</h1>
+    <h1>Számítógép Szerelés</h1>
   </header>
 
   <nav>
-    <a href="index.html">Főoldal</a>
-    <a href="#bevezetes">Bevezetés</a>
-    <a href="#meresek">Mérések</a>
-    <a href="#komponensek">Komponensek</a>
-    <a href="#hibak">Hibák</a>
-    <a href="#kapcsolat">Kapcsolat</a>
-    <a href="meres.html">Mérés</a>
+    <ul>
+      <li><a href="index.html">Vissza a Projektekhez</a></li>
+      <li><a href="#bevezeto">Bevezetés</a></li>
+      <li><a href="#alkatreszek">Alkatrészek</a></li>
+      <li><a href="#hiba">Hibák</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
   </nav>
 
-  <div class="content">
+  <section id="bevezeto">
+    <h2>Bevezetés</h2>
+    <p>A számítógép szerelés során fontos, hogy tisztában legyünk a különböző alkatrészekkel és azok funkcióival. 
+    Ezen az oldalon bemutatjuk a leggyakoribb hibákat és megoldásokat, valamint segítünk abban, hogyan végezhetünk el kisebb javításokat otthon.</p>
+  </section>
 
-    <section id="bevezetes">
-      <h2>Bevezetés</h2>
-      <p>Az áramkörök mérése kulcsszerepet játszik az elektronikai rendszerek tervezésében és karbantartásában. A <span class="highlight">feszültség</span>, <span class="highlight">áram</span>, és <span class="highlight">ellenállás</span> pontos meghatározása elengedhetetlen a hibamentes működéshez.</p>
-      <p>Ez az oldal bemutatja az alapvető mérési eljárásokat, a szükséges műszereket, valamint gyakorlati tanácsokat ad a mérések végrehajtásához.</p>
-    </section>
+  <section id="alkatreszek">
+    <h2>Alkatrészek</h2>
+    <p>A számítógép egy összetett rendszer, amely számos alkatrészből áll. A legfontosabbak közé tartoznak a következők:</p>
+    <ul>
+      <li><strong>Alaplap:</strong> A számítógép központi egysége, amely összeköti az összes többi alkatrészt.</li>
+      <li><strong>Processzor (CPU):</strong> Az agy, amely a számításokat végzi.</li>
+      <li><strong>Memória (RAM):</strong> Az ideiglenes tároló, amely gyors hozzáférést biztosít az aktív adatokhoz.</li>
+      <li><strong>Grafikus kártya (GPU):</strong> A képi megjelenítésért felelős alkatrész.</li>
+      <li><strong>Tápegység (PSU):</strong> Biztosítja az áramellátást a rendszer minden alkatrésze számára.</li>
+    </ul>
+  </section>
 
-    <section id="meresek">
-      <h2>A Mérések Típusai</h2>
-      <ul>
-        <li><strong>Feszültségmérés:</strong> A mérőeszközt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
-        <li><strong>Árammérés:</strong> Az árammérőt <em>sorosan</em> kell bekötni az áramkörbe.</li>
-        <li><strong>Ellenállásmérés:</strong> A mérés csak <em>kikapcsolt</em> áramkörön történhet.</li>
-        <li><strong>Teljesítménymérés:</strong> A teljesítmény számítása: <code>P = U × I</code>.</li>
-      </ul>
-    </section>
+  <section id="hiba">
+    <h2>Hibák és Megoldások</h2>
+    <p>A számítógépek néha hibáznak, de sok esetben a probléma egyszerűen orvosolható. Néhány gyakori hiba:</p>
+    <ul>
+      <li><strong>Nem indul el a számítógép:</strong> Ellenőrizd, hogy az áramellátás rendben van-e, és hogy az összes kábel megfelelően csatlakozik.</li>
+      <li><strong>Képernyő probléma:</strong> Ha a monitor nem kap jelet, próbáld meg újra csatlakoztatni a videókábelt vagy ellenőrizd a grafikus kártyát.</li>
+      <li><strong>Hangprobléma:</strong> Ellenőrizd a hangkártya illesztőprogramjait, és győződj meg arról, hogy a hangszórók megfelelően csatlakoznak.</li>
+    </ul>
+  </section>
 
-    <section id="komponensek">
-      <h2>A Mérési Áramkör Komponensei</h2>
-      <ul>
-        <li><strong>Multiméter:</strong> Kombinált eszköz feszültség, áram és ellenállás mérésére.</li>
-        <li><strong>Árammérő:</strong> Kis ellenállású eszköz, melyet sorba kell kötni a mérendő áramkörrel.</li>
-        <li><strong>Ohmmérő:</strong> Szakadások és zárlatok felderítésére szolgáló műszer.</li>
-        <li><strong>Passzív komponensek:</strong> Kondenzátorok, ellenállások és egyéb elemek, amelyek az áramkör stabilitását biztosítják.</li>
-      </ul>
-    
-
-  <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-    <a href="szereles.html">Szerelés</a>
-    <a href="arajanlat.html">Árajánlat</a>
-    <a href="alkatreszek.html">Alkatrészek</a>
-  </nav>
-
-  <div class="content">
-
-    <section id="arajanlat" tabindex="0">
-      <h2 class="section-title">Szolgáltatások és Árak</h2>
-      <p class="section-content">
-        Az alábbi lista tájékoztató jellegű, a végleges ár az adott probléma és az alkatrészek függvényében változhat.
-      </p>
-      <ul>
-        <li><strong>Alaplap csere:</strong> 8 000 Ft – 12 000 Ft</li>
-        <li><strong>RAM bővítés:</strong> 3 000 Ft – 5 000 Ft</li>
-        <li><strong>HDD/SSD csere:</strong> 4 000 Ft – 6 000 Ft</li>
-        <li><strong>Rendszertelepítés:</strong> 5 000 Ft – 7 000 Ft</li>
-        <li><strong>Portok tisztítása:</strong> 2 000 Ft – 3 000 Ft</li>
-        <li><strong>Teljes karbantartás:</strong> 10 000 Ft – 15 000 Ft</li>
-      </ul>
-    </section>
-
-    <section id="kapcsolat" tabindex="0">
-      <h2 class="section-title">Kapcsolat</h2>
-      <p class="section-content">
-        Ha szeretnél pontos árajánlatot kérni, vagy időpontot egyeztetni, vedd fel velünk a kapcsolatot:
-      </p>
-      <p class="section-content">
-        Email: <a href="mailto:info@szamitogepszereles.hu">info@szamitogepszereles.hu</a>
-      </p>
-    </section>
-
-  </div>
+  <section id="kapcsolat">
+    <h2>Kapcsolat</h2>
+    <p>Ha bármilyen kérdésed van a számítógép szerelésével kapcsolatban, vagy segítségre van szükséged, bátran vedd fel velünk a kapcsolatot!</p>
+    <p>Email: <a href="mailto:info@szamitogepszereles.hu">info@szamitogepszereles.hu</a></p>
+  </section>
 
   <footer>
     &copy; 2025 Számítógép Szerelés | Minden jog fenntartva
@@ -217,4 +184,3 @@
 
 </body>
 </html>
-
