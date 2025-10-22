@@ -146,30 +146,6 @@
             <li><strong>Email:</strong> A munkavállaló email címe</li>
             <li><strong>Telefonszám:</strong> A munkavállaló telefonszáma</li>
         </ul>
-
-        <h3>3.3 SQL Táblázat létrehozása</h3>
-        <pre><code>CREATE TABLE Munkavallalok (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    vezeteknev VARCHAR(50),
-    keresztnev VARCHAR(50),
-    email VARCHAR(100),
-    telefonszam VARCHAR(20)
-);</code></pre>
-
-        <h3>3.4 Módosítás és Lekérdezés</h3>
-        <pre><code>-- Új munkavállaló hozzáadása
-INSERT INTO Munkavallalok (vezeteknev, keresztnev, email, telefonszam)
-VALUES ('Kovács', 'Anna', 'anna.kovacs@example.com', '06201234567');
-
--- Módosítás
-UPDATE Munkavallalok
-SET email = 'anna.newemail@example.com'
-WHERE id = 1;
-
--- Lekérdezés
-SELECT * FROM Munkavallalok WHERE id = 1;
-</code></pre>
-
         <h2>4. Összegzés</h2>
         <p>Az IPv4 alapú hálózati tervezés biztosítja a vállalat számára szükséges eszközkészlet és alhálózati struktúra kialakítását, míg az egytáblás adatbázis lehetőséget biztosít az adatok hatékony kezelésére és lekérdezésére. A megfelelő tervezés és kivitelezés hozzájárul a vállalati rendszer zavartalan működéséhez.</p>
     </div>
