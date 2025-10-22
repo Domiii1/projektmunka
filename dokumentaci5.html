@@ -1,159 +1,205 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kis- és Közepes Vállalati Hálózat + Adatbázis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f8fb;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vállalati Hálózat és Adatbázis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
 
-        header {
-            background-color: #2196F3;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.6;
+      padding-bottom: 100px;
+    }
 
-        nav {
-            background-color: #eaf4fb;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 0;
-            border-bottom: 2px solid #c3dce8;
-        }
+    header {
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a {
-            background-color: #dbe9f4;
-            color: #005f99;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--hover);
+      letter-spacing: 1px;
+    }
 
-        nav a:hover {
-            background-color: #b5d5ea;
-            color: white;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid var(--hover);
+    }
 
-        h2, h3 {
-            color: #2196F3;
-        }
+    nav a:hover {
+      background-color: var(--hover);
+      color: white;
+    }
 
-        p, ul, pre {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
+    section {
+      background-color: var(--bg-section);
+      border-radius: 12px;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    section h2 {
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--hover);
+      padding-left: 0.6rem;
+    }
 
-        pre {
-            background-color: #f3f3f3;
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            overflow-x: auto;
-        }
+    h3 {
+      font-size: 1.4rem;
+      color: #60a5fa;
+      margin-top: 1.5rem;
+    }
 
-        code {
-            font-family: Consolas, monospace;
-            font-size: 1rem;
-        }
+    p, ul, pre {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 8px;
-            }
+    li {
+      margin-bottom: 0.75rem;
+    }
 
-            .container {
-                margin: 20px 15px;
-            }
-        }
-    </style>
+    pre {
+      background-color: #0f172a;
+      border: 1px solid #3b82f6;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      color: #f1f5f9;
+      margin-bottom: 1.5rem;
+    }
+
+    code {
+      color: #60a5fa;
+    }
+
+    footer {
+      background-color: rgba(30, 58, 138, 0.8);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Fejléc -->
-    <header>
-        <h1>Kis- és Közepes Vállalati Hálózat és Adatbázis</h1>
-    </header>
+  <header>
+    <h1>Vállalati Hálózat és Adatbázis</h1>
+  </header>
 
-    <!-- Navigáció -->
-    <nav>
-        <a href="index.html">Főoldal</a>
-        <a href="projekt5.html">Topológia</a>
-        <a href="projekt5a.html">Működés</a>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="#halozat">Hálózat</a></li>
+      <li><a href="#adatbazis">Adatbázis</a></li>
+    </ul>
+  </nav>
 
-    <!-- Tartalom -->
-    <div class="container">
-        <h2>1. Bevezetés</h2>
-        <p>Ez a dokumentáció bemutatja egy kis- és közepes méretű vállalat számára készült hálózati infrastruktúra tervezését, megvalósítását IPv4 címzéssel, valamint egy egyszerű egytáblás adatbázis tervezését és implementálását.</p>
+  <section id="halozat">
+    <h2>1. Hálózati Tervezés</h2>
+    <p>A kis- és közepes vállalatok számára fontos a megbízható és biztonságos hálózati infrastruktúra. Az IPv4 címzés lehetővé teszi az eszközök egyértelmű azonosítását.</p>
 
-        <h2>2. Hálózat Tervezése IPv4 Címzéssel</h2>
+    <h3>1.1 Címzési struktúra</h3>
+    <p>Ajánlott címzési tartomány:</p>
+    <pre><code>192.168.0.0/24</code></pre>
+    <p>Ez 254 eszközt képes kiszolgálni, alhálózatokra osztható igény szerint.</p>
+  </section>
 
-        <h3>2.1 Hálózati igények és célok</h3>
-        <p>A vállalat számára szükséges egy stabil, gyors és biztonságos hálózati infrastruktúra, amely képes kiszolgálni a mindennapi üzleti műveleteket. Az IPv4 címzés használatával történik a hálózati eszközök azonosítása.</p>
+  <section id="adatbazis">
+    <h2>2. Egytáblás Adatbázis</h2>
+    <p>A vállalati munkatársak adatainak tárolására egy egyszerű SQL-alapú adatbázis javasolt.</p>
 
-        <h3>2.2 IPv4 Címzési Tervezés</h3>
-        <p>A hálózati címek tervezéséhez figyelembe kell venni a vállalat eszközeinek számát, a különböző alhálózatokat és a hálózaton belüli kommunikációt. A tervezéshez a következő címzés javasolt:</p>
-        <pre><code>192.168.0.0/24</code></pre>
-        <p>Ez biztosítja a vállalat összes eszközének azonosítását egy 254 eszközig. Az alhálózatokat szükség szerint tovább lehet bontani.</p>
+    <h3>2.1 Tábla szerkezete</h3>
+    <ul>
+      <li><strong>ID:</strong> Egyedi azonosító</li>
+      <li><strong>Vezetéknév</strong></li>
+      <li><strong>Keresztnév</strong></li>
+      <li><strong>Email</strong></li>
+      <li><strong>Telefonszám</strong></li>
+    </ul>
 
-        <h2>3. Egytáblás Adatbázis Tervezése</h2>
+    <h3>2.2 SQL létrehozás</h3>
+    <pre><code>CREATE TABLE Munkavallalok (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  vezeteknev VARCHAR(50),
+  keresztnev VARCHAR(50),
+  email VARCHAR(100),
+  telefonszam VARCHAR(20)
+);</code></pre>
 
-        <h3>3.1 Adatbázis célja</h3>
-        <p>A cél egy egyszerű, egytáblás adatbázis létrehozása, amely tárolja a vállalat munkatársainak adatait.</p>
+    <h3>2.3 Műveletek</h3>
+    <pre><code>-- Beszúrás
+INSERT INTO Munkavallalok (vezeteknev, keresztnev, email, telefonszam)
+VALUES ('Kovács', 'Anna', 'anna.kovacs@example.com', '06201234567');
 
-        <h3>3.2 Adatbázis szerkezete</h3>
-        <ul>
-            <li><strong>ID:</strong> Egyedi azonosító</li>
-            <li><strong>Vezetéknév:</strong> A munkavállaló vezetékneve</li>
-            <li><strong>Keresztnév:</strong> A munkavállaló keresztneve</li>
-            <li><strong>Email:</strong> A munkavállaló email címe</li>
-            <li><strong>Telefonszám:</strong> A munkavállaló telefonszáma</li>
-        </ul>
-        <h2>3. Összegzés</h2>
-        <p>Az IPv4 alapú hálózati tervezés biztosítja a vállalat számára szükséges eszközkészlet és alhálózati struktúra kialakítását, míg az egytáblás adatbázis lehetőséget biztosít az adatok hatékony kezelésére és lekérdezésére. A megfelelő tervezés és kivitelezés hozzájárul a vállalati rendszer zavartalan működéséhez.</p>
-    </div>
+-- Módosítás
+UPDATE Munkavallalok
+SET email = 'anna.uj@example.com'
+WHERE id = 1;
 
-    <!-- Lábléc -->
-    <footer>
-        <p>&copy; 2025 Hálózati és Adatbázis Projekt</p>
-    </footer>
+-- Lekérdezés
+SELECT * FROM Munkavallalok WHERE id = 1;
+</code></pre>
+  </section>
+
+  <footer>
+    &copy; 2025 Vállalati Projekt | Minden jog fenntartva
+  </footer>
 
 </body>
 </html>
