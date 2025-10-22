@@ -1,215 +1,223 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>ÁRAM Körök Dokumentáció</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* --- Alap reset --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <title>ÁRAM Körök Dokumentáció</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0f2fe, #dbeafe);
-            background-attachment: fixed;
-            color: #1f2937;
-            line-height: 1.6;
-            padding-bottom: 100px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* --- Fejléc --- */
-        header {
-            backdrop-filter: blur(10px);
-            background-color: rgba(74, 144, 226, 0.6);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.7;
+      padding-bottom: 100px;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-        }
+    header {
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        /* --- Navigáció --- */
-        nav {
-            text-align: center;
-            padding: 1.2rem;
-            background-color: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            margin-top: 10px;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--hover);
+      letter-spacing: 1px;
+    }
 
-        nav a {
-            background-color: #e3f2fd;
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 30px;
-            margin: 0 12px;
-            display: inline-block;
-            transition: 0.3s;
-            border: 1px solid #cfe2ff;
-        }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(30, 58, 138, 0.8);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-        nav a:hover {
-            background-color: #1a73e8;
-            color: white;
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      border: 1px solid var(--hover);
+    }
 
-        /* --- Tartalom szekciók --- */
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(6px);
-        }
+    nav a:hover {
+      background-color: var(--hover);
+      color: white;
+    }
 
-        h2 {
-            font-size: 1.8rem;
-            color: #1976d2;
-            margin-bottom: 1rem;
-            border-left: 5px solid #60a5fa;
-            padding-left: 10px;
-        }
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.8s ease forwards;
+    }
 
-        h3 {
-            font-size: 1.4rem;
-            margin-top: 1.5rem;
-            color: #1e3a8a;
-        }
+    h2 {
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--hover);
+      padding-left: 10px;
+    }
 
-        p {
-            margin-bottom: 1rem;
-        }
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      color: #60a5fa;
+    }
 
-        ul {
-            margin: 1rem 0 1.5rem 1.2rem;
-            padding-left: 1rem;
-        }
+    p {
+      margin-bottom: 1rem;
+      color: #cbd5e1;
+    }
 
-        ul li {
-            margin-bottom: 10px;
-        }
+    ul {
+      margin: 1rem 0 1.5rem 1.2rem;
+      padding-left: 1rem;
+      color: #cbd5e1;
+    }
 
-        .highlight {
-            font-weight: bold;
-            color: #007BFF;
-        }
+    ul li {
+      margin-bottom: 10px;
+    }
 
-        .quote {
-            margin-bottom: 1em;
-            background-color: #ffffff;
-            padding: 1em;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+    .highlight {
+      font-weight: bold;
+      color: #60a5fa;
+    }
 
-        .video {
-            width: 100%;
-            max-width: 400px;
-            height: 300px;
-            background-color: black;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
+    .quote {
+      margin-bottom: 1em;
+      background-color: #0f172a;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
 
-        /* --- Lábjegyzet --- */
-        footer {
-            background-color: rgba(74, 144, 226, 0.7);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 60px;
-            border-radius: 20px 20px 0 0;
-            backdrop-filter: blur(6px);
-        }
+    .video {
+      width: 100%;
+      max-width: 400px;
+      height: 300px;
+      background-color: black;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
 
-        @media (max-width: 600px) {
-            nav a {
-                margin: 0.4rem;
-                padding: 8px 14px;
-            }
+    footer {
+      background-color: rgba(30, 58, 138, 0.8);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
+    }
 
-            header h1 {
-                font-size: 1.8rem;
-            }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-            h2 {
-                font-size: 1.5rem;
-            }
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0.4rem;
+        padding: 8px 14px;
+      }
 
-            h3 {
-                font-size: 1.2rem;
-            }
+      header h1 {
+        font-size: 2rem;
+      }
 
-            .video {
-                width: 100%;
-                height: 200px;
-            }
-        }
-    </style>
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      .video {
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Dokumentáció az ÁRAM Körökről</h1>
+  <h1>Dokumentáció az ÁRAM Körökről</h1>
 </header>
 
 <nav>
-    <a href="index.html">Vissza a Projektekhez</a>
+  <a href="index.html">← Vissza a Projektekhez</a>
 </nav>
 
 <section>
-    <h2>1. Bevezetés</h2>
-    <p>Az ÁRAM körök egy olyan matematikai és informatikai fogalomkör, amelyet különböző tudományágakban alkalmaznak, többek között a hálózatteóriában, a grafelméletben és az algoritmusok területén...</p>
+  <h2>1. Bevezetés</h2>
+  <p>Az ÁRAM körök egy olyan matematikai és informatikai fogalomkör, amelyet különböző tudományágakban alkalmaznak, többek között a hálózatteóriában, a grafelméletben és az algoritmusok területén...</p>
 
-    <h2>2. Az ÁRAM körök alapfogalmai</h2>
-    <p>Az ÁRAM körök alapját a gráfok és a ciklusok képezik...</p>
+  <h2>2. Az ÁRAM körök alapfogalmai</h2>
+  <p>Az ÁRAM körök alapját a gráfok és a ciklusok képezik...</p>
 
-    <h3>2.1. Ciklus</h3>
-    <p>A ciklus egy olyan gráf-rész, amelyben a csúcsok és élek egy zárt útvonalat alkotnak...</p>
+  <h3>2.1. Ciklus</h3>
+  <p>A ciklus egy olyan gráf-rész, amelyben a csúcsok és élek egy zárt útvonalat alkotnak...</p>
 
-    <h3>2.2. Gráfok típusai</h3>
-    <ul>
-        <li><strong>Irányított gráfok:</strong> Minden élnek van egy kezdő és végpontja.</li>
-        <li><strong>Nem irányított gráfok:</strong> Az élek között nincs irány.</li>
-    </ul>
+  <h3>2.2. Gráfok típusai</h3>
+  <ul>
+    <li><span class="highlight">Irányított gráfok:</span> Minden élnek van egy kezdő és végpontja.</li>
+    <li><span class="highlight">Nem irányított gráfok:</span> Az élek között nincs irány.</li>
+  </ul>
 
-    <h2>3. ÁRAM körök és hálózati struktúrák</h2>
-    <p>Az ÁRAM körök gyakran alkalmazásra kerülnek különböző hálózati struktúrák modellezésében...</p>
+  <h2>3. ÁRAM körök és hálózati struktúrák</h2>
+  <p>Az ÁRAM körök gyakran alkalmazásra kerülnek különböző hálózati struktúrák modellezésében...</p>
 
-    <h2>4. Az ÁRAM körök matematikai háttere</h2>
-    <p>Az ÁRAM körök matematikai modellezése a gráfelméleten alapul...</p>
+  <h2>4. Az ÁRAM körök matematikai háttere</h2>
+  <p>Az ÁRAM körök matematikai modellezése a gráfelméleten alapul...</p>
 
-    <h2>5. Alkalmazások</h2>
-    <ul>
-        <li><strong>Hálózatelemzés</strong></li>
-        <li><strong>Társadalmi hálózatok modellezése</strong></li>
-        <li><strong>Alkalmazás-fejlesztés</strong></li>
-    </ul>
+  <h2>5. Alkalmazások</h2>
+  <ul>
+    <li><span class="highlight">Hálózatelemzés</span></li>
+    <li><span class="highlight">Társadalmi hálózatok modellezése</span></li>
+    <li><span class="highlight">Alkalmazás-fejlesztés</span></li>
+  </ul>
 
-    <h2>6. Kihívások és fejlesztési lehetőségek</h2>
-    <ul>
-        <li><strong>Komplexitás:</strong> Nagy rendszerek bonyolultsága</li>
-        <li><strong>Skálázhatóság:</strong> Növekvő számítási igények</li>
-    </ul>
+  <h2>6. Kihívások és fejlesztési lehetőségek</h2>
+  <ul>
+    <li><span class="highlight">Komplexitás:</span> Nagy rendszerek bonyolultsága</li>
+    <li><span class="highlight">Skálázhatóság:</span> Növekvő számítási igények</li>
+  </ul>
 
-    <h2>7. Jövőbeli kutatások és trendek</h2>
-    <p>Az ÁRAM körök és a grafikus modellezési technikák folyamatosan fejlődnek...</p>
+  <h2>7. Jövőbeli kutatások és trendek</h2>
+  <p>Az ÁRAM körök és a grafikus modellezési technikák folyamatosan fejlődnek...</p>
 
-    <h2>8. Következtetés</h2>
-    <p>Az ÁRAM körök kulcsfontosságú szerepet játszanak a gráf- és hálózatelemzésekben...</p>
+  <h2>8. Következtetés</h2>
+  <p>Az ÁRAM körök kulcsfontosságú szerepet játszanak a gráf- és hálózatelemzésekben...</p>
 </section>
 
 <footer>
@@ -218,3 +226,4 @@
 
 </body>
 </html>
+
