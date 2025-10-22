@@ -1,146 +1,159 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kapcsoló és Router Alapkonfiguráció</title>
-    <link rel="stylesheet" href="stilus.css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kapcsoló és Router Alapkonfiguráció</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
 
-        header {
-            background-color: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 2em 1em;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav {
-            background-color: #e3f2fd;
-            padding: 1em;
-            text-align: center;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
+      line-height: 1.6;
+      padding-bottom: 100px;
+    }
 
-        nav a {
-            background-color: #ffffff;
-            color: #007BFF;
-            margin: 0 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            border: 1px solid #007BFF;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+    header {
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a:hover {
-            background-color: #007BFF;
-            color: white;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--hover);
+      letter-spacing: 1px;
+    }
 
-        main {
-            max-width: 1000px;
-            margin: 2em auto 4em auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
 
-        section {
-            padding: 1em 0;
-        }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid var(--hover);
+    }
 
-        h2 {
-            color: #007BFF;
-            margin-top: 1em;
-        }
+    nav a:hover {
+      background-color: var(--hover);
+      color: white;
+    }
 
-        h3 {
-            color: #333;
-            margin-top: 1em;
-        }
+    section {
+      background-color: var(--bg-section);
+      border-radius: 12px;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
 
-        ul {
-            padding-left: 1.5em;
-            margin-bottom: 1em;
-        }
+    section h2 {
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--hover);
+      padding-left: 0.6rem;
+    }
 
-        li {
-            margin-bottom: 0.5em;
-        }
+    h3 {
+      font-size: 1.4rem;
+      color: #60a5fa;
+      margin-top: 1.5rem;
+    }
 
-        pre {
-            background-color: #f1f1f1;
-            padding: 1em;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: "Courier New", monospace;
-            margin-bottom: 1.5em;
-        }
+    p, ul {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
 
-        code {
-            color: #d63384;
-        }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-        .quote {
-            background-color: #fefefe;
-            border-left: 4px solid #007BFF;
-            padding: 1em;
-            margin: 1em 0;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
+    li {
+      margin-bottom: 0.75rem;
+    }
 
-        .highlight {
-            font-weight: bold;
-            color: #007BFF;
-        }
+    pre {
+      background-color: #0f172a;
+      border: 1px solid #3b82f6;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: "Courier New", monospace;
+      color: #f1f5f9;
+      margin-bottom: 1.5rem;
+    }
 
-        footer {
-            background-color: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+    code {
+      color: #60a5fa;
+    }
 
-        @media screen and (max-width: 768px) {
-            nav a {
-                display: block;
-                margin: 10px auto;
-                width: 80%;
-            }
-            main {
-                margin: 1em;
-                padding: 1em;
-            }
-        }
-    </style>
+    footer {
+      background-color: rgba(30, 58, 138, 0.8);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Vissza a Projektekhez</a>
-</nav>
-
-<header>
+  <header>
     <h1>Kapcsoló és Router Alapkonfiguráció</h1>
-</header>
+  </header>
 
-<main>
-    <section>
-        <h2>Bevezetés</h2>
-        <p>A hálózati eszközök, mint a kapcsolók (switch) és routerek alapvető szerepet játszanak a számítógépes hálózatokban. A kapcsolók lehetővé teszik az eszközök közötti adatátvitelt a helyi hálózatban, míg a routerek a különböző hálózatok közötti adatforgalmat irányítják. Az alábbi dokumentáció célja, hogy bemutassa a kapcsolók és routerek alapvető konfigurálását és azok szerepét egy hálózati környezetben.</p>
+  <nav>
+    <ul>
+      <li><a href="index.html">Vissza a Projektekhez</a></li>
+      <li><a href="#bevezetes">Bevezetés</a></li>
+      <li><a href="#kapcsolo">Kapcsoló</a></li>
+      <li><a href="#router">Router</a></li>
+    </ul>
+  </nav>
+
+  <section id="bevezetes">
+    <h2>Bevezetés</h2>
+    <p>A hálózati eszközök, mint a kapcsolók (switch) és routerek alapvető szerepet játszanak a számítógépes hálózatokban. A kapcsolók lehetővé teszik az eszközök közötti adatátvitelt a helyi hálózatban, míg a routerek a különböző hálózatok közötti adatforgalmat irányítják. Az alábbi dokumentáció célja, hogy bemutassa a kapcsolók és routerek alapvető konfigurálását és azok szerepét egy hálózati környezetben.</p>
 
         <h2>1. Kapcsoló (Switch) Alapkonfiguráció</h2>
 
