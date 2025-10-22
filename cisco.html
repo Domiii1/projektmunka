@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hálózati Alapok és Python</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-section: #1e293b;
+      --accent: #1e3a8a;
+      --hover: #3b82f6;
+      --text-light: #f1f5f9;
+      --card-bg: #1e293b;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -12,146 +22,117 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, #e3f2fd, #cfe9fc);
-      color: #1f2937;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark), var(--accent));
+      color: var(--text-light);
       line-height: 1.6;
+      padding-bottom: 100px;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.4);
+      background-color: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       padding: 2rem;
       text-align: center;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      color: #1e40af;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      color: var(--hover);
+      letter-spacing: 1px;
     }
 
-    nav {
-      margin-top: 1.5rem;
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 1rem;
     }
 
     nav a {
       text-decoration: none;
-      color: #1e40af;
-      background: rgba(255,255,255,0.6);
-      padding: 0.6rem 1.5rem;
+      color: var(--text-light);
+      background-color: var(--accent);
+      padding: 0.6rem 1.2rem;
       border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.8);
+      font-weight: 600;
       transition: all 0.3s ease;
-      backdrop-filter: blur(8px);
-      margin: 0 0.5rem;
-      display: inline-block;
+      border: 1px solid var(--hover);
     }
 
     nav a:hover {
-      background: rgba(255,255,255,0.9);
-      transform: translateY(-2px);
+      background-color: var(--hover);
+      color: white;
     }
 
     section {
-      max-width: 900px;
+      background-color: var(--bg-section);
+      border-radius: 12px;
+      max-width: 1100px;
       margin: 3rem auto;
       padding: 2rem;
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.6);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
     section h2 {
-      color: #1e3a8a;
-      margin-bottom: 1rem;
-      border-left: 4px solid #93c5fd;
+      font-size: 2rem;
+      color: var(--hover);
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--hover);
       padding-left: 0.6rem;
     }
 
-    section h3 {
-      color: #1e40af;
+    h3 {
+      font-size: 1.4rem;
+      color: #60a5fa;
       margin-top: 1.5rem;
     }
 
     p, ul {
-      margin-bottom: 1rem;
+      color: #cbd5e1;
       font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     ul {
       padding-left: 1.5rem;
     }
 
+    li {
+      margin-bottom: 0.75rem;
+    }
+
     pre {
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
+      background-color: #0f172a;
+      border: 1px solid #3b82f6;
       padding: 1rem;
-      border-radius: 10px;
+      border-radius: 8px;
       overflow-x: auto;
-      border: 1px solid rgba(255,255,255,0.8);
+      font-family: "Courier New", monospace;
+      color: #f1f5f9;
+      margin-bottom: 1.5rem;
     }
 
     code {
-      font-family: Consolas, monospace;
-      font-size: 1rem;
-    }
-
-    .python-example {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .python-example code {
-      display: block;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.8);
-    }
-
-    .btn-glass {
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      background: rgba(30, 64, 175, 0.8);
-      padding: 0.8rem 1.8rem;
-      border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.6);
-      box-shadow: 0 8px 24px rgba(30,64,175,0.3);
-      backdrop-filter: blur(8px);
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-glass:hover {
-      background: rgba(30, 64, 175, 0.95);
-      transform: translateY(-2px);
+      color: #60a5fa;
     }
 
     footer {
+      background-color: rgba(30, 58, 138, 0.8);
+      color: white;
       text-align: center;
-      padding: 2rem 0;
-      margin-top: 3rem;
-      background: rgba(255,255,255,0.4);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(255,255,255,0.3);
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        margin: 0.3rem;
-      }
-
-      section {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-      }
+      padding: 1.5rem;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+      backdrop-filter: blur(6px);
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -159,6 +140,50 @@
 
   <header>
     <h1>Hálózati Alapok és Python</h1>
-    <nav>
-      <a href="index.html" class="btn-glass">Projektek</a>
-      <a href="network.html" class="btn-glass">Hálózati Konfigur
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Vissza a Projektekhez</a></li>
+      <li><a href="#halozat">Hálózat</a></li>
+      <li><a href="#python">Python</a></li>
+    </ul>
+  </nav>
+
+  <section id="halozat">
+    <h2>Hálózati Alapok</h2>
+    <p>A hálózatok lehetővé teszik az eszközök közötti kommunikációt. A helyi hálózat (LAN) és a globális hálózat (WAN) alapvető fogalmak, amelyeket minden informatikusnak ismernie kell.</p>
+    <ul>
+      <li><strong>IP-cím:</strong> Azonosítja az eszközt a hálózaton belül.</li>
+      <li><strong>MAC-cím:</strong> Fizikai azonosító, amely az eszköz hálózati interfészéhez tartozik.</li>
+      <li><strong>Router:</strong> Összeköti a különböző hálózatokat, irányítja az adatforgalmat.</li>
+      <li><strong>Switch:</strong> Az eszközök közötti adatátvitelt kezeli a LAN-on belül.</li>
+    </ul>
+  </section>
+
+  <section id="python">
+    <h2>Python Alapok</h2>
+    <p>A Python egy könnyen tanulható, sokoldalú programozási nyelv, amelyet gyakran használnak hálózati automatizálásra is.</p>
+
+    <h3>Egyszerű példa: IP-cím kiírása</h3>
+    <pre><code>ip = "192.168.1.1"
+print("Az IP-cím:", ip)</code></pre>
+
+    <h3>Lista bejárása</h3>
+    <pre><code>ip_lista = ["192.168.1.1", "10.0.0.1", "172.16.0.1"]
+for ip in ip_lista:
+    print("Cím:", ip)</code></pre>
+
+    <h3>Függvény használata</h3>
+    <pre><code>def ping_cim(cim):
+    print(f"{cim} pingelve...")
+
+ping_cim("192.168.1.1")</code></pre>
+  </section>
+
+  <footer>
+    &copy; 2025 Hálózati Alapok és Python | Minden jog fenntartva
+  </footer>
+
+</body>
+</html>
