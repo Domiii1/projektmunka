@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Árajánlat</title>
+  <title>Áramkörök Mérése</title>
   <style>
-    /* Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -26,43 +25,35 @@
       text-align: center;
       padding: 3rem 1.5rem;
       color: white;
-      background: rgba(74 144 226 / 0.75);
+      background: rgba(74, 144, 226, 0.75);
       backdrop-filter: blur(15px);
       border-bottom-left-radius: 24px;
       border-bottom-right-radius: 24px;
-      box-shadow: 0 6px 22px rgb(0 0 0 / 0.15);
-      user-select: none;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
     }
 
     header h1 {
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      text-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
-    }
-
-    header p {
-      font-size: 1.15rem;
-      opacity: 0.85;
-      text-shadow: 0 1px 2px rgb(0 0 0 / 0.15);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
 
     nav {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      padding: 1rem 1rem;
-      background: rgba(255 255 255 / 0.45);
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.45);
       backdrop-filter: blur(15px);
-      box-shadow: 0 4px 18px rgb(0 0 0 / 0.07);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
       border-radius: 32px;
       margin: 2rem auto 0;
       max-width: 960px;
-      user-select: none;
     }
 
     nav a {
-      background: rgba(227 242 253 / 0.8);
+      background: rgba(227, 242, 253, 0.8);
       color: #1a73e8;
       text-decoration: none;
       font-weight: 600;
@@ -70,17 +61,14 @@
       border-radius: 32px;
       border: 1.8px solid #bbdefb;
       transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
-      white-space: nowrap;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     }
 
-    nav a:hover,
-    nav a:focus {
+    nav a:hover {
       background-color: #1a73e8;
       color: white;
       border-color: #145dbf;
-      box-shadow: 0 6px 16px rgb(26 115 232 / 0.6);
-      outline: none;
+      box-shadow: 0 6px 16px rgba(26, 115, 232, 0.6);
     }
 
     .content {
@@ -90,45 +78,30 @@
     }
 
     section {
-      background: rgba(255 255 255 / 0.65);
+      background: rgba(255, 255, 255, 0.65);
       backdrop-filter: blur(12px);
       padding: 28px 32px;
       margin-bottom: 36px;
       border-radius: 20px;
-      box-shadow: 0 10px 26px rgb(0 0 0 / 0.1);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      user-select: text;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
     }
 
-    section:hover,
-    section:focus-within {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 36px rgb(0 0 0 / 0.15);
-    }
-
-    .section-title {
+    h2 {
       color: #1976d2;
       font-size: 1.75rem;
       font-weight: 700;
       margin-bottom: 14px;
-      user-select: text;
     }
 
-    .section-content {
+    p, ul {
       color: #374151;
       font-size: 1.1rem;
       line-height: 1.55;
       margin-bottom: 16px;
-      user-select: text;
     }
 
     ul {
       padding-left: 22px;
-      margin-top: 12px;
-      color: #374151;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      user-select: text;
     }
 
     li {
@@ -140,8 +113,13 @@
       font-weight: 600;
     }
 
+    .highlight {
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
     footer {
-      background: rgba(74 144 226 / 0.75);
+      background: rgba(74, 144, 226, 0.75);
       color: white;
       text-align: center;
       padding: 24px 12px;
@@ -149,55 +127,53 @@
       margin-top: 80px;
       border-radius: 20px 20px 0 0;
       backdrop-filter: blur(15px);
-      user-select: none;
-      box-shadow: 0 -4px 18px rgb(0 0 0 / 0.12);
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 0.7rem;
-      }
-
-      nav a {
-        flex-grow: 1;
-        text-align: center;
-        padding: 10px 12px;
-        font-size: 0.95rem;
-        max-width: 140px;
-      }
-
-      .content {
-        padding: 0 15px 60px;
-      }
-
-      .section-title {
-        font-size: 1.4rem;
-      }
-
-      .section-content,
-      ul {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      nav a {
-        max-width: 100%;
-      }
+      box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.12);
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Árajánlat</h1>
-    <p>Tájékoztató jellegű árak számítógép szerelési szolgáltatásokhoz</p>
+    <h1>Áramkörök Méréseinek Áttekintése</h1>
   </header>
+
+  <nav>
+    <a href="index.html">Főoldal</a>
+    <a href="#bevezetes">Bevezetés</a>
+    <a href="#meresek">Mérések</a>
+    <a href="#komponensek">Komponensek</a>
+    <a href="#hibak">Hibák</a>
+    <a href="#kapcsolat">Kapcsolat</a>
+    <a href="meres.html">Mérés</a>
+  </nav>
+
+  <div class="content">
+
+    <section id="bevezetes">
+      <h2>Bevezetés</h2>
+      <p>Az áramkörök mérése kulcsszerepet játszik az elektronikai rendszerek tervezésében és karbantartásában. A <span class="highlight">feszültség</span>, <span class="highlight">áram</span>, és <span class="highlight">ellenállás</span> pontos meghatározása elengedhetetlen a hibamentes működéshez.</p>
+      <p>Ez az oldal bemutatja az alapvető mérési eljárásokat, a szükséges műszereket, valamint gyakorlati tanácsokat ad a mérések végrehajtásához.</p>
+    </section>
+
+    <section id="meresek">
+      <h2>A Mérések Típusai</h2>
+      <ul>
+        <li><strong>Feszültségmérés:</strong> A mérőeszközt <em>párhuzamosan</em> kell csatlakoztatni a vizsgált pontokhoz.</li>
+        <li><strong>Árammérés:</strong> Az árammérőt <em>sorosan</em> kell bekötni az áramkörbe.</li>
+        <li><strong>Ellenállásmérés:</strong> A mérés csak <em>kikapcsolt</em> áramkörön történhet.</li>
+        <li><strong>Teljesítménymérés:</strong> A teljesítmény számítása: <code>P = U × I</code>.</li>
+      </ul>
+    </section>
+
+    <section id="komponensek">
+      <h2>A Mérési Áramkör Komponensei</h2>
+      <ul>
+        <li><strong>Multiméter:</strong> Kombinált eszköz feszültség, áram és ellenállás mérésére.</li>
+        <li><strong>Árammérő:</strong> Kis ellenállású eszköz, melyet sorba kell kötni a mérendő áramkörrel.</li>
+        <li><strong>Ohmmérő:</strong> Szakadások és zárlatok felderítésére szolgáló műszer.</li>
+        <li><strong>Passzív komponensek:</strong> Kondenzátorok, ellenállások és egyéb elemek, amelyek az áramkör stabilitását biztosítják.</li>
+      </ul>
+    
 
   <nav>
     <a href="index.html">Vissza a Projektekhez</a>
@@ -241,3 +217,4 @@
 
 </body>
 </html>
+
