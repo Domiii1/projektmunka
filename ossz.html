@@ -58,7 +58,41 @@
             font-size: 0.9em;
             color: #666;
         }
+
+        .ppt-button {
+            background-color: #2a5298;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
+
+        .ppt-button:hover {
+            background-color: #1e3c72;
+            transform: scale(1.05);
+        }
+
+        #pptContainer {
+            display: none;
+            margin-top: 20px;
+        }
     </style>
+
+    <script>
+        function togglePPT() {
+            var ppt = document.getElementById("pptContainer");
+            if (ppt.style.display === "none") {
+                ppt.style.display = "block";
+            } else {
+                ppt.style.display = "none";
+            }
+        }
+    </script>
+
 </head>
 <body>
 
@@ -68,16 +102,13 @@
 
         <p>
             A <strong>boss-10.vercel.app</strong> egy iskolai projekt keretében készült weboldal,
-            amely különböző évfolyamok projektmunkáit mutatja be. Az oldal célja,
-            hogy áttekinthető formában összegyűjtse és bemutassa az informatikai
-            és hálózati témájú feladatokat és azok dokumentációit.
+            amely különböző évfolyamok projektmunkáit mutatja be.
         </p>
 
         <h2>Az oldalon található aloldalak</h2>
 
         <p>
-            A weboldal összesen <strong>4 fő tartalmi egységet</strong> tartalmaz,
-            évfolyamok szerint csoportosítva:
+            A weboldal összesen <strong>4 fő tartalmi egységet</strong> tartalmaz:
         </p>
 
         <ul>
@@ -88,24 +119,17 @@
         </ul>
 
         <p>
-            Ezeken belül összesen <strong>8 különböző projekt</strong> található.
-            Minden projekthez tartozik dokumentáció és külön weboldal link.
+            Összesen <strong>8 különböző projekt</strong> található dokumentációval és linkkel.
         </p>
 
         <h2>A weboldal elkészítése</h2>
 
         <p>
-            Az oldal modern webes technológiák felhasználásával készült.
-            HTML, CSS és JavaScript alkalmazásával lett felépítve,
-            majd a <strong>Vercel</strong> platformon került publikálásra,
-            amely gyors és megbízható megjelenést biztosít.
+            Az oldal HTML, CSS és JavaScript felhasználásával készült,
+            majd a <strong>Vercel</strong> platformon került publikálásra.
         </p>
 
         <h2>A csapat bemutatása</h2>
-
-        <p>
-            A projektet <strong>három fő</strong> készítette csapatmunkában:
-        </p>
 
         <ul>
             <li><strong>Fehér Dominik</strong> – csapatkapitány</li>
@@ -113,10 +137,19 @@
             <li>Károly Bálint – csapattag</li>
         </ul>
 
-        <p>
-            A csapat közösen dolgozott a weboldal megtervezésén,
-            a tartalom összeállításán és a projektek bemutatásán.
-        </p>
+        <h2>Projekt bemutató</h2>
+
+        <button onclick="togglePPT()" class="ppt-button">
+            PowerPoint megjelenítése
+        </button>
+
+        <div id="pptContainer">
+            <iframe 
+                src="prezentacio.pptx" 
+                width="100%" 
+                height="500px">
+            </iframe>
+        </div>
 
         <footer>
             <p>Iskolai projekt összegzés © 2026</p>
