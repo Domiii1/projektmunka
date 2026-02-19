@@ -5,82 +5,122 @@
     <title>Projekt összegzés</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #333;
-        }
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        background-size: 200% 200%;
+        animation: gradientMove 8s ease infinite;
+        color: #333;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-        h1 {
-            text-align: center;
-            color: #1e3c72;
-            margin-bottom: 30px;
-        }
+    .container {
+        max-width: 900px;
+        margin: 50px auto;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+    }
 
-        h2 {
-            color: #2a5298;
-            border-left: 5px solid #2a5298;
-            padding-left: 10px;
-            margin-top: 30px;
-        }
+    .container:hover {
+        transform: translateY(-5px);
+    }
 
-        p {
-            line-height: 1.7;
-            margin-top: 15px;
-        }
+    h1 {
+        text-align: center;
+        color: #1b3c59;
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
 
-        ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
+    h2 {
+        color: #2c5364;
+        border-left: 6px solid #2c5364;
+        padding-left: 12px;
+        margin-top: 35px;
+        font-size: 20px;
+    }
 
-        ul li {
-            margin-bottom: 8px;
-        }
+    p {
+        line-height: 1.8;
+        margin-top: 15px;
+        font-size: 16px;
+    }
 
-        strong {
-            color: #1e3c72;
-        }
+    ul {
+        margin-top: 15px;
+        padding-left: 25px;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #666;
-        }
+    ul li {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
 
-        .ppt-button {
-            background-color: #2a5298;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
+    a {
+        text-decoration: none;
+        color: #2c5364;
+        font-weight: bold;
+        transition: 0.3s;
+    }
 
-        .ppt-button:hover {
-            background-color: #1e3c72;
-            transform: scale(1.05);
-        }
+    a:hover {
+        color: #0f2027;
+        text-decoration: underline;
+    }
 
-        #pptContainer {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
+    strong {
+        color: #1b3c59;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: #555;
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+    }
+
+    .ppt-button {
+        background: linear-gradient(45deg, #2c5364, #203a43);
+        color: white;
+        padding: 14px 25px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .ppt-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    #pptContainer {
+        display: none;
+        margin-top: 25px;
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+
 
     <script>
         function togglePPT() {
