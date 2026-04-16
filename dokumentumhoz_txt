@@ -1,0 +1,111 @@
+# Weboldal elemzés
+
+**Vizsgált oldal:** https://boss-10.vercel.app/
+
+## 1. Bevezetés
+
+Ebben a dokumentumban a megadott weboldalt elemzem különböző szempontok alapján. Megvizsgálom, hogy milyen funkciókat lát el, hogyan épül fel technikailag, milyen a felhasználói felülete, illetve mennyire tekinthető megbízhatónak.
+
+Az oldal egy Vercel platformon fut, ami gyakran használt fejlesztői és tesztkörnyezet webalkalmazásokhoz.
+
+---
+
+## 2. Az oldal általános jellemzői
+
+Az oldal megnyitása után egy dashboard jellegű felület fogad. Több különálló blokk jelenik meg, amelyek például:
+
+* felhasználói adatokat mutatnak
+* statisztikákat jelenítenek meg
+* különböző számításokat végeznek
+
+Összességében inkább egy webalkalmazásnak tűnik, nem egy egyszerű statikus weboldalnak.
+
+---
+
+## 3. Funkcionális elemzés
+
+### 3.1. Adatbevitel és számítás
+
+Az oldalon lehetőség van bizonyos adatok megadására (például aktivitási szint), majd ezek alapján a rendszer különböző eredményeket számol ki.
+
+Úgy látom, hogy ezek a számítások a böngészőben történnek, tehát nincs szükség külön szerveroldali feldolgozásra.
+
+### 3.2. Felhasználói profil
+
+Az oldalon megjelenik egy felhasználói profil is, amely tartalmaz például:
+
+* azonosítót
+* státuszt
+* statisztikai adatokat
+
+Ezek azonban valószínűleg nem valódi adatok, hanem előre beállított minták, amelyeket csak a megjelenítés miatt használnak.
+
+### 3.3. Interaktivitás
+
+Bár vannak interaktív elemek, az oldal funkcionalitása korlátozott:
+
+* nincs bejelentkezési lehetőség
+* nincs adatmentés
+* a navigáció egyszerű
+
+Ez alapján inkább egy bemutató jellegű alkalmazásról van szó.
+
+---
+
+## 4. Technikai háttér
+
+A felépítés alapján arra következtetek, hogy az oldal modern webfejlesztési technológiákkal készült, például:
+
+* Next.js (React alapú keretrendszer)
+* valamilyen modern CSS megoldás (pl. Tailwind)
+* Vercel hosztolás
+
+A kód szerkezete komponens alapú lehet, ami ma már elterjedt megoldás.
+
+---
+
+## 5. Felhasználói felület értékelése
+
+### Pozitívumok:
+
+* letisztult, modern megjelenés
+* jól elkülönített elemek
+* könnyen átlátható struktúra
+
+### Negatívumok:
+
+* kevés valódi funkció
+* hiányoznak fontos elemek (pl. mentés, felhasználói rendszer)
+* inkább prototípusnak tűnik
+
+---
+
+## 6. Biztonság és megbízhatóság
+
+Az oldal nem tartalmaz olyan elemeket, amelyek egy éles rendszerhez szükségesek lennének:
+
+* nincs hitelesítés
+* nincs adatkezelési információ
+* nem látható valódi backend működés
+
+Ezért arra jutottam, hogy az oldal nem alkalmas érzékeny adatok megadására.
+
+---
+
+## 7. Az oldal célja
+
+Az elemzés alapján úgy gondolom, hogy az oldal célja inkább:
+
+* gyakorlás
+* bemutatás
+* tanulás
+
+Nem egy kész, éles használatra szánt alkalmazás.
+
+---
+
+## 8. Összegzés
+
+Összességében egy modern technológiákkal készült, jól kinéző dashboard jellegű webalkalmazást láttam. Pozitív, hogy korszerű megoldásokat használ, és a felépítése logikus.
+
+Ugyanakkor hiányoznak belőle azok a funkciók, amelyek egy valódi alkalmazáshoz szükségesek. Emiatt inkább egy tanulási vagy bemutató projektnek tartom, nem pedig egy kész rendszernek.
